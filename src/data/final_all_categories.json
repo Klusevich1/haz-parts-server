@@ -1,0 +1,1810 @@
+[
+  {
+    "id": 1,
+    "category": "Car Service parts",
+    "subcategories": [
+      {
+        "name": "Engine Oil",
+        "slug": "engine-oil"
+      },
+      {
+        "name": "Antifreeze",
+        "slug": "antifreeze"
+      },
+      {
+        "name": "Spark Plug",
+        "slug": "spark-plug"
+      },
+      {
+        "name": "Wiper Blade, Rubber",
+        "slug": "wiper-blade-rubber"
+      },
+      {
+        "name": "Disc Brake",
+        "slug": "disc-brake"
+      },
+      {
+        "name": "Drum Brake",
+        "slug": "drum-brake"
+      },
+      {
+        "name": "Oil Drain Screw",
+        "slug": "oil-drain-screw"
+      },
+      {
+        "name": "Oil AT transmission",
+        "slug": "oil-at-transmission"
+      },
+      {
+        "name": "Oil Steering",
+        "slug": "oil-steering"
+      },
+      {
+        "name": "Set, Timing Belt",
+        "slug": "set-timing-belt"
+      },
+      {
+        "name": "Tensioner Pulley, timing belt",
+        "slug": "tensioner-pulley-timing-belt"
+      },
+      {
+        "name": "Parts, tie rod assembly",
+        "slug": "parts-tie-rod-assembly"
+      }
+    ],
+    "image": "/resources/categories/car-service.jpg",
+    "slug": "car-service-parts"
+  },
+  {
+    "id": 2,
+    "category": "Filters",
+    "subcategories": [
+      {
+        "name": "Oil Filter",
+        "slug": "oil-filter"
+      },
+      {
+        "name": "Air Filter",
+        "slug": "air-filter"
+      },
+      {
+        "name": "Fuel Filter",
+        "slug": "fuel-filter"
+      },
+      {
+        "name": "Air Filter, Salon",
+        "slug": "air-filter-salon"
+      },
+      {
+        "name": "Filter Set",
+        "slug": "filter-set"
+      },
+      {
+        "name": "Transmission, Steering",
+        "slug": "transmission-steering"
+      },
+      {
+        "name": "Coolant Filter",
+        "slug": "coolant-filter"
+      }
+    ],
+    "image": "/resources/categories/filters.jpg",
+    "slug": "filters"
+  },
+  {
+    "id": 3,
+    "category": "Engine parts",
+    "subcategories": [
+      {
+        "name": "Engine Oil",
+        "slug": "engine-oil"
+      },
+      {
+        "name": "Gaskets",
+        "slug": "gaskets"
+      },
+      {
+        "name": "Belt Drive",
+        "slug": "belt-drive"
+      },
+      {
+        "name": "Cylinders, Pistons",
+        "slug": "cylinders-pistons"
+      },
+      {
+        "name": "Engine Guard, Skid Plate",
+        "slug": "engine-guard-skid-plate"
+      },
+      {
+        "name": "Lubrication",
+        "slug": "lubrication"
+      },
+      {
+        "name": "Sensors, Electrics",
+        "slug": "sensors-electrics"
+      },
+      {
+        "name": "Engine Timing Control",
+        "slug": "engine-timing-control"
+      },
+      {
+        "name": "Engine Air Supply",
+        "slug": "engine-air-supply"
+      },
+      {
+        "name": "Engine Mountings",
+        "slug": "engine-mountings"
+      },
+      {
+        "name": "Cylinder Head, Parts",
+        "slug": "cylinder-head-parts"
+      },
+      {
+        "name": "Crankshaft Drive",
+        "slug": "crankshaft-drive"
+      },
+      {
+        "name": "Engine crankcase",
+        "slug": "engine-crankcase"
+      },
+      {
+        "name": "Engine Cover",
+        "slug": "engine-cover"
+      },
+      {
+        "name": "Exhaust Emission Control",
+        "slug": "exhaust-emission-control"
+      },
+      {
+        "name": "Tuning",
+        "slug": "tuning"
+      },
+      {
+        "name": "Complete Engine, Sub-Assembly",
+        "slug": "complete-engine-sub-assembly"
+      },
+      {
+        "name": "Tools",
+        "slug": "tools"
+      }
+    ],
+    "image": "/resources/categories/engine-parts.png",
+    "slug": "engine-parts"
+  },
+  {
+    "id": 4,
+    "category": "Axle & wheels Mounting",
+    "subcategories": [
+      {
+        "name": "Struts, Rods",
+        "slug": "struts-rods"
+      },
+      {
+        "name": "Stabiliser",
+        "slug": "stabiliser"
+      },
+      {
+        "name": "Wheel Hub, Mounting",
+        "slug": "wheel-hub-mounting"
+      },
+      {
+        "name": "Joints",
+        "slug": "joints"
+      },
+      {
+        "name": "Suspension Arm Joint",
+        "slug": "suspension-arm-joint"
+      },
+      {
+        "name": "Wheel Fastening",
+        "slug": "wheel-fastening"
+      },
+      {
+        "name": "Mounting, suspension strut",
+        "slug": "mounting-suspension-strut"
+      },
+      {
+        "name": "Stub Axle, repair Kit",
+        "slug": "stub-axle-repair-kit"
+      },
+      {
+        "name": "Axle Support, Axle Beam",
+        "slug": "axle-support-axle-beam"
+      },
+      {
+        "name": "Dome, Transverse Link Strut",
+        "slug": "dome-transverse-link-strut"
+      },
+      {
+        "name": "Tyre Pressure control",
+        "slug": "tyre-pressure-control"
+      },
+      {
+        "name": "Track widening",
+        "slug": "track-widening"
+      },
+      {
+        "name": "Tools",
+        "slug": "tools"
+      }
+    ],
+    "image": "/resources/categories/axle-wheels.png",
+    "slug": "axle-wheels-mounting"
+  },
+  {
+    "id": 5,
+    "category": "Brake System",
+    "subcategories": [
+      {
+        "name": "Disc Brake",
+        "slug": "disc-brake"
+      },
+      {
+        "name": "Drum Brake",
+        "slug": "drum-brake"
+      },
+      {
+        "name": "Brake Calipers",
+        "slug": "brake-calipers"
+      },
+      {
+        "name": "ABS system",
+        "slug": "abs-system"
+      },
+      {
+        "name": "Brake Fluid",
+        "slug": "brake-fluid"
+      },
+      {
+        "name": "Wheel Cylinders",
+        "slug": "wheel-cylinders"
+      },
+      {
+        "name": "Wear Indicator",
+        "slug": "wear-indicator"
+      },
+      {
+        "name": "Brake Master Cylinder",
+        "slug": "brake-master-cylinder"
+      },
+      {
+        "name": "Handbrake",
+        "slug": "handbrake"
+      },
+      {
+        "name": "Control Levers, Cables",
+        "slug": "control-levers-cables"
+      },
+      {
+        "name": "Valves",
+        "slug": "valves"
+      },
+      {
+        "name": "Filter, breaks",
+        "slug": "filter-breaks"
+      },
+      {
+        "name": "Vacuum Pump",
+        "slug": "vacuum-pump"
+      },
+      {
+        "name": "Brake Booster",
+        "slug": "brake-booster"
+      },
+      {
+        "name": "Brake Light Switch",
+        "slug": "brake-light-switch"
+      },
+      {
+        "name": "Pressure Accumulator, Switch",
+        "slug": "pressure-accumulator-switch"
+      },
+      {
+        "name": "Brake Power Regulator",
+        "slug": "brake-power-regulator"
+      },
+      {
+        "name": "High Performance Brakes",
+        "slug": "high-performance-brakes"
+      },
+      {
+        "name": "Brake Hoses",
+        "slug": "brake-hoses"
+      },
+      {
+        "name": "Brake Pipes",
+        "slug": "brake-pipes"
+      },
+      {
+        "name": "Brake Fluid Reservoir",
+        "slug": "brake-fluid-reservoir"
+      },
+      {
+        "name": "Tools",
+        "slug": "tools"
+      }
+    ],
+    "image": "/resources/categories/brake-system.png",
+    "slug": "brake-system"
+  },
+  {
+    "id": 6,
+    "category": "Wheels",
+    "subcategories": [
+      {
+        "name": "Tyres",
+        "slug": "tyres"
+      },
+      {
+        "name": "Rims",
+        "slug": "rims"
+      },
+      {
+        "name": "Nuts, Bolts, Caps",
+        "slug": "nuts-bolts-caps"
+      },
+      {
+        "name": "Tyre Pressure control",
+        "slug": "tyre-pressure-control"
+      },
+      {
+        "name": "Cover, emblem",
+        "slug": "cover-emblem"
+      }
+    ],
+    "image": "/resources/categories/wheels.jpg",
+    "slug": "wheels"
+  },
+  {
+    "id": 7,
+    "category": "Suspension",
+    "subcategories": [
+      {
+        "name": "Shock Absorber",
+        "slug": "shock-absorber"
+      },
+      {
+        "name": "Coil Springs",
+        "slug": "coil-springs"
+      },
+      {
+        "name": "Strut, Bearing",
+        "slug": "strut-bearing"
+      },
+      {
+        "name": "Strut, parts",
+        "slug": "strut-parts"
+      },
+      {
+        "name": "Suspension Kit, complete",
+        "slug": "suspension-kit-complete"
+      },
+      {
+        "name": "Oil",
+        "slug": "oil"
+      },
+      {
+        "name": "Leaf Spring",
+        "slug": "leaf-spring"
+      },
+      {
+        "name": "Pneumatic",
+        "slug": "pneumatic"
+      },
+      {
+        "name": "Leveling Control, Hydraulics",
+        "slug": "leveling-control-hydraulics"
+      },
+      {
+        "name": "Tools",
+        "slug": "tools"
+      }
+    ],
+    "image": "/resources/categories/suspension.jpg",
+    "slug": "suspension"
+  },
+  {
+    "id": 8,
+    "category": "Belt Drive",
+    "subcategories": [
+      {
+        "name": "Timing Belt, Set",
+        "slug": "timing-belt-set"
+      },
+      {
+        "name": "V-Ribbed Belt, Set",
+        "slug": "v-ribbed-belt-set"
+      },
+      {
+        "name": "V-Belt, Set",
+        "slug": "v-belt-set"
+      },
+      {
+        "name": "Belt Pulley",
+        "slug": "belt-pulley"
+      },
+      {
+        "name": "Flexible Coupling Sleeve",
+        "slug": "flexible-coupling-sleeve"
+      },
+      {
+        "name": "Alternator Freewheel Clutch",
+        "slug": "alternator-freewheel-clutch"
+      },
+      {
+        "name": "Bolts, Washers",
+        "slug": "bolts-washers"
+      },
+      {
+        "name": "Tools",
+        "slug": "tools"
+      }
+    ],
+    "image": "/resources/categories/belt-drive.png",
+    "slug": "belt-drive"
+  },
+  {
+    "id": 9,
+    "category": "Clutch, Parts",
+    "subcategories": [
+      {
+        "name": "Clutch Disc",
+        "slug": "clutch-disc"
+      },
+      {
+        "name": "Clutch Pressure Plate",
+        "slug": "clutch-pressure-plate"
+      },
+      {
+        "name": "Releaser, clutch",
+        "slug": "releaser-clutch"
+      },
+      {
+        "name": "Hydraulic Fluid",
+        "slug": "hydraulic-fluid"
+      },
+      {
+        "name": "Gaskets, Gasket Sets",
+        "slug": "gaskets-gasket-sets"
+      },
+      {
+        "name": "Pilot Bearing",
+        "slug": "pilot-bearing"
+      },
+      {
+        "name": "Clutch complete, Repair Kit",
+        "slug": "clutch-complete-repair-kit"
+      },
+      {
+        "name": "Clutch Control",
+        "slug": "clutch-control"
+      },
+      {
+        "name": "Hydraulic Filter, clutch",
+        "slug": "hydraulic-filter-clutch"
+      },
+      {
+        "name": "Automatic Clutch",
+        "slug": "automatic-clutch"
+      },
+      {
+        "name": "Clutch Torque Limiter",
+        "slug": "clutch-torque-limiter"
+      },
+      {
+        "name": "Clutch Housing",
+        "slug": "clutch-housing"
+      },
+      {
+        "name": "Torsion Damper",
+        "slug": "torsion-damper"
+      },
+      {
+        "name": "Flywheel",
+        "slug": "flywheel"
+      },
+      {
+        "name": "Clutch Conversion Kit",
+        "slug": "clutch-conversion-kit"
+      },
+      {
+        "name": "Tools",
+        "slug": "tools"
+      }
+    ],
+    "image": "/resources/categories/clutch.png",
+    "slug": "clutch-parts"
+  },
+  {
+    "id": 10,
+    "category": "Spark, Glow Ignition",
+    "subcategories": [
+      {
+        "name": "Spark Plug",
+        "slug": "spark-plug"
+      },
+      {
+        "name": "Glow Plug",
+        "slug": "glow-plug"
+      },
+      {
+        "name": "Ignition Coil, units",
+        "slug": "ignition-coil-units"
+      },
+      {
+        "name": "Ignition Distributor, parts",
+        "slug": "ignition-distributor-parts"
+      },
+      {
+        "name": "Ignition Cable, parts",
+        "slug": "ignition-cable-parts"
+      },
+      {
+        "name": "Resistor",
+        "slug": "resistor"
+      },
+      {
+        "name": "Scale (ignition setting)",
+        "slug": "scale-ignition-setting"
+      },
+      {
+        "name": "Glow Control Unit",
+        "slug": "glow-control-unit"
+      },
+      {
+        "name": "Control Unit, Relay",
+        "slug": "control-unit-relay"
+      },
+      {
+        "name": "Ignition Switch Unit, Coil",
+        "slug": "ignition-switch-unit-coil"
+      },
+      {
+        "name": "Pulse Generator",
+        "slug": "pulse-generator"
+      },
+      {
+        "name": "Vacuum System",
+        "slug": "vacuum-system"
+      },
+      {
+        "name": "Flame Start System",
+        "slug": "flame-start-system"
+      },
+      {
+        "name": "Switch, preheating",
+        "slug": "switch-preheating"
+      },
+      {
+        "name": "Tools",
+        "slug": "tools"
+      }
+    ],
+    "image": "/resources/categories/ignition.jpg",
+    "slug": "spark-glow-ignition"
+  },
+  {
+    "id": 11,
+    "category": "Body parts",
+    "subcategories": [
+      {
+        "name": "Windows, Mirrors",
+        "slug": "windows-mirrors"
+      },
+      {
+        "name": "Headlight, parts",
+        "slug": "headlight-parts"
+      },
+      {
+        "name": "Gas Springs",
+        "slug": "gas-springs"
+      },
+      {
+        "name": "Hatches, Bonnets, Doors, Roof",
+        "slug": "hatches-bonnets-doors-roof"
+      },
+      {
+        "name": "Trim, Protection, Emblems",
+        "slug": "trim-protection-emblems"
+      },
+      {
+        "name": "Bumper, Wing, Body parts",
+        "slug": "bumper-wing-body-parts"
+      },
+      {
+        "name": "Vehicle Front",
+        "slug": "vehicle-front"
+      },
+      {
+        "name": "Vehicle Rear",
+        "slug": "vehicle-rear"
+      },
+      {
+        "name": "Passenger Cabin",
+        "slug": "passenger-cabin"
+      },
+      {
+        "name": "Lights",
+        "slug": "lights"
+      },
+      {
+        "name": "Driver Cab",
+        "slug": "driver-cab"
+      },
+      {
+        "name": "Auxiliary Lights, parts",
+        "slug": "auxiliary-lights-parts"
+      },
+      {
+        "name": "Rollbar",
+        "slug": "rollbar"
+      },
+      {
+        "name": "Racks, Carriers of Headlight",
+        "slug": "racks-carriers-of-headlight"
+      },
+      {
+        "name": "Electromotor",
+        "slug": "electromotor"
+      },
+      {
+        "name": "Radiator mounting",
+        "slug": "radiator-mounting"
+      }
+    ],
+    "image": "/resources/categories/body-parts.jpg",
+    "slug": "body-parts"
+  },
+  {
+    "id": 12,
+    "category": "Electrics",
+    "subcategories": [
+      {
+        "name": "Battery",
+        "slug": "battery"
+      },
+      {
+        "name": "Sensors",
+        "slug": "sensors"
+      },
+      {
+        "name": "Alternator",
+        "slug": "alternator"
+      },
+      {
+        "name": "Headlight",
+        "slug": "headlight"
+      },
+      {
+        "name": "Lights",
+        "slug": "lights"
+      },
+      {
+        "name": "Flasher Unit, Relay",
+        "slug": "flasher-unit-relay"
+      },
+      {
+        "name": "Auxiliary Lights",
+        "slug": "auxiliary-lights"
+      },
+      {
+        "name": "Fuse Box, Holder",
+        "slug": "fuse-box-holder"
+      },
+      {
+        "name": "Electric Horn",
+        "slug": "electric-horn"
+      },
+      {
+        "name": "Relay",
+        "slug": "relay"
+      },
+      {
+        "name": "Multifunctional Relay",
+        "slug": "multifunctional-relay"
+      },
+      {
+        "name": "Starter Alternator",
+        "slug": "starter-alternator"
+      },
+      {
+        "name": "Harness",
+        "slug": "harness"
+      },
+      {
+        "name": "Central Electrics",
+        "slug": "central-electrics"
+      },
+      {
+        "name": "Starter System",
+        "slug": "starter-system"
+      },
+      {
+        "name": "Light Switches, Controls",
+        "slug": "light-switches-controls"
+      },
+      {
+        "name": "Indicators",
+        "slug": "indicators"
+      },
+      {
+        "name": "Multi-Function Switch",
+        "slug": "multi-function-switch"
+      },
+      {
+        "name": "Control Instruments",
+        "slug": "control-instruments"
+      },
+      {
+        "name": "CAN Bus",
+        "slug": "can-bus"
+      },
+      {
+        "name": "Reflectors",
+        "slug": "reflectors"
+      },
+      {
+        "name": "Control Units",
+        "slug": "control-units"
+      },
+      {
+        "name": "Tools",
+        "slug": "tools"
+      }
+    ],
+    "image": "/resources/categories/electrics.jpg",
+    "slug": "electrics"
+  },
+  {
+    "id": 13,
+    "category": "Manual Transmission",
+    "subcategories": [
+      {
+        "name": "Oil",
+        "slug": "oil"
+      },
+      {
+        "name": "Gaskets, Seals",
+        "slug": "gaskets-seals"
+      },
+      {
+        "name": "Transmission",
+        "slug": "transmission"
+      },
+      {
+        "name": "Transmission Control",
+        "slug": "transmission-control"
+      },
+      {
+        "name": "Transmission Mounting",
+        "slug": "transmission-mounting"
+      },
+      {
+        "name": "Transmission Control, Hydraulics",
+        "slug": "transmission-control-hydraulics"
+      },
+      {
+        "name": "Repair Kits",
+        "slug": "repair-kits"
+      },
+      {
+        "name": "Sensor",
+        "slug": "sensor"
+      },
+      {
+        "name": "Transmission Housing, Parts",
+        "slug": "transmission-housing-parts"
+      },
+      {
+        "name": "Synchronizer Ring",
+        "slug": "synchronizer-ring"
+      },
+      {
+        "name": "Radiator",
+        "slug": "radiator"
+      },
+      {
+        "name": "Clamp",
+        "slug": "clamp"
+      }
+    ],
+    "image": "/resources/categories/manual-transmission.jpg",
+    "slug": "manual-transmission"
+  },
+  {
+    "id": 14,
+    "category": "Automatic Transmission",
+    "subcategories": [
+      {
+        "name": "Oil AT transmission",
+        "slug": "oil-at-transmission"
+      },
+      {
+        "name": "Gaskets, Seals",
+        "slug": "gaskets-seals"
+      },
+      {
+        "name": "Transmission",
+        "slug": "transmission"
+      },
+      {
+        "name": "Transmission Control, Hydraulics",
+        "slug": "transmission-control-hydraulics"
+      },
+      {
+        "name": "Transmission Mounting",
+        "slug": "transmission-mounting"
+      },
+      {
+        "name": "Transmission Housing, Parts",
+        "slug": "transmission-housing-parts"
+      },
+      {
+        "name": "Oil Pump",
+        "slug": "oil-pump"
+      },
+      {
+        "name": "Oil Change Parts Set",
+        "slug": "oil-change-parts-set"
+      },
+      {
+        "name": "Oil Pan, Parts",
+        "slug": "oil-pan-parts"
+      },
+      {
+        "name": "Repair Kits",
+        "slug": "repair-kits"
+      },
+      {
+        "name": "Brake Band",
+        "slug": "brake-band"
+      },
+      {
+        "name": "Sensor",
+        "slug": "sensor"
+      },
+      {
+        "name": "Cable",
+        "slug": "cable"
+      },
+      {
+        "name": "Lining Discs, Sets",
+        "slug": "lining-discs-sets"
+      },
+      {
+        "name": "Radiator",
+        "slug": "radiator"
+      },
+      {
+        "name": "Torque Converter",
+        "slug": "torque-converter"
+      },
+      {
+        "name": "Oil Dipstick",
+        "slug": "oil-dipstick"
+      },
+      {
+        "name": "Clamp",
+        "slug": "clamp"
+      }
+    ],
+    "image": "/resources/categories/automatic-transmission.jpg",
+    "slug": "automatic-transmission"
+  },
+  {
+    "id": 15,
+    "category": "Windscreen Cleaning",
+    "subcategories": [
+      {
+        "name": "Wiper Blade, Rubber",
+        "slug": "wiper-blade-rubber"
+      },
+      {
+        "name": "Wiper Arm, Bearing",
+        "slug": "wiper-arm-bearing"
+      },
+      {
+        "name": "Headlight Washer System",
+        "slug": "headlight-washer-system"
+      },
+      {
+        "name": "Washer Fluid Jet",
+        "slug": "washer-fluid-jet"
+      },
+      {
+        "name": "Wiper Linkage, Drive",
+        "slug": "wiper-linkage-drive"
+      },
+      {
+        "name": "Wipers Motor",
+        "slug": "wipers-motor"
+      },
+      {
+        "name": "Water Pump",
+        "slug": "water-pump"
+      },
+      {
+        "name": "Switch, Relay",
+        "slug": "switch-relay"
+      },
+      {
+        "name": "Water Tank, Pipe",
+        "slug": "water-tank-pipe"
+      },
+      {
+        "name": "System Kit",
+        "slug": "system-kit"
+      }
+    ],
+    "image": "/resources/categories/windscreen-cleaning.jpg",
+    "slug": "windscreen-cleaning"
+  },
+  {
+    "id": 16,
+    "category": "Wheel Drive",
+    "subcategories": [
+      {
+        "name": "Drive Shaft",
+        "slug": "drive-shaft"
+      },
+      {
+        "name": "Bellow",
+        "slug": "bellow"
+      },
+      {
+        "name": "Constant-velocity joint, shaft",
+        "slug": "constant-velocity-joint-shaft"
+      },
+      {
+        "name": "Tripod Hub",
+        "slug": "tripod-hub"
+      },
+      {
+        "name": "Assembly Parts",
+        "slug": "assembly-parts"
+      },
+      {
+        "name": "Planetary Axle Gear",
+        "slug": "planetary-axle-gear"
+      }
+    ],
+    "image": "/resources/categories/wheel-drive.jpg",
+    "slug": "wheel-drive"
+  },
+  {
+    "id": 17,
+    "category": "Fuel Supply System",
+    "subcategories": [
+      {
+        "name": "Fuel Filter, housing",
+        "slug": "fuel-filter-housing"
+      },
+      {
+        "name": "Fuel Pump, Parts",
+        "slug": "fuel-pump-parts"
+      },
+      {
+        "name": "Fuel Radiator",
+        "slug": "fuel-radiator"
+      },
+      {
+        "name": "Fuel Preheater",
+        "slug": "fuel-preheater"
+      },
+      {
+        "name": "Fuel Tank, Parts",
+        "slug": "fuel-tank-parts"
+      },
+      {
+        "name": "Fuel Lines",
+        "slug": "fuel-lines"
+      },
+      {
+        "name": "Fuel Sender Unit",
+        "slug": "fuel-sender-unit"
+      },
+      {
+        "name": "Pulsation Damper",
+        "slug": "pulsation-damper"
+      },
+      {
+        "name": "Fuel cock, Maintenance",
+        "slug": "fuel-cock-maintenance"
+      },
+      {
+        "name": "Fuel Pressure Regulator, Switch",
+        "slug": "fuel-pressure-regulator-switch"
+      },
+      {
+        "name": "Valves",
+        "slug": "valves"
+      },
+      {
+        "name": "Water Sensor",
+        "slug": "water-sensor"
+      },
+      {
+        "name": "Fuel Delivery Unit, Complete",
+        "slug": "fuel-delivery-unit-complete"
+      },
+      {
+        "name": "Tools",
+        "slug": "tools"
+      }
+    ],
+    "image": "/resources/categories/fuel-supply.jpg",
+    "slug": "fuel-supply-system"
+  },
+  {
+    "id": 18,
+    "category": "Steering",
+    "subcategories": [
+      {
+        "name": "Tie Rod Assembly, Parts",
+        "slug": "tie-rod-assembly-parts"
+      },
+      {
+        "name": "Steering Joints",
+        "slug": "steering-joints"
+      },
+      {
+        "name": "Oil Steering",
+        "slug": "oil-steering"
+      },
+      {
+        "name": "Steering Gear, Pump",
+        "slug": "steering-gear-pump"
+      },
+      {
+        "name": "Steering Mounting",
+        "slug": "steering-mounting"
+      },
+      {
+        "name": "Steering Column",
+        "slug": "steering-column"
+      },
+      {
+        "name": "Oil Pressure Switch",
+        "slug": "oil-pressure-switch"
+      },
+      {
+        "name": "Steering Box",
+        "slug": "steering-box"
+      },
+      {
+        "name": "Filter, power steering",
+        "slug": "filter-power-steering"
+      },
+      {
+        "name": "Control Arm, Bush",
+        "slug": "control-arm-bush"
+      },
+      {
+        "name": "Steering Linkage",
+        "slug": "steering-linkage"
+      },
+      {
+        "name": "Expansion Tank",
+        "slug": "expansion-tank"
+      },
+      {
+        "name": "Bellow, Seal",
+        "slug": "bellow-seal"
+      },
+      {
+        "name": "Steering Damper",
+        "slug": "steering-damper"
+      },
+      {
+        "name": "Steering Hose, Pipe",
+        "slug": "steering-hose-pipe"
+      },
+      {
+        "name": "Steering Wheel, Parts",
+        "slug": "steering-wheel-parts"
+      },
+      {
+        "name": "Steering Angle Sensor",
+        "slug": "steering-angle-sensor"
+      },
+      {
+        "name": "Control, Regulation",
+        "slug": "control-regulation"
+      },
+      {
+        "name": "Oil Dipstick",
+        "slug": "oil-dipstick"
+      }
+    ],
+    "image": "/resources/categories/steering.jpg",
+    "slug": "steering"
+  },
+  {
+    "id": 19,
+    "category": "Cooling System",
+    "subcategories": [
+      {
+        "name": "Antifreeze",
+        "slug": "antifreeze"
+      },
+      {
+        "name": "Radiator, Oil Cooler",
+        "slug": "radiator-oil-cooler"
+      },
+      {
+        "name": "Radiator Fan",
+        "slug": "radiator-fan"
+      },
+      {
+        "name": "Thermostat, Gasket",
+        "slug": "thermostat-gasket"
+      },
+      {
+        "name": "Sensors, temperature",
+        "slug": "sensors-temperature"
+      },
+      {
+        "name": "Water Pump, Gasket",
+        "slug": "water-pump-gasket"
+      },
+      {
+        "name": "Relay",
+        "slug": "relay"
+      },
+      {
+        "name": "Hoses, Pipes, Flanges",
+        "slug": "hoses-pipes-flanges"
+      },
+      {
+        "name": "Air Cooling",
+        "slug": "air-cooling"
+      },
+      {
+        "name": "Cooling Module",
+        "slug": "cooling-module"
+      },
+      {
+        "name": "Control Unit",
+        "slug": "control-unit"
+      },
+      {
+        "name": "Tools, Parts",
+        "slug": "tools-parts"
+      }
+    ],
+    "image": "/resources/categories/cooling.jpg",
+    "slug": "cooling-system"
+  },
+  {
+    "id": 20,
+    "category": "Exhaust System",
+    "subcategories": [
+      {
+        "name": "Exhaust System, complete",
+        "slug": "exhaust-system-complete"
+      },
+      {
+        "name": "Silencer",
+        "slug": "silencer"
+      },
+      {
+        "name": "Sensors",
+        "slug": "sensors"
+      },
+      {
+        "name": "Resonator",
+        "slug": "resonator"
+      },
+      {
+        "name": "Lambda Sensor",
+        "slug": "lambda-sensor"
+      },
+      {
+        "name": "Manifold",
+        "slug": "manifold"
+      },
+      {
+        "name": "Catalytic Converter",
+        "slug": "catalytic-converter"
+      },
+      {
+        "name": "Heat Shield",
+        "slug": "heat-shield"
+      },
+      {
+        "name": "Soot, Particulate filter Regeneration",
+        "slug": "soot-particulate-filter-regeneration"
+      },
+      {
+        "name": "Euro1, Euro2, D3 Conversion",
+        "slug": "euro1-euro2-d3-conversion"
+      },
+      {
+        "name": "Soot, Particulate Filter",
+        "slug": "soot-particulate-filter"
+      },
+      {
+        "name": "Exhaust Pipes",
+        "slug": "exhaust-pipes"
+      },
+      {
+        "name": "Charger",
+        "slug": "charger"
+      },
+      {
+        "name": "Exhaust Gas Door",
+        "slug": "exhaust-gas-door"
+      },
+      {
+        "name": "Silencer, sport set",
+        "slug": "silencer-sport-set"
+      },
+      {
+        "name": "Assembly Parts, Gaskets",
+        "slug": "assembly-parts-gaskets"
+      },
+      {
+        "name": "Urea Injection",
+        "slug": "urea-injection"
+      },
+      {
+        "name": "Baffle",
+        "slug": "baffle"
+      }
+    ],
+    "image": "/resources/categories/exhaust-system.jpg",
+    "slug": "exhaust-system"
+  },
+  {
+    "id": 21,
+    "category": "Outer Accessories",
+    "subcategories": [
+      {
+        "name": "Car cover",
+        "slug": "car-cover"
+      },
+      {
+        "name": "Gas Springs",
+        "slug": "gas-springs"
+      },
+      {
+        "name": "Wind Deflector, Mounted parts",
+        "slug": "wind-deflector-mounted-parts"
+      },
+      {
+        "name": "Snow Chains",
+        "slug": "snow-chains"
+      }
+    ],
+    "image": "/resources/categories/outer-accessories.jpg",
+    "slug": "outer-accessories"
+  },
+  {
+    "id": 22,
+    "category": "Air Conditioning",
+    "subcategories": [
+      {
+        "name": "Refrigerant, Freon",
+        "slug": "refrigerant-freon"
+      },
+      {
+        "name": "Compressor, Parts",
+        "slug": "compressor-parts"
+      },
+      {
+        "name": "Condenser",
+        "slug": "condenser"
+      },
+      {
+        "name": "Vaporizer",
+        "slug": "vaporizer"
+      },
+      {
+        "name": "Sensors",
+        "slug": "sensors"
+      },
+      {
+        "name": "Valves",
+        "slug": "valves"
+      },
+      {
+        "name": "Dryer",
+        "slug": "dryer"
+      },
+      {
+        "name": "Relay",
+        "slug": "relay"
+      },
+      {
+        "name": "Control Unit",
+        "slug": "control-unit"
+      },
+      {
+        "name": "Hoses, Pipes",
+        "slug": "hoses-pipes"
+      },
+      {
+        "name": "Additional Resistor",
+        "slug": "additional-resistor"
+      },
+      {
+        "name": "Controls, Regulation",
+        "slug": "controls-regulation"
+      },
+      {
+        "name": "Switch",
+        "slug": "switch"
+      },
+      {
+        "name": "Repair Kit",
+        "slug": "repair-kit"
+      },
+      {
+        "name": "Mounting",
+        "slug": "mounting"
+      }
+    ],
+    "image": "/resources/categories/air-conditioning.jpg",
+    "slug": "air-conditioning"
+  },
+  {
+    "id": 23,
+    "category": "Heating, Ventilation",
+    "subcategories": [
+      {
+        "name": "Air Filter, saloon",
+        "slug": "air-filter-saloon"
+      },
+      {
+        "name": "Interior Heat Exchanger",
+        "slug": "interior-heat-exchanger"
+      },
+      {
+        "name": "Blower, Parts",
+        "slug": "blower-parts"
+      },
+      {
+        "name": "Valves, Controls",
+        "slug": "valves-controls"
+      },
+      {
+        "name": "Control Units",
+        "slug": "control-units"
+      },
+      {
+        "name": "Hoses, Pipes",
+        "slug": "hoses-pipes"
+      },
+      {
+        "name": "Coolant Water Preheating",
+        "slug": "coolant-water-preheating"
+      },
+      {
+        "name": "Heater Flap Box",
+        "slug": "heater-flap-box"
+      },
+      {
+        "name": "Actuators",
+        "slug": "actuators"
+      }
+    ],
+    "image": "/resources/categories/heating-ventilation.jpg",
+    "slug": "heating-ventilation"
+  },
+  {
+    "id": 24,
+    "category": "Axle Drive",
+    "subcategories": [
+      {
+        "name": "Oil",
+        "slug": "oil"
+      },
+      {
+        "name": "Propshaft",
+        "slug": "propshaft"
+      },
+      {
+        "name": "Differential",
+        "slug": "differential"
+      },
+      {
+        "name": "Transfer Case",
+        "slug": "transfer-case"
+      },
+      {
+        "name": "Clutch Haldex",
+        "slug": "clutch-haldex"
+      },
+      {
+        "name": "Switches, valves",
+        "slug": "switches-valves"
+      },
+      {
+        "name": "Filters",
+        "slug": "filters"
+      }
+    ],
+    "image": "/resources/categories/axle-drive.jpg",
+    "slug": "axle-drive"
+  },
+  {
+    "id": 25,
+    "category": "Carrier Equipment",
+    "subcategories": [
+      {
+        "name": "Roof Rack",
+        "slug": "roof-rack"
+      },
+      {
+        "name": "Trailer Hitch",
+        "slug": "trailer-hitch"
+      },
+      {
+        "name": "Electric Kit, Fifth Whee",
+        "slug": "electric-kit-fifth-whee"
+      },
+      {
+        "name": "Coupling Carrier",
+        "slug": "coupling-carrier"
+      },
+      {
+        "name": "Rear Rack",
+        "slug": "rear-rack"
+      },
+      {
+        "name": "Mounting Kit, towbar",
+        "slug": "mounting-kit-towbar"
+      },
+      {
+        "name": "Parts, towbar",
+        "slug": "parts-towbar"
+      }
+    ],
+    "image": "/resources/categories/carrier-equipment.jpg",
+    "slug": "carrier-equipment"
+  },
+  {
+    "id": 26,
+    "category": "Fuel Mixture Formation",
+    "subcategories": [
+      {
+        "name": "Mixture Formation",
+        "slug": "mixture-formation"
+      },
+      {
+        "name": "Carburettor System",
+        "slug": "carburettor-system"
+      },
+      {
+        "name": "Exhaust Emission Control",
+        "slug": "exhaust-emission-control"
+      }
+    ],
+    "image": "/resources/categories/fuel-mixture.jpg",
+    "slug": "fuel-mixture-formation"
+  },
+  {
+    "id": 27,
+    "category": "Locking System",
+    "subcategories": [
+      {
+        "name": "Central Locking System",
+        "slug": "central-locking-system"
+      },
+      {
+        "name": "Locks, exterior",
+        "slug": "locks-exterior"
+      },
+      {
+        "name": "Locks, interior",
+        "slug": "locks-interior"
+      },
+      {
+        "name": "Remote Control, central locking",
+        "slug": "remote-control-central-locking"
+      },
+      {
+        "name": "Lock Barrel, Set",
+        "slug": "lock-barrel-set"
+      },
+      {
+        "name": "Lock Set",
+        "slug": "lock-set"
+      },
+      {
+        "name": "Button, Switch",
+        "slug": "button-switch"
+      },
+      {
+        "name": "Handles",
+        "slug": "handles"
+      }
+    ],
+    "image": "/resources/categories/locking-system.jpg",
+    "slug": "locking-system"
+  },
+  {
+    "id": 28,
+    "category": "Power Take Off (PTO)",
+    "subcategories": [
+      {
+        "name": "Gaskets",
+        "slug": "gaskets"
+      },
+      {
+        "name": "Oil",
+        "slug": "oil"
+      }
+    ],
+    "image": "/resources/categories/pto.jpg",
+    "slug": "power-take-off"
+  },
+  {
+    "id": 29,
+    "category": "Security Systems",
+    "subcategories": [
+      {
+        "name": "Safety Belt System",
+        "slug": "safety-belt-system"
+      },
+      {
+        "name": "Alarm System",
+        "slug": "alarm-system"
+      },
+      {
+        "name": "Immobilizer",
+        "slug": "immobilizer"
+      },
+      {
+        "name": "Air Bag System",
+        "slug": "air-bag-system"
+      },
+      {
+        "name": "Lane Assistant",
+        "slug": "lane-assistant"
+      }
+    ],
+    "image": "/resources/categories/security.jpg",
+    "slug": "security-systems"
+  },
+  {
+    "id": 30,
+    "category": "Interior Equipment",
+    "subcategories": [
+      {
+        "name": "Accessories",
+        "slug": "accessories"
+      },
+      {
+        "name": "Gas Springs",
+        "slug": "gas-springs"
+      },
+      {
+        "name": "Hand, Foot Lever System",
+        "slug": "hand-foot-lever-system"
+      },
+      {
+        "name": "Seats",
+        "slug": "seats"
+      },
+      {
+        "name": "Panelling",
+        "slug": "panelling"
+      },
+      {
+        "name": "Centre Console",
+        "slug": "centre-console"
+      },
+      {
+        "name": "Cigarette Lighter",
+        "slug": "cigarette-lighter"
+      },
+      {
+        "name": "Floor Mats",
+        "slug": "floor-mats"
+      },
+      {
+        "name": "Boot, Сargo Area",
+        "slug": "boot-сargo-area"
+      },
+      {
+        "name": "Handles",
+        "slug": "handles"
+      },
+      {
+        "name": "Dashboard",
+        "slug": "dashboard"
+      },
+      {
+        "name": "Window Regulator",
+        "slug": "window-regulator"
+      },
+      {
+        "name": "Fastening Clips",
+        "slug": "fastening-clips"
+      },
+      {
+        "name": "Armrests",
+        "slug": "armrests"
+      },
+      {
+        "name": "Glove Compartment",
+        "slug": "glove-compartment"
+      },
+      {
+        "name": "Cupholder",
+        "slug": "cupholder"
+      },
+      {
+        "name": "Sun Visor",
+        "slug": "sun-visor"
+      },
+      {
+        "name": "Ashtray",
+        "slug": "ashtray"
+      }
+    ],
+    "image": "/resources/categories/interior.jpg",
+    "slug": "interior-equipment"
+  },
+  {
+    "id": 31,
+    "category": "Comfort Systems",
+    "subcategories": [
+      {
+        "name": "Seat Heating",
+        "slug": "seat-heating"
+      },
+      {
+        "name": "Parktronic, Reverse Alarm",
+        "slug": "parktronic-reverse-alarm"
+      },
+      {
+        "name": "Window Regulator",
+        "slug": "window-regulator"
+      },
+      {
+        "name": "Motors, Relay, Switch",
+        "slug": "motors-relay-switch"
+      },
+      {
+        "name": "Cruise Control",
+        "slug": "cruise-control"
+      },
+      {
+        "name": "Speeding Alarm",
+        "slug": "speeding-alarm"
+      },
+      {
+        "name": "Rain Sensor",
+        "slug": "rain-sensor"
+      },
+      {
+        "name": "Pumps",
+        "slug": "pumps"
+      },
+      {
+        "name": "Central Locking",
+        "slug": "central-locking"
+      },
+      {
+        "name": "Parking Heater",
+        "slug": "parking-heater"
+      },
+      {
+        "name": "Tailgate control",
+        "slug": "tailgate-control"
+      },
+      {
+        "name": "Engine Preheater System (electric)",
+        "slug": "engine-preheater-system-electric"
+      }
+    ],
+    "image": "/resources/categories/comfort.jpg",
+    "slug": "comfort-systems"
+  },
+  {
+    "id": 32,
+    "category": "Compressed Air System",
+    "subcategories": [
+      {
+        "name": "Brake, Slave Cylinder",
+        "slug": "brake-slave-cylinder"
+      },
+      {
+        "name": "Silencer",
+        "slug": "silencer"
+      },
+      {
+        "name": "Air Dryer, Cartridge",
+        "slug": "air-dryer-cartridge"
+      },
+      {
+        "name": "Hoses, Pipes",
+        "slug": "hoses-pipes"
+      },
+      {
+        "name": "Pressure Regulator",
+        "slug": "pressure-regulator"
+      },
+      {
+        "name": "Coupling Head",
+        "slug": "coupling-head"
+      },
+      {
+        "name": "Valves",
+        "slug": "valves"
+      }
+    ],
+    "image": "/resources/categories/compressed-air.jpg",
+    "slug": "compressed-air-system"
+  },
+  {
+    "id": 33,
+    "category": "Communication Systems",
+    "subcategories": [
+      {
+        "name": "Navigation",
+        "slug": "navigation"
+      },
+      {
+        "name": "Audio System",
+        "slug": "audio-system"
+      },
+      {
+        "name": "Aerial",
+        "slug": "aerial"
+      },
+      {
+        "name": "Gauge, Indications",
+        "slug": "gauge-indications"
+      }
+    ],
+    "image": "/resources/categories/communication.jpg",
+    "slug": "communication-systems"
+  },
+  {
+    "id": 34,
+    "category": "Electric Drive",
+    "subcategories": [
+      {
+        "name": "Cooling System, Hybrid",
+        "slug": "cooling-system-hybrid"
+      },
+      {
+        "name": "Charge Connector",
+        "slug": "charge-connector"
+      },
+      {
+        "name": "Cooling System, Electric Drive",
+        "slug": "cooling-system-electric-drive"
+      }
+    ],
+    "image": "/resources/categories/electric-drive.jpg",
+    "slug": "electric-drive"
+  },
+  {
+    "id": 35,
+    "category": "Auto Chemical",
+    "subcategories": [
+      {
+        "name": "Body",
+        "slug": "body"
+      },
+      {
+        "name": "Salon",
+        "slug": "salon"
+      },
+      {
+        "name": "Wheels",
+        "slug": "wheels"
+      },
+      {
+        "name": "Glass",
+        "slug": "glass"
+      }
+    ],
+    "image": "/resources/categories/auto-chemical.jpg",
+    "slug": "auto-chemical"
+  }
+]
