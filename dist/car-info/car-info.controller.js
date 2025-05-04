@@ -12,53 +12,55 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CategoriesController = void 0;
+exports.CarInfoController = void 0;
 const common_1 = require("@nestjs/common");
-const categories_service_1 = require("./categories.service");
-let CategoriesController = class CategoriesController {
-    categoriesService;
-    constructor(categoriesService) {
-        this.categoriesService = categoriesService;
+const car_info_service_1 = require("./car-info.service");
+let CarInfoController = class CarInfoController {
+    carInfoService;
+    constructor(carInfoService) {
+        this.carInfoService = carInfoService;
     }
-    async getAll() {
-        return this.categoriesService.getAllCategories();
+    async getAllBrands() {
+        return this.carInfoService.getAllBrands();
     }
-    async getCategoryBySlug(slug) {
-        if (!slug) {
-            throw new common_1.HttpException('Slug parameter is required', common_1.HttpStatus.BAD_REQUEST);
-        }
-        const category = await this.categoriesService.findBySlug(slug);
-        if (!category) {
-            throw new common_1.HttpException('Category not found', common_1.HttpStatus.NOT_FOUND);
-        }
-        return [category];
+    async getAllBrandsNames() {
+        return this.carInfoService.getAllBrandsNames();
     }
-    async importFromFile() {
-        return this.categoriesService.loadAllFromFile();
+    async getModelsByBrand(brand) {
+        return this.carInfoService.getModelsByBrandName(brand);
+    }
+    async importCarData() {
+        return this.carInfoService.loadCarDataFromFile();
     }
 };
-exports.CategoriesController = CategoriesController;
+exports.CarInfoController = CarInfoController;
 __decorate([
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
-], CategoriesController.prototype, "getAll", null);
+], CarInfoController.prototype, "getAllBrands", null);
 __decorate([
-    (0, common_1.Get)('bySlug'),
-    __param(0, (0, common_1.Query)('slug')),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", Promise)
-], CategoriesController.prototype, "getCategoryBySlug", null);
-__decorate([
-    (0, common_1.Post)('import-from-file'),
+    (0, common_1.Get)('brands'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
-], CategoriesController.prototype, "importFromFile", null);
-exports.CategoriesController = CategoriesController = __decorate([
-    (0, common_1.Controller)('categories'),
-    __metadata("design:paramtypes", [categories_service_1.CategoriesService])
-], CategoriesController);
-//# sourceMappingURL=categories.controller.js.map
+], CarInfoController.prototype, "getAllBrandsNames", null);
+__decorate([
+    (0, common_1.Get)('models'),
+    __param(0, (0, common_1.Query)('brand')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], CarInfoController.prototype, "getModelsByBrand", null);
+__decorate([
+    (0, common_1.Post)('import'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], CarInfoController.prototype, "importCarData", null);
+exports.CarInfoController = CarInfoController = __decorate([
+    (0, common_1.Controller)('car-info'),
+    __metadata("design:paramtypes", [car_info_service_1.CarInfoService])
+], CarInfoController);
+//# sourceMappingURL=car-info.controller.js.map

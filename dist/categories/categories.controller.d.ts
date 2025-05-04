@@ -5,4 +5,5 @@ export declare class CategoriesController {
     constructor(categoriesService: CategoriesService);
     getAll(): Promise<Category[]>;
     getCategoryBySlug(slug: string): Promise<Category[]>;
+    importFromFile(): Promise<Category[]>;
 }

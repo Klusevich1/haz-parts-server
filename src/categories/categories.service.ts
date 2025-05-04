@@ -41,42 +41,42 @@ export class CategoriesService {
     }
   }
 
-  // async createCategory(data: {
-  //   category: string;
-  //   subcategories: { name: string; slug: string }[];
-  //   image: string;
-  //   slug: string;
-  // }) {
-  //   const category = this.categoryRepository.create({
-  //     category: data.category,
-  //     subcategories: data.subcategories,
-  //     image: data.image,
-  //     slug: data.slug,
-  //   });
+  async createCategory(data: {
+    category: string;
+    subcategories: { name: string; slug: string }[];
+    image: string;
+    slug: string;
+  }) {
+    const category = this.categoryRepository.create({
+      category: data.category,
+      subcategories: data.subcategories,
+      image: data.image,
+      slug: data.slug,
+    });
 
-  //   return this.categoryRepository.save(category);
-  // }
+    return this.categoryRepository.save(category);
+  }
 
-  // async loadAllFromFile() {
-  //   const filePath = join(
-  //     process.cwd(),
-  //     'src',
-  //     'data',
-  //     'final_all_categories.json',
-  //   );
-  //   const jsonData = JSON.parse(readFileSync(filePath, 'utf8'));
+  async loadAllFromFile() {
+    const filePath = join(
+      process.cwd(),
+      'src',
+      'data',
+      'final_all_categories.json',
+    );
+    const jsonData = JSON.parse(readFileSync(filePath, 'utf8'));
 
-  //   const results: Category[] = [];
-  //   for (const item of jsonData) {
-  //     const saved = await this.createCategory({
-  //       category: item.category,
-  //       subcategories: item.subcategories,
-  //       image: item.image,
-  //       slug: item.slug,
-  //     });
-  //     results.push(saved);
-  //   }
+    const results: Category[] = [];
+    for (const item of jsonData) {
+      const saved = await this.createCategory({
+        category: item.category,
+        subcategories: item.subcategories,
+        image: item.image,
+        slug: item.slug,
+      });
+      results.push(saved);
+    }
 
-  //   return results;
-  // }
+    return results;
+  }
 }

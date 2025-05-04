@@ -9,32 +9,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.News = void 0;
+exports.CarBrand = void 0;
 const typeorm_1 = require("typeorm");
-let News = class News {
+const car_model_entity_1 = require("./car-model.entity");
+let CarBrand = class CarBrand {
     id;
-    title;
-    miniDescription;
-    imagePath;
+    name;
+    logo_url;
+    url;
+    models;
 };
-exports.News = News;
+exports.CarBrand = CarBrand;
 __decorate([
-    (0, typeorm_1.PrimaryGeneratedColumn)(),
-    __metadata("design:type", Number)
-], News.prototype, "id", void 0);
+    (0, typeorm_1.PrimaryGeneratedColumn)('uuid'),
+    __metadata("design:type", String)
+], CarBrand.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], News.prototype, "title", void 0);
+], CarBrand.prototype, "name", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], News.prototype, "miniDescription", void 0);
+], CarBrand.prototype, "logo_url", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], News.prototype, "imagePath", void 0);
-exports.News = News = __decorate([
+], CarBrand.prototype, "url", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => car_model_entity_1.CarModel, (model) => model.brand, {
+        cascade: true,
+        eager: true,
+    }),
+    __metadata("design:type", Array)
+], CarBrand.prototype, "models", void 0);
+exports.CarBrand = CarBrand = __decorate([
     (0, typeorm_1.Entity)()
-], News);
-//# sourceMappingURL=news.entity.js.map
+], CarBrand);
+//# sourceMappingURL=car-brand.entity.js.map

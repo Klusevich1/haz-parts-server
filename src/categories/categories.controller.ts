@@ -37,8 +37,8 @@ export class CategoriesController {
     return [category];
   }
 
-  // @Post('import-from-file')
-  // async importFromFile() {
-  //   return this.categoriesService.loadAllFromFile();
-  // }
+  @Post('import-from-file')
+  async importFromFile() {
+    return this.categoriesService.loadAllFromFile();
+  }
 }

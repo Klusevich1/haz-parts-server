@@ -5,4 +5,14 @@ export declare class CategoriesService {
     constructor(categoryRepository: Repository<Category>);
     getAllCategories(): Promise<Category[]>;
     findBySlug(slug: string): Promise<Category | null>;
+    createCategory(data: {
+        category: string;
+        subcategories: {
+            name: string;
+            slug: string;
+        }[];
+        image: string;
+        slug: string;
+    }): Promise<Category>;
+    loadAllFromFile(): Promise<Category[]>;
 }

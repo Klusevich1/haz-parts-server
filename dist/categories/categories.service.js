@@ -17,6 +17,8 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const category_entity_1 = require("./category.entity");
+const fs_1 = require("fs");
+const path_1 = require("path");
 let CategoriesService = class CategoriesService {
     categoryRepository;
     constructor(categoryRepository) {
@@ -45,6 +47,30 @@ let CategoriesService = class CategoriesService {
             console.error('Error finding category by slug:', error);
             throw error;
         }
+    }
+    async createCategory(data) {
+        const category = this.categoryRepository.create({
+            category: data.category,
+            subcategories: data.subcategories,
+            image: data.image,
+            slug: data.slug,
+        });
+        return this.categoryRepository.save(category);
+    }
+    async loadAllFromFile() {
+        const filePath = (0, path_1.join)(process.cwd(), 'src', 'data', 'final_all_categories.json');
+        const jsonData = JSON.parse((0, fs_1.readFileSync)(filePath, 'utf8'));
+        const results = [];
+        for (const item of jsonData) {
+            const saved = await this.createCategory({
+                category: item.category,
+                subcategories: item.subcategories,
+                image: item.image,
+                slug: item.slug,
+            });
+            results.push(saved);
+        }
+        return results;
     }
 };
 exports.CategoriesService = CategoriesService;

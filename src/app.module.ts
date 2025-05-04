@@ -8,6 +8,7 @@ import { ProductsModule } from './products/products.module';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 import { CategoriesModule } from './categories/categories.module';
+import { CarInfoModule } from './car-info/car-info.module';
 
 @Module({
   imports: [
@@ -28,11 +29,13 @@ import { CategoriesModule } from './categories/categories.module';
     }),
     ProductsModule,
     ApplicationModule,
+    CarInfoModule,
     OrderModule,
     ProductsModule,
     UserModule,
     AuthModule,
     CategoriesModule,
+    CarInfoModule,
   ],
 })
 export class AppModule {}
