@@ -15,8 +15,8 @@ export class CategoriesController {
   constructor(private readonly categoriesService: CategoriesService) {}
 
   @Get()
-  async getAll(): Promise<Category[]> {
-    return this.categoriesService.getAllCategories();
+  async getAll(@Query('locale') locale: string = 'en'): Promise<Category[]> {
+    return this.categoriesService.getAllCategories(locale);
   }
 
   @Get('bySlug')
@@ -38,7 +38,7 @@ export class CategoriesController {
   }
 
   @Post('import-from-file')
-  async importFromFile() {
-    return this.categoriesService.loadAllFromFile();
+  async importFromFile(@Query('locale') locale: string = 'en') {
+    return this.categoriesService.loadAllFromFile(locale);
   }
 }

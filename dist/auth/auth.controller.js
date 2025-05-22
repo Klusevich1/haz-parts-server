@@ -17,10 +17,13 @@ const common_1 = require("@nestjs/common");
 const auth_service_1 = require("./auth.service");
 const register_dto_1 = require("./dto/register.dto");
 const login_dto_1 = require("./dto/login.dto");
+const email_verification_service_1 = require("./email-verification.service");
 let AuthController = class AuthController {
     authService;
-    constructor(authService) {
+    emailVerificationService;
+    constructor(authService, emailVerificationService) {
         this.authService = authService;
+        this.emailVerificationService = emailVerificationService;
     }
     register(dto) {
         console.log(dto);
@@ -28,6 +31,15 @@ let AuthController = class AuthController {
     }
     login(dto) {
         return this.authService.login(dto);
+    }
+    async sendConfirmationCode(email) {
+        return this.emailVerificationService.sendCode(email);
+    }
+    async verifyCodeAndRegister(dto) {
+        const isValid = this.emailVerificationService.verifyCode(dto.email, dto.code);
+        if (isValid) {
+            return this.authService.register(dto);
+        }
     }
 };
 exports.AuthController = AuthController;
@@ -45,8 +57,23 @@ __decorate([
     __metadata("design:paramtypes", [login_dto_1.LoginDto]),
     __metadata("design:returntype", void 0)
 ], AuthController.prototype, "login", null);
+__decorate([
+    (0, common_1.Post)('send-confirmation-code'),
+    __param(0, (0, common_1.Body)('email')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], AuthController.prototype, "sendConfirmationCode", null);
+__decorate([
+    (0, common_1.Post)('verify-confirmation-code'),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], AuthController.prototype, "verifyCodeAndRegister", null);
 exports.AuthController = AuthController = __decorate([
     (0, common_1.Controller)('auth'),
-    __metadata("design:paramtypes", [auth_service_1.AuthService])
+    __metadata("design:paramtypes", [auth_service_1.AuthService,
+        email_verification_service_1.EmailVerificationService])
 ], AuthController);
 //# sourceMappingURL=auth.controller.js.map

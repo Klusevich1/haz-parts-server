@@ -20,8 +20,8 @@ let CategoriesController = class CategoriesController {
     constructor(categoriesService) {
         this.categoriesService = categoriesService;
     }
-    async getAll() {
-        return this.categoriesService.getAllCategories();
+    async getAll(locale = 'en') {
+        return this.categoriesService.getAllCategories(locale);
     }
     async getCategoryBySlug(slug) {
         if (!slug) {
@@ -33,15 +33,16 @@ let CategoriesController = class CategoriesController {
         }
         return [category];
     }
-    async importFromFile() {
-        return this.categoriesService.loadAllFromFile();
+    async importFromFile(locale = 'en') {
+        return this.categoriesService.loadAllFromFile(locale);
     }
 };
 exports.CategoriesController = CategoriesController;
 __decorate([
     (0, common_1.Get)(),
+    __param(0, (0, common_1.Query)('locale')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], CategoriesController.prototype, "getAll", null);
 __decorate([
@@ -53,8 +54,9 @@ __decorate([
 ], CategoriesController.prototype, "getCategoryBySlug", null);
 __decorate([
     (0, common_1.Post)('import-from-file'),
+    __param(0, (0, common_1.Query)('locale')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], CategoriesController.prototype, "importFromFile", null);
 exports.CategoriesController = CategoriesController = __decorate([

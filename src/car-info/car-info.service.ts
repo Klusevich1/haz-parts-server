@@ -29,7 +29,7 @@ export class CarInfoService {
 
   async getModelsByBrandName(brandName: string): Promise<CarModel[]> {
     const brand = await this.carBrandRepository.findOne({
-      where: { name: brandName },
+      where: { name: brandName.toUpperCase() },
       relations: ['models'],
     });
 

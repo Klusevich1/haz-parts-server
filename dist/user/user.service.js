@@ -18,10 +18,13 @@ const typeorm_1 = require("@nestjs/typeorm");
 const user_entity_1 = require("./entities/user.entity");
 const typeorm_2 = require("typeorm");
 const bcrypt = require("bcrypt");
+const adress_entity_1 = require("./entities/adress.entity");
 let UserService = class UserService {
     userRepo;
-    constructor(userRepo) {
+    addressRepo;
+    constructor(userRepo, addressRepo) {
         this.userRepo = userRepo;
+        this.addressRepo = addressRepo;
     }
     findByEmail(email) {
         return this.userRepo.findOne({ where: { email } });
@@ -50,19 +53,40 @@ let UserService = class UserService {
         return { message: 'Пароль успешно изменён' };
     }
     async updateProfile(userId, dto) {
-        console.log(userId);
-        console.log(dto);
         const user = await this.findById(userId);
         if (!user)
             throw new common_1.NotFoundException();
         Object.assign(user, dto);
         return this.save(user);
     }
+    async getAddresses(userId) {
+        const user = await this.userRepo.findOne({
+            where: { id: userId },
+            relations: ['addresses'],
+        });
+        if (!user) {
+            throw new common_1.NotFoundException('Пользователь не найден');
+        }
+        return user.addresses;
+    }
+    async addAddress(userId, dto) {
+        const user = await this.findById(userId);
+        if (!user) {
+            throw new common_1.NotFoundException('Пользователь не найден');
+        }
+        const address = this.addressRepo.create({
+            ...dto,
+            user,
+        });
+        return this.addressRepo.save(address);
+    }
 };
 exports.UserService = UserService;
 exports.UserService = UserService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, typeorm_1.InjectRepository)(user_entity_1.User)),
-    __metadata("design:paramtypes", [typeorm_2.Repository])
+    __param(1, (0, typeorm_1.InjectRepository)(adress_entity_1.Address)),
+    __metadata("design:paramtypes", [typeorm_2.Repository,
+        typeorm_2.Repository])
 ], UserService);
 //# sourceMappingURL=user.service.js.map

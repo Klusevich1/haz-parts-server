@@ -19,6 +19,7 @@ const user_service_1 = require("./user.service");
 const jwt_auth_guard_1 = require("../common/guards/jwt-auth.guard");
 const change_password_dto_1 = require("./dto/change-password.dto");
 const update_user_dto_1 = require("./dto/update-user.dto");
+const add_address_dto_1 = require("./dto/add-address.dto");
 let UserController = class UserController {
     userService;
     constructor(userService) {
@@ -27,11 +28,17 @@ let UserController = class UserController {
     async getProfile(user) {
         return this.userService.findById(user.userId);
     }
-    changePassword(req, dto) {
-        return this.userService.changePassword(req.user.userId, dto);
+    getUserAddresses(user) {
+        return this.userService.getAddresses(user.userId);
     }
-    async updateProfile(req, dto) {
-        return this.userService.updateProfile(req.user.userId, dto);
+    changePassword(user, dto) {
+        return this.userService.changePassword(user.userId, dto);
+    }
+    addUserAddress(user, dto) {
+        return this.userService.addAddress(user.userId, dto);
+    }
+    async updateProfile(user, dto) {
+        return this.userService.updateProfile(user.userId, dto);
     }
 };
 exports.UserController = UserController;
@@ -45,8 +52,16 @@ __decorate([
 ], UserController.prototype, "getProfile", null);
 __decorate([
     (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
+    (0, common_1.Get)('addresses'),
+    __param(0, (0, user_decorator_1.User)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], UserController.prototype, "getUserAddresses", null);
+__decorate([
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     (0, common_1.Post)('change-password'),
-    __param(0, (0, common_1.Req)()),
+    __param(0, (0, user_decorator_1.User)()),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, change_password_dto_1.ChangePasswordDto]),
@@ -54,8 +69,17 @@ __decorate([
 ], UserController.prototype, "changePassword", null);
 __decorate([
     (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
+    (0, common_1.Post)('address'),
+    __param(0, (0, user_decorator_1.User)()),
+    __param(1, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, add_address_dto_1.AddAddressDto]),
+    __metadata("design:returntype", void 0)
+], UserController.prototype, "addUserAddress", null);
+__decorate([
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     (0, common_1.Patch)('update'),
-    __param(0, (0, common_1.Req)()),
+    __param(0, (0, user_decorator_1.User)()),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, update_user_dto_1.UpdateUserDto]),

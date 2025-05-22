@@ -37,7 +37,7 @@ let CarInfoService = class CarInfoService {
     }
     async getModelsByBrandName(brandName) {
         const brand = await this.carBrandRepository.findOne({
-            where: { name: brandName },
+            where: { name: brandName.toUpperCase() },
             relations: ['models'],
         });
         if (!brand) {

@@ -21,11 +21,23 @@ const fs_1 = require("fs");
 const path_1 = require("path");
 let CategoriesService = class CategoriesService {
     categoryRepository;
-    constructor(categoryRepository) {
+    categoryRepositoryRu;
+    categoryRepositoryLv;
+    constructor(categoryRepository, categoryRepositoryRu, categoryRepositoryLv) {
         this.categoryRepository = categoryRepository;
+        this.categoryRepositoryRu = categoryRepositoryRu;
+        this.categoryRepositoryLv = categoryRepositoryLv;
     }
-    async getAllCategories() {
-        return this.categoryRepository.find();
+    async getAllCategories(locale) {
+        if (locale === 'lv') {
+            return this.categoryRepositoryLv.find();
+        }
+        else if (locale === 'ru') {
+            return this.categoryRepositoryRu.find();
+        }
+        else {
+            return this.categoryRepository.find();
+        }
     }
     async findBySlug(slug) {
         try {
@@ -49,20 +61,52 @@ let CategoriesService = class CategoriesService {
         }
     }
     async createCategory(data) {
-        const category = this.categoryRepository.create({
-            category: data.category,
-            subcategories: data.subcategories,
-            image: data.image,
-            slug: data.slug,
-        });
-        return this.categoryRepository.save(category);
+        if (data.locale === 'ru') {
+            const category = this.categoryRepositoryRu.create({
+                category: data.category,
+                subcategories: data.subcategories,
+                image: data.image,
+                slug: data.slug,
+            });
+            return this.categoryRepositoryRu.save(category);
+        }
+        else if (data.locale === 'lv') {
+            const category = this.categoryRepositoryLv.create({
+                category: data.category,
+                subcategories: data.subcategories,
+                image: data.image,
+                slug: data.slug,
+            });
+            return this.categoryRepositoryLv.save(category);
+        }
+        else {
+            const category = this.categoryRepository.create({
+                category: data.category,
+                subcategories: data.subcategories,
+                image: data.image,
+                slug: data.slug,
+            });
+            return this.categoryRepository.save(category);
+        }
     }
-    async loadAllFromFile() {
-        const filePath = (0, path_1.join)(process.cwd(), 'src', 'data', 'final_all_categories.json');
-        const jsonData = JSON.parse((0, fs_1.readFileSync)(filePath, 'utf8'));
+    async loadAllFromFile(locale) {
+        let jsonData;
+        if (locale === 'lv') {
+            const filePath = (0, path_1.join)(process.cwd(), 'src', 'data', 'final_all_categoriesLV.json');
+            jsonData = JSON.parse((0, fs_1.readFileSync)(filePath, 'utf8'));
+        }
+        else if (locale === 'ru') {
+            const filePath = (0, path_1.join)(process.cwd(), 'src', 'data', 'final_all_categoriesRU.json');
+            jsonData = JSON.parse((0, fs_1.readFileSync)(filePath, 'utf8'));
+        }
+        else {
+            const filePath = (0, path_1.join)(process.cwd(), 'src', 'data', 'final_all_categories.json');
+            jsonData = JSON.parse((0, fs_1.readFileSync)(filePath, 'utf8'));
+        }
         const results = [];
         for (const item of jsonData) {
             const saved = await this.createCategory({
+                locale: locale,
                 category: item.category,
                 subcategories: item.subcategories,
                 image: item.image,
@@ -77,6 +121,10 @@ exports.CategoriesService = CategoriesService;
 exports.CategoriesService = CategoriesService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, typeorm_1.InjectRepository)(category_entity_1.Category)),
-    __metadata("design:paramtypes", [typeorm_2.Repository])
+    __param(1, (0, typeorm_1.InjectRepository)(category_entity_1.CategoryRu)),
+    __param(2, (0, typeorm_1.InjectRepository)(category_entity_1.CategoryLv)),
+    __metadata("design:paramtypes", [typeorm_2.Repository,
+        typeorm_2.Repository,
+        typeorm_2.Repository])
 ], CategoriesService);
 //# sourceMappingURL=categories.service.js.map

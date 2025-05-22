@@ -1,11 +1,14 @@
 import { Repository } from 'typeorm';
-import { Category } from './category.entity';
+import { Category, CategoryLv, CategoryRu } from './category.entity';
 export declare class CategoriesService {
     private readonly categoryRepository;
-    constructor(categoryRepository: Repository<Category>);
-    getAllCategories(): Promise<Category[]>;
+    private readonly categoryRepositoryRu;
+    private readonly categoryRepositoryLv;
+    constructor(categoryRepository: Repository<Category>, categoryRepositoryRu: Repository<CategoryRu>, categoryRepositoryLv: Repository<CategoryLv>);
+    getAllCategories(locale: string): Promise<Category[]>;
     findBySlug(slug: string): Promise<Category | null>;
     createCategory(data: {
+        locale: string;
         category: string;
         subcategories: {
             name: string;
@@ -13,6 +16,6 @@ export declare class CategoriesService {
         }[];
         image: string;
         slug: string;
-    }): Promise<Category>;
-    loadAllFromFile(): Promise<Category[]>;
+    }): Promise<Category | CategoryRu | CategoryLv>;
+    loadAllFromFile(locale: string): Promise<Category[]>;
 }

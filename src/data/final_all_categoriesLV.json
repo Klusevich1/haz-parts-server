@@ -1,54 +1,54 @@
 [
   {
     "id": 1,
-    "category": "Car Service parts",
+    "category": "Auto servisa dalas",
     "subcategories": [
       {
-        "name": "Engine Oil",
+        "name": "Motorella",
         "slug": "engine-oil"
       },
       {
-        "name": "Antifreeze",
+        "name": "Antifrīzs",
         "slug": "antifreeze"
       },
       {
-        "name": "Spark Plug",
+        "name": "Aizdedzes svece",
         "slug": "spark-plug"
       },
       {
-        "name": "Wiper Blade, Rubber",
+        "name": "Stikla tīrītājs, gumija",
         "slug": "wiper-blade-rubber"
       },
       {
-        "name": "Disc Brake",
+        "name": "Disku bremžu mehānisms",
         "slug": "disc-brake"
       },
       {
-        "name": "Drum Brake",
+        "name": "Trumuļu bremzes",
         "slug": "drum-brake"
       },
       {
-        "name": "Oil Drain Screw",
+        "name": "Noliešanas skrūve",
         "slug": "oil-drain-screw"
       },
       {
-        "name": "Oil AT transmission",
+        "name": "Transmissijas eļļa",
         "slug": "oil-at-transmission"
       },
       {
-        "name": "Oil Steering",
+        "name": "Stūres pastiprinātāja eļļa",
         "slug": "oil-steering"
       },
       {
-        "name": "Set, Timing Belt",
+        "name": "Zobsiksnas komplekts",
         "slug": "set-timing-belt"
       },
       {
-        "name": "Tensioner Pulley, timing belt",
+        "name": "Spriegotājrullītis",
         "slug": "tensioner-pulley-timing-belt"
       },
       {
-        "name": "Parts, tie rod assembly",
+        "name": "Stūres šķērsstiepņa atsevišķi komponenti",
         "slug": "parts-tie-rod-assembly"
       }
     ],
@@ -57,34 +57,34 @@
   },
   {
     "id": 2,
-    "category": "Filters",
+    "category": "Filtrs",
     "subcategories": [
       {
-        "name": "Oil Filter",
+        "name": "Eļļas filtrs",
         "slug": "oil-filter"
       },
       {
-        "name": "Air Filter",
+        "name": "Gaisa filtrs",
         "slug": "air-filter"
       },
       {
-        "name": "Fuel Filter",
+        "name": "Degvielas filtrs",
         "slug": "fuel-filter"
       },
       {
-        "name": "Air Filter, Salon",
+        "name": "Salona filtrs",
         "slug": "air-filter-salon"
       },
       {
-        "name": "Filter Set",
+        "name": "Filtrs-Komplekts",
         "slug": "filter-set"
       },
       {
-        "name": "Transmission, Steering",
+        "name": "Hidrauliskais filtrs",
         "slug": "transmission-steering"
       },
       {
-        "name": "Coolant Filter",
+        "name": "Dzesēšanas šķidruma filtrs",
         "slug": "coolant-filter"
       }
     ],
@@ -93,66 +93,66 @@
   },
   {
     "id": 3,
-    "category": "Engine parts",
+    "category": "Dzinējs",
     "subcategories": [
       {
-        "name": "Engine Oil",
+        "name": "Motoreļļa",
         "slug": "engine-oil"
       },
       {
-        "name": "Gaskets",
+        "name": "Blīves",
         "slug": "gaskets"
       },
       {
-        "name": "Belt Drive",
+        "name": "Siksnu pievads",
         "slug": "belt-drive"
       },
       {
-        "name": "Cylinders, Pistons",
+        "name": "Cilindrs, Virzulis",
         "slug": "cylinders-pistons"
       },
       {
-        "name": "Engine Guard, Skid Plate",
+        "name": "Motora, Apakšdaļas aizsargs",
         "slug": "engine-guard-skid-plate"
       },
       {
-        "name": "Lubrication",
+        "name": "Eļļošana",
         "slug": "lubrication"
       },
       {
-        "name": "Sensors, Electrics",
+        "name": "Eļļas spiediens",
         "slug": "sensors-electrics"
       },
       {
-        "name": "Engine Timing Control",
+        "name": "Dzinēja vadības sistēma",
         "slug": "engine-timing-control"
       },
       {
-        "name": "Engine Air Supply",
+        "name": "Gaisa padeves sistēma",
         "slug": "engine-air-supply"
       },
       {
-        "name": "Engine Mountings",
+        "name": "Motora piekare",
         "slug": "engine-mountings"
       },
       {
-        "name": "Cylinder Head, Parts",
+        "name": "Cilindra galva, uzkares daļas",
         "slug": "cylinder-head-parts"
       },
       {
-        "name": "Crankshaft Drive",
+        "name": "Kloķa-klaņa mehānisms",
         "slug": "crankshaft-drive"
       },
       {
-        "name": "Engine crankcase",
+        "name": "Motora bloks",
         "slug": "engine-crankcase"
       },
       {
-        "name": "Engine Cover",
+        "name": "Motora vāks",
         "slug": "engine-cover"
       },
       {
-        "name": "Exhaust Emission Control",
+        "name": "Izplūdes gāzu attīrīšanas sistēma",
         "slug": "exhaust-emission-control"
       },
       {
@@ -160,11 +160,11 @@
         "slug": "tuning"
       },
       {
-        "name": "Complete Engine, Sub-Assembly",
+        "name": "Pilnīgs dzinējs, apakšsavienojums",
         "slug": "complete-engine-sub-assembly"
       },
       {
-        "name": "Tools",
+        "name": "Instrumenti",
         "slug": "tools"
       }
     ],
@@ -173,58 +173,58 @@
   },
   {
     "id": 4,
-    "category": "Axle & wheels Mounting",
+    "category": "Ass un riteņi Montāža",
     "subcategories": [
       {
-        "name": "Struts, Rods",
+        "name": "Statņi, Stiepņi",
         "slug": "struts-rods"
       },
       {
-        "name": "Stabiliser",
+        "name": "Stabilizēts",
         "slug": "stabiliser"
       },
       {
-        "name": "Wheel Hub, Mounting",
+        "name": "Riteņa rumba, uzstādīšana",
         "slug": "wheel-hub-mounting"
       },
       {
-        "name": "Joints",
+        "name": "Šarnīri",
         "slug": "joints"
       },
       {
-        "name": "Suspension Arm Joint",
+        "name": "Svira, Sviras uzstādīšana",
         "slug": "suspension-arm-joint"
       },
       {
-        "name": "Wheel Fastening",
+        "name": "Ritenis, Riteņa stiprinājums",
         "slug": "wheel-fastening"
       },
       {
-        "name": "Mounting, suspension strut",
+        "name": "Montāža, balstiekārta",
         "slug": "mounting-suspension-strut"
       },
       {
-        "name": "Stub Axle, repair Kit",
+        "name": "Grozāmass statne, remkomplekts",
         "slug": "stub-axle-repair-kit"
       },
       {
-        "name": "Axle Support, Axle Beam",
+        "name": "Tilta sija, Ass piekare",
         "slug": "axle-support-axle-beam"
       },
       {
-        "name": "Dome, Transverse Link Strut",
+        "name": "Šķērssviras atsaite",
         "slug": "dome-transverse-link-strut"
       },
       {
-        "name": "Tyre Pressure control",
+        "name": "Riepu spiediena kontroles sistēma",
         "slug": "tyre-pressure-control"
       },
       {
-        "name": "Track widening",
+        "name": "Riteņu starplika",
         "slug": "track-widening"
       },
       {
-        "name": "Tools",
+        "name": "Instrumenti",
         "slug": "tools"
       }
     ],
@@ -233,94 +233,94 @@
   },
   {
     "id": 5,
-    "category": "Brake System",
+    "category": "Bremžu sistēma",
     "subcategories": [
       {
-        "name": "Disc Brake",
+        "name": "Disku bremžu mehānisms",
         "slug": "disc-brake"
       },
       {
-        "name": "Drum Brake",
+        "name": "Trumuļu bremzes",
         "slug": "drum-brake"
       },
       {
-        "name": "Brake Calipers",
+        "name": "Bremžu suports",
         "slug": "brake-calipers"
       },
       {
-        "name": "ABS system",
+        "name": "ABS sistēma",
         "slug": "abs-system"
       },
       {
-        "name": "Brake Fluid",
+        "name": "Bremžu šķidrums",
         "slug": "brake-fluid"
       },
       {
-        "name": "Wheel Cylinders",
+        "name": "Riteņa bremžu cilindrs",
         "slug": "wheel-cylinders"
       },
       {
-        "name": "Wear Indicator",
+        "name": "Nodiluma devējs",
         "slug": "wear-indicator"
       },
       {
-        "name": "Brake Master Cylinder",
+        "name": "Galvenais bremžu cilindrs",
         "slug": "brake-master-cylinder"
       },
       {
-        "name": "Handbrake",
+        "name": "Stāvbremžu sistēma",
         "slug": "handbrake"
       },
       {
-        "name": "Control Levers, Cables",
+        "name": "Sviras, Troses, Stiepņi",
         "slug": "control-levers-cables"
       },
       {
-        "name": "Valves",
+        "name": "Vārsti",
         "slug": "valves"
       },
       {
-        "name": "Filter, breaks",
+        "name": "Filtrs",
         "slug": "filter-breaks"
       },
       {
-        "name": "Vacuum Pump",
+        "name": "Vakuumsūknis",
         "slug": "vacuum-pump"
       },
       {
-        "name": "Brake Booster",
+        "name": "Bremžu pastiprinātājs",
         "slug": "brake-booster"
       },
       {
-        "name": "Brake Light Switch",
+        "name": "Bremžu signāla slēdzis",
         "slug": "brake-light-switch"
       },
       {
-        "name": "Pressure Accumulator, Switch",
+        "name": "Spiediena akumulators, slēdzis",
         "slug": "pressure-accumulator-switch"
       },
       {
-        "name": "Brake Power Regulator",
+        "name": "Bremžu spēka regulators",
         "slug": "brake-power-regulator"
       },
       {
-        "name": "High Performance Brakes",
+        "name": "Augstas veiktspējas bremzes",
         "slug": "high-performance-brakes"
       },
       {
-        "name": "Brake Hoses",
+        "name": "Bremžu šļūtene",
         "slug": "brake-hoses"
       },
       {
-        "name": "Brake Pipes",
+        "name": "Bremžu cauruļvadi",
         "slug": "brake-pipes"
       },
       {
-        "name": "Brake Fluid Reservoir",
+        "name": "Bremžu šķidrums",
         "slug": "brake-fluid-reservoir"
       },
       {
-        "name": "Tools",
+        "name": "Instrumenti",
         "slug": "tools"
       }
     ],
@@ -329,26 +329,26 @@
   },
   {
     "id": 6,
-    "category": "Wheels",
+    "category": "Riteņi",
     "subcategories": [
       {
-        "name": "Tyres",
+        "name": "Riepas",
         "slug": "tyres"
       },
       {
-        "name": "Rims",
+        "name": "Diski",
         "slug": "rims"
       },
       {
-        "name": "Nuts, Bolts, Caps",
+        "name": "Piederumi",
         "slug": "nuts-bolts-caps"
       },
       {
-        "name": "Tyre Pressure control",
+        "name": "Riepu spiediena kontrole",
         "slug": "tyre-pressure-control"
       },
       {
-        "name": "Cover, emblem",
+        "name": "Dekoratīvā uzlika, emblēma",
         "slug": "cover-emblem"
       }
     ],
@@ -357,46 +357,46 @@
   },
   {
     "id": 7,
-    "category": "Suspension",
+    "category": "Apturēšana",
     "subcategories": [
       {
-        "name": "Shock Absorber",
+        "name": "Amortizators",
         "slug": "shock-absorber"
       },
       {
-        "name": "Coil Springs",
+        "name": "Piekare",
         "slug": "coil-springs"
       },
       {
-        "name": "Strut, Bearing",
+        "name": "Balsts, gultnis",
         "slug": "strut-bearing"
       },
       {
-        "name": "Strut, parts",
+        "name": "Statīva montāža",
         "slug": "strut-parts"
       },
       {
-        "name": "Suspension Kit, complete",
+        "name": "Pilns komplekts",
         "slug": "suspension-kit-complete"
       },
       {
-        "name": "Oil",
+        "name": "Eļļas, amortizators",
         "slug": "oil"
       },
       {
-        "name": "Leaf Spring",
+        "name": "Lāgu atsperojums",
         "slug": "leaf-spring"
       },
       {
-        "name": "Pneumatic",
+        "name": "Pneimopiekare",
         "slug": "pneumatic"
       },
       {
-        "name": "Leveling Control, Hydraulics",
+        "name": "Izlīdzināšanas vadība, hidraulika",
         "slug": "leveling-control-hydraulics"
       },
       {
-        "name": "Tools",
+        "name": "Instrumenti",
         "slug": "tools"
       }
     ],
@@ -405,38 +405,38 @@
   },
   {
     "id": 8,
-    "category": "Belt Drive",
+    "category": "Siksnu pievads",
     "subcategories": [
       {
-        "name": "Timing Belt, Set",
+        "name": "Zobsiksna, komplekts",
         "slug": "timing-belt-set"
       },
       {
-        "name": "V-Ribbed Belt, Set",
+        "name": "Ķīļrievu siksna, komplekts",
         "slug": "v-ribbed-belt-set"
       },
       {
-        "name": "V-Belt, Set",
+        "name": "Ķīļsiksna, komplekts",
         "slug": "v-belt-set"
       },
       {
-        "name": "Belt Pulley",
+        "name": "Piedziņas skriemelis",
         "slug": "belt-pulley"
       },
       {
-        "name": "Flexible Coupling Sleeve",
+        "name": "Elastīga sajūga uzmava",
         "slug": "flexible-coupling-sleeve"
       },
       {
-        "name": "Alternator Freewheel Clutch",
+        "name": "Ģeneratora brīvgaitas mehānisms",
         "slug": "alternator-freewheel-clutch"
       },
       {
-        "name": "Bolts, Washers",
+        "name": "Piederumi, Mazas detaļas",
         "slug": "bolts-washers"
       },
       {
-        "name": "Tools",
+        "name": "Instrumenti",
         "slug": "tools"
       }
     ],
@@ -445,70 +445,70 @@
   },
   {
     "id": 9,
-    "category": "Clutch, Parts",
+    "category": "Sajūgs, uzkares daļas",
     "subcategories": [
       {
-        "name": "Clutch Disc",
+        "name": "Sajūga disks",
         "slug": "clutch-disc"
       },
       {
-        "name": "Clutch Pressure Plate",
+        "name": "Sajūga piespiedējdisks",
         "slug": "clutch-pressure-plate"
       },
       {
-        "name": "Releaser, clutch",
+        "name": "Izspiedējgultnis, sajūgs",
         "slug": "releaser-clutch"
       },
       {
-        "name": "Hydraulic Fluid",
+        "name": "Hidrauliskais šķidrums",
         "slug": "hydraulic-fluid"
       },
       {
-        "name": "Gaskets, Gasket Sets",
+        "name": "Blīves, Blīvju komplekti",
         "slug": "gaskets-gasket-sets"
       },
       {
-        "name": "Pilot Bearing",
+        "name": "Izmēģinājuma gultnis",
         "slug": "pilot-bearing"
       },
       {
-        "name": "Clutch complete, Repair Kit",
+        "name": "Sajūga komplekts",
         "slug": "clutch-complete-repair-kit"
       },
       {
-        "name": "Clutch Control",
+        "name": "Sajūga vadība",
         "slug": "clutch-control"
       },
       {
-        "name": "Hydraulic Filter, clutch",
+        "name": "Sajūga hidrauliskais filtrs",
         "slug": "hydraulic-filter-clutch"
       },
       {
-        "name": "Automatic Clutch",
+        "name": "Automātiskais sajūgs",
         "slug": "automatic-clutch"
       },
       {
-        "name": "Clutch Torque Limiter",
+        "name": "Sajūga griezes momenta ierobežotājs",
         "slug": "clutch-torque-limiter"
       },
       {
-        "name": "Clutch Housing",
+        "name": "Sajūga korpuss",
         "slug": "clutch-housing"
       },
       {
-        "name": "Torsion Damper",
+        "name": "Svārstību slāpētājs",
         "slug": "torsion-damper"
       },
       {
-        "name": "Flywheel",
+        "name": "Spararats",
         "slug": "flywheel"
       },
       {
-        "name": "Clutch Conversion Kit",
+        "name": "Sajūga pārveidošanas komplekts",
         "slug": "clutch-conversion-kit"
       },
       {
-        "name": "Tools",
+        "name": "Instrumenti",
         "slug": "tools"
       }
     ],
@@ -517,138 +517,138 @@
   },
   {
     "id": 10,
-    "category": "Spark, Glow Ignition",
+    "category": "Dzirkstele, kvēlspuldze",
     "subcategories": [
       {
-        "name": "Spark Plug",
+        "name": "Aizdedzes svece",
         "slug": "spark-plug"
       },
       {
-        "name": "Glow Plug",
+        "name": "Kvēlsvece",
         "slug": "glow-plug"
       },
       {
-        "name": "Ignition Coil, units",
+        "name": "Aizdedzes spole, vienības",
         "slug": "ignition-coil-units"
       },
       {
-        "name": "Ignition Distributor, parts",
+        "name": "Aizdedzes sadalītājs, daļas",
         "slug": "ignition-distributor-parts"
       },
       {
-        "name": "Ignition Cable, parts",
+        "name": "Aizdedzes vads, daļas",
         "slug": "ignition-cable-parts"
       },
       {
-        "name": "Resistor",
+        "name": "Papildpretestība",
         "slug": "resistor"
       },
       {
-        "name": "Scale (ignition setting)",
+        "name": "Mērogs (aizdedzes iestatījums)",
         "slug": "scale-ignition-setting"
       },
       {
-        "name": "Glow Control Unit",
+        "name": "Kvēlspuldzes vadības ierīce",
         "slug": "glow-control-unit"
       },
       {
-        "name": "Control Unit, Relay",
+        "name": "Vadības iekārta, Releji, Devēji",
         "slug": "control-unit-relay"
       },
       {
-        "name": "Ignition Switch Unit, Coil",
+        "name": "Aizdedzes slēdzis, Spole",
         "slug": "ignition-switch-unit-coil"
       },
       {
-        "name": "Pulse Generator",
+        "name": "Impulsu ģenerators",
         "slug": "pulse-generator"
       },
       {
-        "name": "Vacuum System",
+        "name": "Vakuumsistēma",
         "slug": "vacuum-system"
       },
       {
-        "name": "Flame Start System",
+        "name": "Liesmas palaišanas sistēma",
         "slug": "flame-start-system"
       },
       {
-        "name": "Switch, preheating",
+        "name": "Slēdzis",
         "slug": "switch-preheating"
       },
       {
-        "name": "Tools",
+        "name": "Instrumenti",
         "slug": "tools"
       }
     ],
     "image": "/resources/categories/ignition.jpg",
     "slug": "spark-glow-ignition"
-  },
+  }, 
   {
     "id": 11,
-    "category": "Body parts",
+    "category": "Ķermeņa daļas",
     "subcategories": [
       {
-        "name": "Windows, Mirrors",
+        "name": "Iestiklošana, Spoguļi",
         "slug": "windows-mirrors"
       },
       {
-        "name": "Headlight, parts",
+        "name": "Pamatlukturis, daļas",
         "slug": "headlight-parts"
       },
       {
-        "name": "Gas Springs",
+        "name": "Gāzes atsperes",
         "slug": "gas-springs"
       },
       {
-        "name": "Hatches, Bonnets, Doors, Roof",
+        "name": "Vāki, Pārsegi, Durvis, Jumta lūka",
         "slug": "hatches-bonnets-doors-roof"
       },
       {
-        "name": "Trim, Protection, Emblems",
+        "name": "Trim, aizsardzība, emblēmas",
         "slug": "trim-protection-emblems"
       },
       {
-        "name": "Bumper, Wing, Body parts",
+        "name": "Bamperis, Spārns, Virsbūves daļas",
         "slug": "bumper-wing-body-parts"
       },
       {
-        "name": "Vehicle Front",
+        "name": "Automobilis, priekšdaļa",
         "slug": "vehicle-front"
       },
       {
-        "name": "Vehicle Rear",
+        "name": "Automobilis, aizmugurējā daļa",
         "slug": "vehicle-rear"
       },
       {
-        "name": "Passenger Cabin",
+        "name": "Salons",
         "slug": "passenger-cabin"
       },
       {
-        "name": "Lights",
+        "name": "Lukturi",
         "slug": "lights"
       },
       {
-        "name": "Driver Cab",
+        "name": "Vadītāja kabīne",
         "slug": "driver-cab"
       },
       {
-        "name": "Auxiliary Lights, parts",
+        "name": "Palīggaismas, detaļas",
         "slug": "auxiliary-lights-parts"
       },
       {
-        "name": "Rollbar",
+        "name": "Drošības stienis",
         "slug": "rollbar"
       },
       {
-        "name": "Racks, Carriers of Headlight",
+        "name": "Stiprinājums, Turētājs, Rāmis",
         "slug": "racks-carriers-of-headlight"
       },
       {
-        "name": "Electromotor",
+        "name": "Elektromotors",
         "slug": "electromotor"
       },
       {
-        "name": "Radiator mounting",
+        "name": "Radiatora stiprināšana",
         "slug": "radiator-mounting"
       }
     ],
@@ -657,82 +657,82 @@
   },
   {
     "id": 12,
-    "category": "Electrics",
+    "category": "Elektroiekārta",
     "subcategories": [
       {
-        "name": "Battery",
+        "name": "Akumulatoru baterija",
         "slug": "battery"
       },
       {
-        "name": "Sensors",
+        "name": "Devēji",
         "slug": "sensors"
       },
       {
-        "name": "Alternator",
+        "name": "Ģenerators",
         "slug": "alternator"
       },
       {
-        "name": "Headlight",
+        "name": "Pamatlukturis",
         "slug": "headlight"
       },
       {
-        "name": "Lights",
+        "name": "Lukturi",
         "slug": "lights"
       },
       {
-        "name": "Flasher Unit, Relay",
+        "name": "Pagrieziena signāla slēdzis, relejs",
         "slug": "flasher-unit-relay"
       },
       {
-        "name": "Auxiliary Lights",
+        "name": "Palīggaismas",
         "slug": "auxiliary-lights"
       },
       {
-        "name": "Fuse Box, Holder",
+        "name": "Drošinātāju kaste, ietvere",
         "slug": "fuse-box-holder"
       },
       {
-        "name": "Electric Horn",
+        "name": "Skaņas signāls, Taure",
         "slug": "electric-horn"
       },
       {
-        "name": "Relay",
+        "name": "Relejs",
         "slug": "relay"
       },
       {
-        "name": "Multifunctional Relay",
+        "name": "Multifunkcionāls relejs",
         "slug": "multifunctional-relay"
       },
       {
-        "name": "Starter Alternator",
+        "name": "Starteris-ģenerators",
         "slug": "starter-alternator"
       },
       {
-        "name": "Harness",
+        "name": "Vadu komplekts",
         "slug": "harness"
       },
       {
-        "name": "Central Electrics",
+        "name": "Centrālā elektroapgādes sistēma",
         "slug": "central-electrics"
       },
       {
-        "name": "Starter System",
+        "name": "Startera sistēma",
         "slug": "starter-system"
       },
       {
-        "name": "Light Switches, Controls",
+        "name": "Gaismas slēdži, vadības ierīces",
         "slug": "light-switches-controls"
       },
       {
-        "name": "Indicators",
+        "name": "Signālierīce",
         "slug": "indicators"
       },
       {
-        "name": "Multi-Function Switch",
+        "name": "Daudzfunkciju slēdzis",
         "slug": "multi-function-switch"
       },
       {
-        "name": "Control Instruments",
+        "name": "Mērinstrumenti",
         "slug": "control-instruments"
       },
       {
@@ -740,71 +740,71 @@
         "slug": "can-bus"
       },
       {
-        "name": "Reflectors",
+        "name": "Aizmugurējais, Sānu atstarotājs",
         "slug": "reflectors"
       },
       {
-        "name": "Control Units",
+        "name": "Vadības iekārta",
         "slug": "control-units"
       },
       {
-        "name": "Tools",
+        "name": "Instrumenti",
         "slug": "tools"
       }
     ],
-    "image": "/resources/categories/electrics.webp",
+    "image": "/resources/categories/electrics.jpg",
     "slug": "electrics"
   },
   {
     "id": 13,
-    "category": "Manual Transmission",
+    "category": "Mehāniskā pārnesumkārba",
     "subcategories": [
       {
-        "name": "Oil",
+        "name": "Eļļa",
         "slug": "oil"
       },
       {
-        "name": "Gaskets, Seals",
+        "name": "Blīves",
         "slug": "gaskets-seals"
       },
       {
-        "name": "Transmission",
+        "name": "Transmisija",
         "slug": "transmission"
       },
       {
-        "name": "Transmission Control",
+        "name": "Transmisijas pievads",
         "slug": "transmission-control"
       },
       {
-        "name": "Transmission Mounting",
+        "name": "Piekare",
         "slug": "transmission-mounting"
       },
       {
-        "name": "Transmission Control, Hydraulics",
+        "name": "Vadība, Hidraulika",
         "slug": "transmission-control-hydraulics"
       },
       {
-        "name": "Repair Kits",
+        "name": "Remkomplekti",
         "slug": "repair-kits"
       },
       {
-        "name": "Sensor",
+        "name": "Devējs",
         "slug": "sensor"
       },
       {
-        "name": "Transmission Housing, Parts",
+        "name": "Korpuss, Atsevišķi komponenti",
         "slug": "transmission-housing-parts"
       },
       {
-        "name": "Synchronizer Ring",
+        "name": "Sinhronizatora gredzens",
         "slug": "synchronizer-ring"
       },
       {
-        "name": "Radiator",
+        "name": "Radiators",
         "slug": "radiator"
       },
       {
-        "name": "Clamp",
+        "name": "Kronšteins",
         "slug": "clamp"
       }
     ],
@@ -813,78 +813,78 @@
   },
   {
     "id": 14,
-    "category": "Automatic Transmission",
+    "category": "Automātiskā pārnesumkārba",
     "subcategories": [
       {
-        "name": "Oil AT transmission",
+        "name": "Transmissijas eļļa",
         "slug": "oil-at-transmission"
       },
       {
-        "name": "Gaskets, Seals",
+        "name": "Blīves",
         "slug": "gaskets-seals"
       },
       {
-        "name": "Transmission",
+        "name": "Transmisija",
         "slug": "transmission"
       },
       {
-        "name": "Transmission Control, Hydraulics",
+        "name": "Vadība, Hidraulika",
         "slug": "transmission-control-hydraulics"
       },
       {
-        "name": "Transmission Mounting",
+        "name": "Piekare",
         "slug": "transmission-mounting"
       },
       {
-        "name": "Transmission Housing, Parts",
+        "name": "Korpuss, Atsevišķi komponenti",
         "slug": "transmission-housing-parts"
       },
       {
-        "name": "Oil Pump",
+        "name": "Eļļas sūknis",
         "slug": "oil-pump"
       },
       {
-        "name": "Oil Change Parts Set",
+        "name": "Eļļas maiņas detaļu komplekts",
         "slug": "oil-change-parts-set"
       },
       {
-        "name": "Oil Pan, Parts",
+        "name": "Eļļas panna, daļas",
         "slug": "oil-pan-parts"
       },
       {
-        "name": "Repair Kits",
+        "name": "Remkomplekti",
         "slug": "repair-kits"
       },
       {
-        "name": "Brake Band",
+        "name": "Bremžu lenta",
         "slug": "brake-band"
       },
       {
-        "name": "Sensor",
+        "name": "Devējs",
         "slug": "sensor"
       },
       {
-        "name": "Cable",
+        "name": "Troses pievads",
         "slug": "cable"
       },
       {
-        "name": "Lining Discs, Sets",
+        "name": "Disks, komplekts",
         "slug": "lining-discs-sets"
       },
       {
-        "name": "Radiator",
+        "name": "Radiators",
         "slug": "radiator"
       },
       {
-        "name": "Torque Converter",
+        "name": "Griezes momenta pārveidotājs",
         "slug": "torque-converter"
       },
       {
-        "name": "Oil Dipstick",
+        "name": "Eļļas tausts",
         "slug": "oil-dipstick"
       },
       {
-        "name": "Clamp",
+        "name": "Kronšteins",
         "slug": "clamp"
       }
     ],
@@ -893,46 +893,46 @@
   },
   {
     "id": 15,
-    "category": "Windscreen Cleaning",
+    "category": "Logu tīrītaju sistēma",
     "subcategories": [
       {
-        "name": "Wiper Blade, Rubber",
+        "name": "Stikla tīrītājs, gumija",
         "slug": "wiper-blade-rubber"
       },
       {
-        "name": "Wiper Arm, Bearing",
+        "name": "Stikla tīrītāja svira, gultnis",
         "slug": "wiper-arm-bearing"
       },
       {
-        "name": "Headlight Washer System",
+        "name": "Lukturu tīrīšanas sistēma",
         "slug": "headlight-washer-system"
       },
       {
-        "name": "Washer Fluid Jet",
+        "name": "Mazgātāja šķidruma strūkla",
         "slug": "washer-fluid-jet"
       },
       {
-        "name": "Wiper Linkage, Drive",
+        "name": "Stikla tīrītāja sviru, piedziņas",
         "slug": "wiper-linkage-drive"
       },
       {
-        "name": "Wipers Motor",
+        "name": "Stikla tīrītāju motors",
         "slug": "wipers-motor"
       },
       {
-        "name": "Water Pump",
+        "name": "Ūdens sūknis",
         "slug": "water-pump"
       },
       {
-        "name": "Switch, Relay",
+        "name": "Slēdzis, Relejs",
         "slug": "switch-relay"
       },
       {
-        "name": "Water Tank, Pipe",
+        "name": "Ūdens tvertne, cauruļvads",
         "slug": "water-tank-pipe"
       },
       {
-        "name": "System Kit",
+        "name": "Stiklu tīrīšanas sistēma",
         "slug": "system-kit"
       }
     ],
@@ -941,30 +941,30 @@
   },
   {
     "id": 16,
-    "category": "Wheel Drive",
+    "category": "Riteņu piedziņas mehānisms",
     "subcategories": [
       {
-        "name": "Drive Shaft",
+        "name": "Piedziņas vārpsta",
         "slug": "drive-shaft"
       },
       {
-        "name": "Bellow",
+        "name": "Putekļusargs",
         "slug": "bellow"
       },
       {
-        "name": "Constant-velocity joint, shaft",
+        "name": "Šarnīrs, komplekts",
         "slug": "constant-velocity-joint-shaft"
       },
       {
-        "name": "Tripod Hub",
+        "name": "Tripod rumba",
         "slug": "tripod-hub"
       },
       {
-        "name": "Assembly Parts",
+        "name": "Montāžas daļass",
         "slug": "assembly-parts"
       },
       {
-        "name": "Planetary Axle Gear",
+        "name": "Planetārā ass pārnesums",
         "slug": "planetary-axle-gear"
       }
     ],
@@ -973,62 +973,62 @@
   },
   {
     "id": 17,
-    "category": "Fuel Supply System",
+    "category": "Degvielas padeves sistēma",
     "subcategories": [
       {
-        "name": "Fuel Filter, housing",
+        "name": "Degvielas filtrs, korpuss",
         "slug": "fuel-filter-housing"
       },
       {
-        "name": "Fuel Pump, Parts",
+        "name": "Sūknis, piederumi",
         "slug": "fuel-pump-parts"
       },
       {
-        "name": "Fuel Radiator",
+        "name": "Degvielas radiators",
         "slug": "fuel-radiator"
       },
       {
-        "name": "Fuel Preheater",
+        "name": "Degvielas priekšsildītājs",
         "slug": "fuel-preheater"
       },
       {
-        "name": "Fuel Tank, Parts",
+        "name": "Degvielas tvertne, piederumi",
         "slug": "fuel-tank-parts"
       },
       {
-        "name": "Fuel Lines",
+        "name": "Šļūtenes, Vadi",
         "slug": "fuel-lines"
       },
       {
-        "name": "Fuel Sender Unit",
+        "name": "Degvielas līmeņa devējs",
         "slug": "fuel-sender-unit"
       },
       {
-        "name": "Pulsation Damper",
+        "name": "Pulsāciju slāpētājs",
         "slug": "pulsation-damper"
       },
       {
-        "name": "Fuel cock, Maintenance",
+        "name": "Degvielas krāns, Vadība",
         "slug": "fuel-cock-maintenance"
       },
       {
-        "name": "Fuel Pressure Regulator, Switch",
+        "name": "Spiediena regulators, slēdzis",
         "slug": "fuel-pressure-regulator-switch"
       },
       {
-        "name": "Valves",
+        "name": "Vārsti",
         "slug": "valves"
       },
       {
-        "name": "Water Sensor",
+        "name": "Ūdens limeņa devējs",
         "slug": "water-sensor"
       },
       {
-        "name": "Fuel Delivery Unit, Complete",
+        "name": "Degvielas padeves bloks, pabeigts",
         "slug": "fuel-delivery-unit-complete"
       },
       {
-        "name": "Tools",
+        "name": "Instrumenti",
         "slug": "tools"
       }
     ],
@@ -1037,82 +1037,82 @@
   },
   {
     "id": 18,
-    "category": "Steering",
+    "category": "Stūres mehānisms",
     "subcategories": [
       {
-        "name": "Tie Rod Assembly, Parts",
+        "name": "Stūres stūres šķērsstiepnis, detaļas",
         "slug": "tie-rod-assembly-parts"
       },
       {
-        "name": "Steering Joints",
+        "name": "Šarnīri",
         "slug": "steering-joints"
       },
       {
-        "name": "Oil Steering",
+        "name": "Stūres pastiprinātāja eļļa",
         "slug": "oil-steering"
       },
       {
-        "name": "Steering Gear, Pump",
+        "name": "Stūres mehānisms, sūknis",
         "slug": "steering-gear-pump"
       },
       {
-        "name": "Steering Mounting",
+        "name": "Stūres mehānisma piekare",
         "slug": "steering-mounting"
       },
       {
-        "name": "Steering Column",
+        "name": "Stūres statne, vārpsta",
         "slug": "steering-column"
       },
       {
-        "name": "Oil Pressure Switch",
+        "name": "Eļļas spiediena devējs",
         "slug": "oil-pressure-switch"
       },
       {
-        "name": "Steering Box",
+        "name": "Stūres mehānisma korpuss",
         "slug": "steering-box"
       },
       {
-        "name": "Filter, power steering",
+        "name": "Stūres iekārtas filtrs",
         "slug": "filter-power-steering"
       },
       {
-        "name": "Control Arm, Bush",
+        "name": "Stūres svira",
         "slug": "control-arm-bush"
       },
       {
-        "name": "Steering Linkage",
+        "name": "Stūres svira",
         "slug": "steering-linkage"
       },
       {
-        "name": "Expansion Tank",
+        "name": "Paplašināšanas tvertne",
         "slug": "expansion-tank"
       },
       {
-        "name": "Bellow, Seal",
+        "name": "Putekļusargs, Blīve",
         "slug": "bellow-seal"
       },
       {
-        "name": "Steering Damper",
+        "name": "Stūres vadības amortizators",
         "slug": "steering-damper"
       },
       {
-        "name": "Steering Hose, Pipe",
+        "name": "Stūres šļūtene, cauruļvads",
         "slug": "steering-hose-pipe"
       },
       {
-        "name": "Steering Wheel, Parts",
+        "name": "Stūres rats, detaļas",
         "slug": "steering-wheel-parts"
       },
       {
-        "name": "Steering Angle Sensor",
+        "name": "Pagrieziena leņķa devējs",
         "slug": "steering-angle-sensor"
       },
       {
-        "name": "Control, Regulation",
+        "name": "Vadība, Regulēšana",
         "slug": "control-regulation"
       },
       {
-        "name": "Oil Dipstick",
+        "name": "Eļļas tausts",
         "slug": "oil-dipstick"
       }
     ],
@@ -1121,54 +1121,54 @@
   },
   {
     "id": 19,
-    "category": "Cooling System",
+    "category": "Dzesēšanas sistēma",
     "subcategories": [
       {
-        "name": "Antifreeze",
+        "name": "Antifrīzs",
         "slug": "antifreeze"
       },
       {
-        "name": "Radiator, Oil Cooler",
+        "name": "Ūdens, eļļas radiators",
         "slug": "radiator-oil-cooler"
       },
       {
-        "name": "Radiator Fan",
+        "name": "Ventilators",
         "slug": "radiator-fan"
       },
       {
-        "name": "Thermostat, Gasket",
+        "name": "Termostats, blīve",
         "slug": "thermostat-gasket"
       },
       {
-        "name": "Sensors, temperature",
+        "name": "Slēdzis, Devējs",
         "slug": "sensors-temperature"
       },
       {
-        "name": "Water Pump, Gasket",
+        "name": "Ūdenssūknis, blīve",
         "slug": "water-pump-gasket"
       },
       {
-        "name": "Relay",
+        "name": "Relejs",
         "slug": "relay"
       },
       {
-        "name": "Hoses, Pipes, Flanges",
+        "name": "Šļūtenes, Vadi, Flanči",
         "slug": "hoses-pipes-flanges"
       },
       {
-        "name": "Air Cooling",
+        "name": "Gaisa dzesēšanas sistēma",
         "slug": "air-cooling"
       },
       {
-        "name": "Cooling Module",
+        "name": "Dzesēšanas modulis",
         "slug": "cooling-module"
       },
       {
-        "name": "Control Unit",
+        "name": "Vadības iekārta",
         "slug": "control-unit"
       },
       {
-        "name": "Tools, Parts",
+        "name": "Instrumenti",
         "slug": "tools-parts"
       }
     ],
@@ -1177,78 +1177,78 @@
   },
   {
     "id": 20,
-    "category": "Exhaust System",
+    "category": "Izplūdes gāzu sistēma",
     "subcategories": [
       {
-        "name": "Exhaust System, complete",
+        "name": "Trokšņa slāpētāju komplekts",
         "slug": "exhaust-system-complete"
       },
       {
-        "name": "Silencer",
+        "name": "Trokšņa slāpētājs",
         "slug": "silencer"
       },
       {
-        "name": "Sensors",
+        "name": "Devējs, Zonde",
         "slug": "sensors"
       },
       {
-        "name": "Resonator",
+        "name": "Rezonators",
         "slug": "resonator"
       },
       {
-        "name": "Lambda Sensor",
+        "name": "Lambda zonde",
         "slug": "lambda-sensor"
       },
       {
-        "name": "Manifold",
+        "name": "Kolektors",
         "slug": "manifold"
       },
       {
-        "name": "Catalytic Converter",
+        "name": "Katalizators",
         "slug": "catalytic-converter"
       },
       {
-        "name": "Heat Shield",
+        "name": "Siltuma aizsargs",
         "slug": "heat-shield"
       },
       {
-        "name": "Soot, Particulate filter Regeneration",
+        "name": "Soot, daļiņu filtra reģenerācija",
         "slug": "soot-particulate-filter-regeneration"
       },
       {
-        "name": "Euro1, Euro2, D3 Conversion",
+        "name": "Euro1, Euro2, D3-Pārveidošana",
         "slug": "euro1-euro2-d3-conversion"
       },
       {
-        "name": "Soot, Particulate Filter",
+        "name": "Sodrēju, Daļiņu filtrs",
         "slug": "soot-particulate-filter"
       },
       {
-        "name": "Exhaust Pipes",
+        "name": "Caurule",
         "slug": "exhaust-pipes"
       },
       {
-        "name": "Charger",
+        "name": "Kompresors",
         "slug": "charger"
       },
       {
-        "name": "Exhaust Gas Door",
+        "name": "Izplūdes vārsts",
         "slug": "exhaust-gas-door"
       },
       {
-        "name": "Silencer, sport set",
+        "name": "Sporta trokšņa slāpētājs",
         "slug": "silencer-sport-set"
       },
       {
-        "name": "Assembly Parts, Gaskets",
+        "name": "Montāžas detaļas",
         "slug": "assembly-parts-gaskets"
       },
       {
-        "name": "Urea Injection",
+        "name": "Karbamīda iesmidzināšana",
         "slug": "urea-injection"
       },
       {
-        "name": "Baffle",
+        "name": "Pildījums-apšuvums",
         "slug": "baffle"
       }
     ],
@@ -1257,22 +1257,22 @@
   },
   {
     "id": 21,
-    "category": "Outer Accessories",
+    "category": "Piederumi",
     "subcategories": [
       {
-        "name": "Car cover",
+        "name": "Tr. līdzekļa pārklājs",
         "slug": "car-cover"
       },
       {
-        "name": "Gas Springs",
+        "name": "Gāzes atsperes",
         "slug": "gas-springs"
       },
       {
-        "name": "Wind Deflector, Mounted parts",
+        "name": "Gaisa deflektors",
         "slug": "wind-deflector-mounted-parts"
       },
       {
-        "name": "Snow Chains",
+        "name": "Sniega ķēdes",
         "slug": "snow-chains"
       }
     ],
@@ -1281,66 +1281,66 @@
   },
   {
     "id": 22,
-    "category": "Air Conditioning",
+    "category": "Gaisa kondicionēšana",
     "subcategories": [
       {
-        "name": "Refrigerant, Freon",
+        "name": "Dzesēšanas viela, Filtrs",
         "slug": "refrigerant-freon"
       },
       {
-        "name": "Compressor, Parts",
+        "name": "Kompresors, detaļas",
         "slug": "compressor-parts"
       },
       {
-        "name": "Condenser",
+        "name": "Kondensators",
         "slug": "condenser"
       },
       {
-        "name": "Vaporizer",
+        "name": "Iztvaicētājs",
         "slug": "vaporizer"
       },
       {
-        "name": "Sensors",
+        "name": "Devēji",
         "slug": "sensors"
       },
       {
-        "name": "Valves",
+        "name": "Vārsti",
         "slug": "valves"
       },
       {
-        "name": "Dryer",
+        "name": "Sausinātājs",
         "slug": "dryer"
       },
       {
-        "name": "Relay",
+        "name": "Relejs",
         "slug": "relay"
       },
       {
-        "name": "Control Unit",
+        "name": "Vadības iekārta",
         "slug": "control-unit"
       },
       {
-        "name": "Hoses, Pipes",
+        "name": "Šļūtenes, Vadi",
         "slug": "hoses-pipes"
       },
       {
-        "name": "Additional Resistor",
+        "name": "Papildpretestība",
         "slug": "additional-resistor"
       },
       {
-        "name": "Controls, Regulation",
+        "name": "Vadība, Regulēšana",
         "slug": "controls-regulation"
       },
       {
-        "name": "Switch",
+        "name": "Slēdzis",
         "slug": "switch"
       },
       {
-        "name": "Repair Kit",
+        "name": "Remkomplekts",
         "slug": "repair-kit"
       },
       {
-        "name": "Mounting",
+        "name": "Montāža",
         "slug": "mounting"
       }
     ],
@@ -1349,42 +1349,42 @@
   },
   {
     "id": 23,
-    "category": "Heating, Ventilation",
+    "category": "Apsilde, Ventilācija",
     "subcategories": [
       {
-        "name": "Air Filter, saloon",
+        "name": "Salona gaisa filtrs",
         "slug": "air-filter-saloon"
       },
       {
-        "name": "Interior Heat Exchanger",
+        "name": "Salona siltummainis",
         "slug": "interior-heat-exchanger"
       },
       {
-        "name": "Blower, Parts",
+        "name": "Ventilators, detaļas",
         "slug": "blower-parts"
       },
       {
-        "name": "Valves, Controls",
+        "name": "Vārsti, Regulēšana",
         "slug": "valves-controls"
       },
       {
-        "name": "Control Units",
+        "name": "Vadības iekārta",
         "slug": "control-units"
       },
       {
-        "name": "Hoses, Pipes",
+        "name": "Šļūtenes, Caurules",
         "slug": "hoses-pipes"
       },
       {
-        "name": "Coolant Water Preheating",
+        "name": "Dzesēšanas šķidruma sildīšana",
         "slug": "coolant-water-preheating"
       },
       {
-        "name": "Heater Flap Box",
+        "name": "Sildītāja vārsts",
         "slug": "heater-flap-box"
       },
       {
-        "name": "Actuators",
+        "name": "Vadības elementi",
         "slug": "actuators"
       }
     ],
@@ -1393,70 +1393,70 @@
   },
   {
     "id": 24,
-    "category": "Axle Drive",
+    "category": "Galvenais pārvads",
     "subcategories": [
       {
-        "name": "Oil",
+        "name": "Eļļa",
         "slug": "oil"
       },
       {
-        "name": "Propshaft",
+        "name": "Garenvārpsta",
         "slug": "propshaft"
       },
       {
-        "name": "Differential",
+        "name": "Diferenciālis",
         "slug": "differential"
       },
       {
-        "name": "Transfer Case",
+        "name": "Sadales kārba",
         "slug": "transfer-case"
       },
       {
-        "name": "Clutch Haldex",
+        "name": "Haldex sajūgs",
         "slug": "clutch-haldex"
       },
       {
-        "name": "Switches, valves",
+        "name": "Slēdzis, Vārsti",
         "slug": "switches-valves"
       },
       {
-        "name": "Filters",
+        "name": "Filtri",
         "slug": "filters"
       }
     ],
     "image": "/resources/categories/axle-drive.jpg",
     "slug": "axle-drive"
-  },
+  }, 
   {
     "id": 25,
-    "category": "Carrier Equipment",
+    "category": "Transportēšanas iekārta",
     "subcategories": [
       {
-        "name": "Roof Rack",
+        "name": "Jumta bagāžnieks",
         "slug": "roof-rack"
       },
       {
-        "name": "Trailer Hitch",
+        "name": "Piekabes aprīkojums",
         "slug": "trailer-hitch"
       },
       {
-        "name": "Electric Kit, Fifth Whee",
+        "name": "Elektriskās daļas",
         "slug": "electric-kit-fifth-whee"
       },
       {
-        "name": "Coupling Carrier",
+        "name": "Turētājs (uz sakabes āķa)",
         "slug": "coupling-carrier"
       },
       {
-        "name": "Rear Rack",
+        "name": "Aizmugurējais stiprinājums",
         "slug": "rear-rack"
       },
       {
-        "name": "Mounting Kit, towbar",
+        "name": "Montāžas komplekts",
         "slug": "mounting-kit-towbar"
       },
       {
-        "name": "Parts, towbar",
+        "name": "Daļas, sakabes āķis",
         "slug": "parts-towbar"
       }
     ],
@@ -1465,18 +1465,18 @@
   },
   {
     "id": 26,
-    "category": "Fuel Mixture Formation",
+    "category": "Degmaisījuma sagatavošana",
     "subcategories": [
       {
-        "name": "Mixture Formation",
+        "name": "Maisījuma sagatavošana",
         "slug": "mixture-formation"
       },
       {
-        "name": "Carburettor System",
+        "name": "Karburatora sistēma",
         "slug": "carburettor-system"
       },
       {
-        "name": "Exhaust Emission Control",
+        "name": "Izplūdes gāzu neitralizācija",
         "slug": "exhaust-emission-control"
       }
     ],
@@ -1485,22 +1485,22 @@
   },
   {
     "id": 27,
-    "category": "Locking System",
+    "category": "Slēdzene",
     "subcategories": [
       {
-        "name": "Central Locking System",
+        "name": "Centrālā atslēga",
         "slug": "central-locking-system"
       },
       {
-        "name": "Locks, exterior",
+        "name": "Ārējā slēdzene",
         "slug": "locks-exterior"
       },
       {
-        "name": "Locks, interior",
+        "name": "Iekšējā slēdzene",
         "slug": "locks-interior"
       },
       {
-        "name": "Remote Control, central locking",
+        "name": "Tālvadība, Centrālā atslēga",
         "slug": "remote-control-central-locking"
       },
       {
@@ -1508,15 +1508,15 @@
         "slug": "lock-barrel-set"
       },
       {
-        "name": "Lock Set",
+        "name": "Slēdzenes komplekts",
         "slug": "lock-set"
       },
       {
-        "name": "Button, Switch",
+        "name": "Detaļas",
         "slug": "button-switch"
       },
       {
-        "name": "Handles",
+        "name": "Rokturi",
         "slug": "handles"
       }
     ],
@@ -1525,14 +1525,14 @@
   },
   {
     "id": 28,
-    "category": "Power Take Off (PTO)",
+    "category": "Papildus pievads",
     "subcategories": [
       {
-        "name": "Gaskets",
+        "name": "Blīves",
         "slug": "gaskets"
       },
       {
-        "name": "Oil",
+        "name": "Eļļa",
         "slug": "oil"
       }
     ],
@@ -1541,22 +1541,22 @@
   },
   {
     "id": 29,
-    "category": "Security Systems",
+    "category": "Drošības sistēma",
     "subcategories": [
       {
-        "name": "Safety Belt System",
+        "name": "Drošības jostu sistēma",
         "slug": "safety-belt-system"
       },
       {
-        "name": "Alarm System",
+        "name": "Signalizācija",
         "slug": "alarm-system"
       },
       {
-        "name": "Immobilizer",
+        "name": "Imobilaizers",
         "slug": "immobilizer"
       },
       {
-        "name": "Air Bag System",
+        "name": "Gaisa spilvenu sistēma",
         "slug": "air-bag-system"
       },
       {
@@ -1569,78 +1569,78 @@
   },
   {
     "id": 30,
-    "category": "Interior Equipment",
+    "category": "Salona apdare un aprīkojums",
     "subcategories": [
       {
-        "name": "Accessories",
+        "name": "Piederumi",
         "slug": "accessories"
       },
       {
-        "name": "Gas Springs",
+        "name": "Gāzes atsperes",
         "slug": "gas-springs"
       },
       {
-        "name": "Hand, Foot Lever System",
+        "name": "Rokas, kājas sviru vadība",
         "slug": "hand-foot-lever-system"
       },
       {
-        "name": "Seats",
+        "name": "Sēdekļi",
         "slug": "seats"
       },
       {
-        "name": "Panelling",
+        "name": "Apdare",
         "slug": "panelling"
       },
       {
-        "name": "Centre Console",
+        "name": "Centrālā konsole",
         "slug": "centre-console"
       },
       {
-        "name": "Cigarette Lighter",
+        "name": "Piepīpētājs",
         "slug": "cigarette-lighter"
       },
       {
-        "name": "Floor Mats",
+        "name": "Paklājiņi",
         "slug": "floor-mats"
       },
       {
-        "name": "Boot, Сargo Area",
+        "name": "Bagāžas, Kravas nodalījums",
         "slug": "boot-сargo-area"
       },
       {
-        "name": "Handles",
+        "name": "Rokturi",
         "slug": "handles"
       },
       {
-        "name": "Dashboard",
+        "name": "Mērinstrumentu panelis",
         "slug": "dashboard"
       },
       {
-        "name": "Window Regulator",
+        "name": "Stikla pacelšanas mehānisms",
         "slug": "window-regulator"
       },
       {
-        "name": "Fastening Clips",
+        "name": "Stiprināšanas fiksatori",
         "slug": "fastening-clips"
       },
       {
-        "name": "Armrests",
+        "name": "Elkoņbalsts",
         "slug": "armrests"
       },
       {
-        "name": "Glove Compartment",
+        "name": "Cimdu nodalījums",
         "slug": "glove-compartment"
       },
       {
-        "name": "Cupholder",
+        "name": "Dzērienu turētājs",
         "slug": "cupholder"
       },
       {
-        "name": "Sun Visor",
+        "name": "Saulessargs",
         "slug": "sun-visor"
       },
       {
-        "name": "Ashtray",
+        "name": "Pelnutrauks",
         "slug": "ashtray"
       }
     ],
@@ -1649,54 +1649,54 @@
   },
   {
     "id": 31,
-    "category": "Comfort Systems",
+    "category": "Komforta aprīkojums",
     "subcategories": [
       {
-        "name": "Seat Heating",
+        "name": "Sēdekļu apsilde",
         "slug": "seat-heating"
       },
       {
-        "name": "Parktronic, Reverse Alarm",
+        "name": "Parktronic, Reversā trauksme",
         "slug": "parktronic-reverse-alarm"
       },
       {
-        "name": "Window Regulator",
+        "name": "Stikla pacelšanas mehānisms",
         "slug": "window-regulator"
       },
       {
-        "name": "Motors, Relay, Switch",
+        "name": "Dzinējs, Relejs, Slēdzis",
         "slug": "motors-relay-switch"
       },
       {
-        "name": "Cruise Control",
+        "name": "Kruīzkontroles iekārta",
         "slug": "cruise-control"
       },
       {
-        "name": "Speeding Alarm",
+        "name": "Ātruma pārsniegšana",
         "slug": "speeding-alarm"
       },
       {
-        "name": "Rain Sensor",
+        "name": "Nokrišņu devējs",
         "slug": "rain-sensor"
       },
       {
-        "name": "Pumps",
+        "name": "Sūkņi",
         "slug": "pumps"
       },
       {
-        "name": "Central Locking",
+        "name": "Centrālā atslēga",
         "slug": "central-locking"
       },
       {
-        "name": "Parking Heater",
+        "name": "Autonomā apsildes sistēma",
         "slug": "parking-heater"
       },
       {
-        "name": "Tailgate control",
+        "name": "Bagāžas nodalījuma vadība",
         "slug": "tailgate-control"
       },
       {
-        "name": "Engine Preheater System (electric)",
+        "name": "Dzinēja apsildes sistēma (elektriskā)",
         "slug": "engine-preheater-system-electric"
       }
     ],
@@ -1705,34 +1705,34 @@
   },
   {
     "id": 32,
-    "category": "Compressed Air System",
+    "category": "Pneimatiskā sistēma",
     "subcategories": [
       {
-        "name": "Brake, Slave Cylinder",
+        "name": "Bremžu, Darba cilindrs",
         "slug": "brake-slave-cylinder"
       },
       {
-        "name": "Silencer",
+        "name": "Trokšņa slāpētājs",
         "slug": "silencer"
       },
       {
-        "name": "Air Dryer, Cartridge",
+        "name": "Gaisa sausinātājs, patrona",
         "slug": "air-dryer-cartridge"
       },
       {
-        "name": "Hoses, Pipes",
+        "name": "Vadi, Savienotājelementi",
         "slug": "hoses-pipes"
       },
       {
-        "name": "Pressure Regulator",
+        "name": "Spiediena regulators",
         "slug": "pressure-regulator"
       },
       {
-        "name": "Coupling Head",
+        "name": "Savienotājgalviņa",
         "slug": "coupling-head"
       },
       {
-        "name": "Valves",
+        "name": "Vārsti, Kompresora sistēma",
         "slug": "valves"
       }
     ],
@@ -1741,22 +1741,22 @@
   },
   {
     "id": 33,
-    "category": "Communication Systems",
+    "category": "Sakaru sistēmas",
     "subcategories": [
       {
-        "name": "Navigation",
+        "name": "Navigācija",
         "slug": "navigation"
       },
       {
-        "name": "Audio System",
+        "name": "Audiosistēma",
         "slug": "audio-system"
       },
       {
-        "name": "Aerial",
+        "name": "Antena",
         "slug": "aerial"
       },
       {
-        "name": "Gauge, Indications",
+        "name": "Mērinstrumenti",
         "slug": "gauge-indications"
       }
     ],
@@ -1765,18 +1765,18 @@
   },
   {
     "id": 34,
-    "category": "Electric Drive",
+    "category": "Elektropiedziņa",
     "subcategories": [
       {
-        "name": "Cooling System, Hybrid",
+        "name": "Dzesēšanas sistēma",
         "slug": "cooling-system-hybrid"
       },
       {
-        "name": "Charge Connector",
+        "name": "Uzlādes savienojums",
         "slug": "charge-connector"
       },
       {
-        "name": "Cooling System, Electric Drive",
+        "name": "Dzesēšanas sistēma",
         "slug": "cooling-system-electric-drive"
       }
     ],
@@ -1785,10 +1785,10 @@
   },
   {
     "id": 35,
-    "category": "Auto Chemical",
+    "category": "Chemija",
     "subcategories": [
       {
-        "name": "Body",
+        "name": "Ķermenis",
         "slug": "body"
       },
       {
@@ -1796,11 +1796,11 @@
         "slug": "salon"
       },
       {
-        "name": "Wheels",
+        "name": "Riteņi",
         "slug": "wheels"
       },
       {
-        "name": "Glass",
+        "name": "Stikls",
         "slug": "glass"
       }
     ],

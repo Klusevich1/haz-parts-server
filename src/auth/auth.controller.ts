@@ -4,10 +4,14 @@ import { RegisterDto } from './dto/register.dto';
 import { LoginDto } from './dto/login.dto';
 import { JwtAuthGuard } from 'src/common/guards/jwt-auth.guard';
 import { ChangePasswordDto } from '../user/dto/change-password.dto';
+import { EmailVerificationService } from './email-verification.service';
 
 @Controller('auth')
 export class AuthController {
-  constructor(private readonly authService: AuthService) {}
+  constructor(
+    private readonly authService: AuthService,
+    private readonly emailVerificationService: EmailVerificationService,
+  ) {}
 
   @Post('register')
   register(@Body() dto: RegisterDto) {
@@ -18,5 +22,21 @@ export class AuthController {
   @Post('login')
   login(@Body() dto: LoginDto) {
     return this.authService.login(dto);
+  }
+
+  @Post('send-confirmation-code')
+  async sendConfirmationCode(@Body('email') email: string) {
+    return this.emailVerificationService.sendCode(email);
+  }
+
+  @Post('verify-confirmation-code')
+  async verifyCodeAndRegister(@Body() dto: RegisterDto & { code: string }) {
+    const isValid = this.emailVerificationService.verifyCode(
+      dto.email,
+      dto.code,
+    );
+    if (isValid) {
+      return this.authService.register(dto);
+    }
   }
 }

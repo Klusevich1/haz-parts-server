@@ -1,54 +1,54 @@
 [
   {
     "id": 1,
-    "category": "Car Service parts",
+    "category": "Детали для ТО",
     "subcategories": [
       {
-        "name": "Engine Oil",
+        "name": "Масло моторное",
         "slug": "engine-oil"
       },
       {
-        "name": "Antifreeze",
+        "name": "Антифриз",
         "slug": "antifreeze"
       },
       {
-        "name": "Spark Plug",
+        "name": "Свеча зажигания",
         "slug": "spark-plug"
       },
       {
-        "name": "Wiper Blade, Rubber",
+        "name": "Щётки стеклоочистителя",
         "slug": "wiper-blade-rubber"
       },
       {
-        "name": "Disc Brake",
+        "name": "Дисковые тормоза",
         "slug": "disc-brake"
       },
       {
-        "name": "Drum Brake",
+        "name": "Барабанные тормоза",
         "slug": "drum-brake"
       },
       {
-        "name": "Oil Drain Screw",
+        "name": "Винт сливного отверстия",
         "slug": "oil-drain-screw"
       },
       {
-        "name": "Oil AT transmission",
+        "name": "Масло коробки автомат",
         "slug": "oil-at-transmission"
       },
       {
-        "name": "Oil Steering",
+        "name": "Масло ГУР",
         "slug": "oil-steering"
       },
       {
-        "name": "Set, Timing Belt",
+        "name": "Комплект ремня ГРМ",
         "slug": "set-timing-belt"
       },
       {
-        "name": "Tensioner Pulley, timing belt",
+        "name": "Ролик натяжителя, ГРМ",
         "slug": "tensioner-pulley-timing-belt"
       },
       {
-        "name": "Parts, tie rod assembly",
+        "name": "Рулевая тяга, части",
         "slug": "parts-tie-rod-assembly"
       }
     ],
@@ -57,34 +57,34 @@
   },
   {
     "id": 2,
-    "category": "Filters",
+    "category": "Фильтры",
     "subcategories": [
       {
-        "name": "Oil Filter",
+        "name": "Масляный",
         "slug": "oil-filter"
       },
       {
-        "name": "Air Filter",
+        "name": "Воздушный",
         "slug": "air-filter"
       },
       {
-        "name": "Fuel Filter",
+        "name": "Топливный",
         "slug": "fuel-filter"
       },
       {
-        "name": "Air Filter, Salon",
+        "name": "Фильтр салона",
         "slug": "air-filter-salon"
       },
       {
-        "name": "Filter Set",
+        "name": "Комплект фильтров",
         "slug": "filter-set"
       },
       {
-        "name": "Transmission, Steering",
+        "name": "Трансмиссии, Рулевого",
         "slug": "transmission-steering"
       },
       {
-        "name": "Coolant Filter",
+        "name": "Антифриза, ОЖ",
         "slug": "coolant-filter"
       }
     ],
@@ -93,78 +93,78 @@
   },
   {
     "id": 3,
-    "category": "Engine parts",
+    "category": "Двигатель",
     "subcategories": [
       {
-        "name": "Engine Oil",
+        "name": "Масло моторное",
         "slug": "engine-oil"
       },
       {
-        "name": "Gaskets",
+        "name": "Прокладки двигателя",
         "slug": "gaskets"
       },
       {
-        "name": "Belt Drive",
+        "name": "Ременный привод",
         "slug": "belt-drive"
       },
       {
-        "name": "Cylinders, Pistons",
+        "name": "Цилиндр, Поршень",
         "slug": "cylinders-pistons"
       },
       {
-        "name": "Engine Guard, Skid Plate",
+        "name": "Защита двигателя",
         "slug": "engine-guard-skid-plate"
       },
       {
-        "name": "Lubrication",
+        "name": "Система смазки",
         "slug": "lubrication"
       },
       {
-        "name": "Sensors, Electrics",
+        "name": "Датчики, Электрика",
         "slug": "sensors-electrics"
       },
       {
-        "name": "Engine Timing Control",
+        "name": "Механизм ГРМ",
         "slug": "engine-timing-control"
       },
       {
-        "name": "Engine Air Supply",
+        "name": "Система подачи воздуха",
         "slug": "engine-air-supply"
       },
       {
-        "name": "Engine Mountings",
+        "name": "Крепление двигателя",
         "slug": "engine-mountings"
       },
       {
-        "name": "Cylinder Head, Parts",
+        "name": "Головка цилиндров",
         "slug": "cylinder-head-parts"
       },
       {
-        "name": "Crankshaft Drive",
+        "name": "Кривошипно-шатунный механизм",
         "slug": "crankshaft-drive"
       },
       {
-        "name": "Engine crankcase",
+        "name": "Картер двигателя",
         "slug": "engine-crankcase"
       },
       {
-        "name": "Engine Cover",
+        "name": "Кожух двигателя",
         "slug": "engine-cover"
       },
       {
-        "name": "Exhaust Emission Control",
+        "name": "Система очистки ОГ",
         "slug": "exhaust-emission-control"
       },
       {
-        "name": "Tuning",
+        "name": "Тюнинг",
         "slug": "tuning"
       },
       {
-        "name": "Complete Engine, Sub-Assembly",
+        "name": "Двигатель в сборе, части",
         "slug": "complete-engine-sub-assembly"
       },
       {
-        "name": "Tools",
+        "name": "Инструменты",
         "slug": "tools"
       }
     ],
@@ -173,58 +173,58 @@
   },
   {
     "id": 4,
-    "category": "Axle & wheels Mounting",
+    "category": "Подвеска колес",
     "subcategories": [
       {
-        "name": "Struts, Rods",
+        "name": "Стойки, тяги",
         "slug": "struts-rods"
       },
       {
-        "name": "Stabiliser",
+        "name": "Стабилизатор",
         "slug": "stabiliser"
       },
       {
-        "name": "Wheel Hub, Mounting",
+        "name": "Ступица колеса, крепление",
         "slug": "wheel-hub-mounting"
       },
       {
-        "name": "Joints",
+        "name": "Шаровая опора",
         "slug": "joints"
       },
       {
-        "name": "Suspension Arm Joint",
+        "name": "Подвеска поперечного рычага",
         "slug": "suspension-arm-joint"
       },
       {
-        "name": "Wheel Fastening",
+        "name": "Крепление колеса",
         "slug": "wheel-fastening"
       },
       {
-        "name": "Mounting, suspension strut",
+        "name": "Крепление стойки амортизатора",
         "slug": "mounting-suspension-strut"
       },
       {
-        "name": "Stub Axle, repair Kit",
+        "name": "Поворотный кулак, ремкомплект",
         "slug": "stub-axle-repair-kit"
       },
       {
-        "name": "Axle Support, Axle Beam",
+        "name": "Балка моста, подвеска оси",
         "slug": "axle-support-axle-beam"
       },
       {
-        "name": "Dome, Transverse Link Strut",
+        "name": "Растяжка поперечного рычага",
         "slug": "dome-transverse-link-strut"
       },
       {
-        "name": "Tyre Pressure control",
+        "name": "Контроль давления в шинах",
         "slug": "tyre-pressure-control"
       },
       {
-        "name": "Track widening",
+        "name": "Расширение колеи",
         "slug": "track-widening"
       },
       {
-        "name": "Tools",
+        "name": "Инструменты",
         "slug": "tools"
       }
     ],
@@ -233,94 +233,94 @@
   },
   {
     "id": 5,
-    "category": "Brake System",
+    "category": "Тормозная система",
     "subcategories": [
       {
-        "name": "Disc Brake",
+        "name": "Дисковые тормоза",
         "slug": "disc-brake"
       },
       {
-        "name": "Drum Brake",
+        "name": "Барабанные тормоза",
         "slug": "drum-brake"
       },
       {
-        "name": "Brake Calipers",
+        "name": "Суппорт дисковый",
         "slug": "brake-calipers"
       },
       {
-        "name": "ABS system",
+        "name": "ABS система",
         "slug": "abs-system"
       },
       {
-        "name": "Brake Fluid",
+        "name": "Тормозная жидкость",
         "slug": "brake-fluid"
       },
       {
-        "name": "Wheel Cylinders",
+        "name": "Колесный тормозной цилиндр",
         "slug": "wheel-cylinders"
       },
       {
-        "name": "Wear Indicator",
+        "name": "Датчик износа",
         "slug": "wear-indicator"
       },
       {
-        "name": "Brake Master Cylinder",
+        "name": "Главный цилиндр",
         "slug": "brake-master-cylinder"
       },
       {
-        "name": "Handbrake",
+        "name": "Стояночный тормоз",
         "slug": "handbrake"
       },
       {
-        "name": "Control Levers, Cables",
+        "name": "Рычаги, Тросы, Тяги",
         "slug": "control-levers-cables"
       },
       {
-        "name": "Valves",
+        "name": "Клапана",
         "slug": "valves"
       },
       {
-        "name": "Filter, breaks",
+        "name": "Фильтр, тормозная система",
         "slug": "filter-breaks"
       },
       {
-        "name": "Vacuum Pump",
+        "name": "Вакуумный усилитель тормоза",
         "slug": "vacuum-pump"
       },
       {
-        "name": "Brake Booster",
+        "name": "Усилитель вакуумный",
         "slug": "brake-booster"
       },
       {
-        "name": "Brake Light Switch",
+        "name": "Включатель стоповых сигналов",
         "slug": "brake-light-switch"
       },
       {
-        "name": "Pressure Accumulator, Switch",
+        "name": "Гидроаккумулятор, переключатель",
         "slug": "pressure-accumulator-switch"
       },
       {
-        "name": "Brake Power Regulator",
+        "name": "Регулятор силы пружины",
         "slug": "brake-power-regulator"
       },
       {
-        "name": "High Performance Brakes",
+        "name": "Экономичный тормоз",
         "slug": "high-performance-brakes"
       },
       {
-        "name": "Brake Hoses",
+        "name": "Шланги",
         "slug": "brake-hoses"
       },
       {
-        "name": "Brake Pipes",
+        "name": "Трубопроводы",
         "slug": "brake-pipes"
       },
       {
-        "name": "Brake Fluid Reservoir",
+        "name": "Бачок тормозной жидкости",
         "slug": "brake-fluid-reservoir"
       },
       {
-        "name": "Tools",
+        "name": "Инструменты",
         "slug": "tools"
       }
     ],
@@ -329,26 +329,26 @@
   },
   {
     "id": 6,
-    "category": "Wheels",
+    "category": "Колёса",
     "subcategories": [
       {
-        "name": "Tyres",
+        "name": "Шины",
         "slug": "tyres"
       },
       {
-        "name": "Rims",
+        "name": "Диски колесные",
         "slug": "rims"
       },
       {
-        "name": "Nuts, Bolts, Caps",
+        "name": "Гайки и болты",
         "slug": "nuts-bolts-caps"
       },
       {
-        "name": "Tyre Pressure control",
+        "name": "Контроль давления в шинах",
         "slug": "tyre-pressure-control"
       },
       {
-        "name": "Cover, emblem",
+        "name": "Колпаки и эмблемы",
         "slug": "cover-emblem"
       }
     ],
@@ -357,46 +357,46 @@
   },
   {
     "id": 7,
-    "category": "Suspension",
+    "category": "Амортизация",
     "subcategories": [
       {
-        "name": "Shock Absorber",
+        "name": "Амортизатор",
         "slug": "shock-absorber"
       },
       {
-        "name": "Coil Springs",
+        "name": "Пружины",
         "slug": "coil-springs"
       },
       {
-        "name": "Strut, Bearing",
+        "name": "Опорный подшипник",
         "slug": "strut-bearing"
       },
       {
-        "name": "Strut, parts",
+        "name": "Стойка в сборе",
         "slug": "strut-parts"
       },
       {
-        "name": "Suspension Kit, complete",
+        "name": "Комплект амортизатора в сборе",
         "slug": "suspension-kit-complete"
       },
       {
-        "name": "Oil",
+        "name": "Масла, амортизатор",
         "slug": "oil"
       },
       {
-        "name": "Leaf Spring",
+        "name": "Листовая рессора",
         "slug": "leaf-spring"
       },
       {
-        "name": "Pneumatic",
+        "name": "Пневматическая подвеска",
         "slug": "pneumatic"
       },
       {
-        "name": "Leveling Control, Hydraulics",
+        "name": "Регулировка просвета, гидравлика",
         "slug": "leveling-control-hydraulics"
       },
       {
-        "name": "Tools",
+        "name": "Инструменты",
         "slug": "tools"
       }
     ],
@@ -405,38 +405,38 @@
   },
   {
     "id": 8,
-    "category": "Belt Drive",
+    "category": "Ременный привод",
     "subcategories": [
       {
-        "name": "Timing Belt, Set",
+        "name": "Ремень ГРМ",
         "slug": "timing-belt-set"
       },
       {
-        "name": "V-Ribbed Belt, Set",
+        "name": "Поликлиновой ремень",
         "slug": "v-ribbed-belt-set"
       },
       {
-        "name": "V-Belt, Set",
+        "name": "Клиновой ремень",
         "slug": "v-belt-set"
       },
       {
-        "name": "Belt Pulley",
+        "name": "Ременный шкив",
         "slug": "belt-pulley"
       },
       {
-        "name": "Flexible Coupling Sleeve",
+        "name": "Эластичная муфта сцепления",
         "slug": "flexible-coupling-sleeve"
       },
       {
-        "name": "Alternator Freewheel Clutch",
+        "name": "Муфта свободного хода генератора",
         "slug": "alternator-freewheel-clutch"
       },
       {
-        "name": "Bolts, Washers",
+        "name": "Болты, шайбы",
         "slug": "bolts-washers"
       },
       {
-        "name": "Tools",
+        "name": "Инструменты",
         "slug": "tools"
       }
     ],
@@ -445,70 +445,70 @@
   },
   {
     "id": 9,
-    "category": "Clutch, Parts",
+    "category": "Сцепление",
     "subcategories": [
       {
-        "name": "Clutch Disc",
+        "name": "Диск сцепления",
         "slug": "clutch-disc"
       },
       {
-        "name": "Clutch Pressure Plate",
+        "name": "Корзина сцепления",
         "slug": "clutch-pressure-plate"
       },
       {
-        "name": "Releaser, clutch",
+        "name": "Выжимной механизм",
         "slug": "releaser-clutch"
       },
       {
-        "name": "Hydraulic Fluid",
+        "name": "Гидрожидкость",
         "slug": "hydraulic-fluid"
       },
       {
-        "name": "Gaskets, Gasket Sets",
+        "name": "Прокладки",
         "slug": "gaskets-gasket-sets"
       },
       {
-        "name": "Pilot Bearing",
+        "name": "Направляющий подшипник",
         "slug": "pilot-bearing"
       },
       {
-        "name": "Clutch complete, Repair Kit",
+        "name": "Комплект сцепления",
         "slug": "clutch-complete-repair-kit"
       },
       {
-        "name": "Clutch Control",
+        "name": "Цилиндры и элементы управления",
         "slug": "clutch-control"
       },
       {
-        "name": "Hydraulic Filter, clutch",
+        "name": "Гидравлический фильтр",
         "slug": "hydraulic-filter-clutch"
       },
       {
-        "name": "Automatic Clutch",
+        "name": "Автоматическое сцепление",
         "slug": "automatic-clutch"
       },
       {
-        "name": "Clutch Torque Limiter",
+        "name": "Ограничитель крутящего момента",
         "slug": "clutch-torque-limiter"
       },
       {
-        "name": "Clutch Housing",
+        "name": "Корпус сцепления",
         "slug": "clutch-housing"
       },
       {
-        "name": "Torsion Damper",
+        "name": "Торсионный демпфер",
         "slug": "torsion-damper"
       },
       {
-        "name": "Flywheel",
+        "name": "Маховик",
         "slug": "flywheel"
       },
       {
-        "name": "Clutch Conversion Kit",
+        "name": "Комплект переоборудования",
         "slug": "clutch-conversion-kit"
       },
       {
-        "name": "Tools",
+        "name": "Инструменты",
         "slug": "tools"
       }
     ],
@@ -517,138 +517,138 @@
   },
   {
     "id": 10,
-    "category": "Spark, Glow Ignition",
+    "category": "Зажигание, накаливание",
     "subcategories": [
       {
-        "name": "Spark Plug",
+        "name": "Свеча зажигания",
         "slug": "spark-plug"
       },
       {
-        "name": "Glow Plug",
+        "name": "Свеча накаливания",
         "slug": "glow-plug"
       },
       {
-        "name": "Ignition Coil, units",
+        "name": "Катушка зажигания, элементы",
         "slug": "ignition-coil-units"
       },
       {
-        "name": "Ignition Distributor, parts",
+        "name": "Распределитель зажигания",
         "slug": "ignition-distributor-parts"
       },
       {
-        "name": "Ignition Cable, parts",
+        "name": "Свечной кабель, элементы",
         "slug": "ignition-cable-parts"
       },
       {
-        "name": "Resistor",
+        "name": "Дополнительный резистор",
         "slug": "resistor"
       },
       {
-        "name": "Scale (ignition setting)",
+        "name": "Шкала (регулировка зажигания)",
         "slug": "scale-ignition-setting"
       },
       {
-        "name": "Glow Control Unit",
+        "name": "Контрольный блок свечей накаливания",
         "slug": "glow-control-unit"
       },
       {
-        "name": "Control Unit, Relay",
+        "name": "Блок управления, реле",
         "slug": "control-unit-relay"
       },
       {
-        "name": "Ignition Switch Unit, Coil",
+        "name": "Усилитель искры, катушка",
         "slug": "ignition-switch-unit-coil"
       },
       {
-        "name": "Pulse Generator",
+        "name": "Генератор импульсов",
         "slug": "pulse-generator"
       },
       {
-        "name": "Vacuum System",
+        "name": "Вакуумная система",
         "slug": "vacuum-system"
       },
       {
-        "name": "Flame Start System",
+        "name": "Факельное устройство",
         "slug": "flame-start-system"
       },
       {
-        "name": "Switch, preheating",
+        "name": "Переключатель предпускового обогрева",
         "slug": "switch-preheating"
       },
       {
-        "name": "Tools",
+        "name": "Инструменты",
         "slug": "tools"
       }
     ],
     "image": "/resources/categories/ignition.jpg",
     "slug": "spark-glow-ignition"
-  },
+  }, 
   {
     "id": 11,
-    "category": "Body parts",
+    "category": "Кузовные детали",
     "subcategories": [
       {
-        "name": "Windows, Mirrors",
+        "name": "Стекла, зеркала",
         "slug": "windows-mirrors"
       },
       {
-        "name": "Headlight, parts",
+        "name": "Основная фара",
         "slug": "headlight-parts"
       },
       {
-        "name": "Gas Springs",
+        "name": "Газовые пружины, упоры",
         "slug": "gas-springs"
       },
       {
-        "name": "Hatches, Bonnets, Doors, Roof",
+        "name": "Капот, двери, люк, крыша",
         "slug": "hatches-bonnets-doors-roof"
       },
       {
-        "name": "Trim, Protection, Emblems",
+        "name": "Решетка, молдинг, эмблемы",
         "slug": "trim-protection-emblems"
       },
       {
-        "name": "Bumper, Wing, Body parts",
+        "name": "Крыло, бампер, части кузова",
         "slug": "bumper-wing-body-parts"
       },
       {
-        "name": "Vehicle Front",
+        "name": "Передняя часть",
         "slug": "vehicle-front"
       },
       {
-        "name": "Vehicle Rear",
+        "name": "Задняя часть",
         "slug": "vehicle-rear"
       },
       {
-        "name": "Passenger Cabin",
+        "name": "Кабина пассажира",
         "slug": "passenger-cabin"
       },
       {
-        "name": "Lights",
+        "name": "Система освещения",
         "slug": "lights"
       },
       {
-        "name": "Driver Cab",
+        "name": "Кабина водителя",
         "slug": "driver-cab"
       },
       {
-        "name": "Auxiliary Lights, parts",
+        "name": "Дополнительная фара",
         "slug": "auxiliary-lights-parts"
       },
       {
-        "name": "Rollbar",
+        "name": "Дуга безопасности",
         "slug": "rollbar"
       },
       {
-        "name": "Racks, Carriers of Headlight",
+        "name": "Крепление фары",
         "slug": "racks-carriers-of-headlight"
       },
       {
-        "name": "Electromotor",
+        "name": "Электромотор",
         "slug": "electromotor"
       },
       {
-        "name": "Radiator mounting",
+        "name": "Крепление радиатора",
         "slug": "radiator-mounting"
       }
     ],
@@ -657,154 +657,154 @@
   },
   {
     "id": 12,
-    "category": "Electrics",
+    "category": "Электрика",
     "subcategories": [
       {
-        "name": "Battery",
+        "name": "Аккумулятор",
         "slug": "battery"
       },
       {
-        "name": "Sensors",
+        "name": "Датчики",
         "slug": "sensors"
       },
       {
-        "name": "Alternator",
+        "name": "Генератор",
         "slug": "alternator"
       },
       {
-        "name": "Headlight",
+        "name": "Основная фара",
         "slug": "headlight"
       },
       {
-        "name": "Lights",
+        "name": "Система освещения",
         "slug": "lights"
       },
       {
-        "name": "Flasher Unit, Relay",
+        "name": "Указатель поворотов, реле",
         "slug": "flasher-unit-relay"
       },
       {
-        "name": "Auxiliary Lights",
+        "name": "Дополнительная фара",
         "slug": "auxiliary-lights"
       },
       {
-        "name": "Fuse Box, Holder",
+        "name": "Коробка предохранителей",
         "slug": "fuse-box-holder"
       },
       {
-        "name": "Electric Horn",
+        "name": "Звуковой сигнал",
         "slug": "electric-horn"
       },
       {
-        "name": "Relay",
+        "name": "Реле",
         "slug": "relay"
       },
       {
-        "name": "Multifunctional Relay",
+        "name": "Многофункциональное реле",
         "slug": "multifunctional-relay"
       },
       {
-        "name": "Starter Alternator",
+        "name": "Пусковой генератор",
         "slug": "starter-alternator"
       },
       {
-        "name": "Harness",
+        "name": "Кабельный комплект",
         "slug": "harness"
       },
       {
-        "name": "Central Electrics",
+        "name": "Центральное электрооборудование",
         "slug": "central-electrics"
       },
       {
-        "name": "Starter System",
+        "name": "Система стартера",
         "slug": "starter-system"
       },
       {
-        "name": "Light Switches, Controls",
+        "name": "Переключатели, блок управления",
         "slug": "light-switches-controls"
       },
       {
-        "name": "Indicators",
+        "name": "Индикаторы",
         "slug": "indicators"
       },
       {
-        "name": "Multi-Function Switch",
+        "name": "Многофункциональный переключатель",
         "slug": "multi-function-switch"
       },
       {
-        "name": "Control Instruments",
+        "name": "Контрольные приборы",
         "slug": "control-instruments"
       },
       {
-        "name": "CAN Bus",
+        "name": "Сеть датчиков (CAN)",
         "slug": "can-bus"
       },
       {
-        "name": "Reflectors",
+        "name": "Отражатели",
         "slug": "reflectors"
       },
       {
-        "name": "Control Units",
+        "name": "Приборы управления",
         "slug": "control-units"
       },
       {
-        "name": "Tools",
+        "name": "Инструменты",
         "slug": "tools"
       }
     ],
-    "image": "/resources/categories/electrics.webp",
+    "image": "/resources/categories/electrics.jpg",
     "slug": "electrics"
   },
   {
     "id": 13,
-    "category": "Manual Transmission",
+    "category": "Механическая коробка",
     "subcategories": [
       {
-        "name": "Oil",
+        "name": "Масла",
         "slug": "oil"
       },
       {
-        "name": "Gaskets, Seals",
+        "name": "Прокладки",
         "slug": "gaskets-seals"
       },
       {
-        "name": "Transmission",
+        "name": "Механическая коробка передач",
         "slug": "transmission"
       },
       {
-        "name": "Transmission Control",
+        "name": "Управление передачами",
         "slug": "transmission-control"
       },
       {
-        "name": "Transmission Mounting",
+        "name": "Крепление, подушки",
         "slug": "transmission-mounting"
       },
       {
-        "name": "Transmission Control, Hydraulics",
+        "name": "Управление, гидравлика",
         "slug": "transmission-control-hydraulics"
       },
       {
-        "name": "Repair Kits",
+        "name": "Ремкомплекты МКПП",
         "slug": "repair-kits"
       },
       {
-        "name": "Sensor",
+        "name": "Датчик",
         "slug": "sensor"
       },
       {
-        "name": "Transmission Housing, Parts",
+        "name": "Корпус, комплектующие",
         "slug": "transmission-housing-parts"
       },
       {
-        "name": "Synchronizer Ring",
+        "name": "Кольцо синхронизатора",
         "slug": "synchronizer-ring"
       },
       {
-        "name": "Radiator",
+        "name": "Радиатор",
         "slug": "radiator"
       },
       {
-        "name": "Clamp",
+        "name": "Кронштейн",
         "slug": "clamp"
       }
     ],
@@ -813,78 +813,78 @@
   },
   {
     "id": 14,
-    "category": "Automatic Transmission",
+    "category": "Коробка автомат",
     "subcategories": [
       {
-        "name": "Oil AT transmission",
+        "name": "Масло коробки автомат",
         "slug": "oil-at-transmission"
       },
       {
-        "name": "Gaskets, Seals",
+        "name": "Сальники",
         "slug": "gaskets-seals"
       },
       {
-        "name": "Transmission",
+        "name": "Коробка передач",
         "slug": "transmission"
       },
       {
-        "name": "Transmission Control, Hydraulics",
+        "name": "Управление, гидравлика",
         "slug": "transmission-control-hydraulics"
       },
       {
-        "name": "Transmission Mounting",
+        "name": "Подвеска",
         "slug": "transmission-mounting"
       },
       {
-        "name": "Transmission Housing, Parts",
+        "name": "Корпус, составные части",
         "slug": "transmission-housing-parts"
       },
       {
-        "name": "Oil Pump",
+        "name": "Масляный насос",
         "slug": "oil-pump"
       },
       {
-        "name": "Oil Change Parts Set",
+        "name": "Комплект запчастей для замены масла",
         "slug": "oil-change-parts-set"
       },
       {
-        "name": "Oil Pan, Parts",
+        "name": "Масляный поддон АКПП, комплектующие",
         "slug": "oil-pan-parts"
       },
       {
-        "name": "Repair Kits",
+        "name": "Ремкомплекты АКПП",
         "slug": "repair-kits"
       },
       {
-        "name": "Brake Band",
+        "name": "Тормозная лента",
         "slug": "brake-band"
       },
       {
-        "name": "Sensor",
+        "name": "Датчик",
         "slug": "sensor"
       },
       {
-        "name": "Cable",
+        "name": "Тросовый привод",
         "slug": "cable"
       },
       {
-        "name": "Lining Discs, Sets",
+        "name": "Ламели",
         "slug": "lining-discs-sets"
       },
       {
-        "name": "Radiator",
+        "name": "Радиатор",
         "slug": "radiator"
       },
       {
-        "name": "Torque Converter",
+        "name": "Конвертер крутящего момента",
         "slug": "torque-converter"
       },
       {
-        "name": "Oil Dipstick",
+        "name": "Указатель уровня масла",
         "slug": "oil-dipstick"
       },
       {
-        "name": "Clamp",
+        "name": "Кронштейн",
         "slug": "clamp"
       }
     ],
@@ -893,46 +893,46 @@
   },
   {
     "id": 15,
-    "category": "Windscreen Cleaning",
+    "category": "Очистка окон, фар",
     "subcategories": [
       {
-        "name": "Wiper Blade, Rubber",
+        "name": "Щётки стеклоочистителя",
         "slug": "wiper-blade-rubber"
       },
       {
-        "name": "Wiper Arm, Bearing",
+        "name": "Держатель щётки, подшипник",
         "slug": "wiper-arm-bearing"
       },
       {
-        "name": "Headlight Washer System",
+        "name": "Система очистки фар",
         "slug": "headlight-washer-system"
       },
       {
-        "name": "Washer Fluid Jet",
+        "name": "Форсунка",
         "slug": "washer-fluid-jet"
       },
       {
-        "name": "Wiper Linkage, Drive",
+        "name": "Привод, тяги и рычаги",
         "slug": "wiper-linkage-drive"
       },
       {
-        "name": "Wipers Motor",
+        "name": "Мотор стеклоочистителя",
         "slug": "wipers-motor"
       },
       {
-        "name": "Water Pump",
+        "name": "Насос омывателя",
         "slug": "water-pump"
       },
       {
-        "name": "Switch, Relay",
+        "name": "Реле, переключатель",
         "slug": "switch-relay"
       },
       {
-        "name": "Water Tank, Pipe",
+        "name": "Бачок, трубки",
         "slug": "water-tank-pipe"
       },
       {
-        "name": "System Kit",
+        "name": "Комплект системы",
         "slug": "system-kit"
       }
     ],
@@ -941,30 +941,30 @@
   },
   {
     "id": 16,
-    "category": "Wheel Drive",
+    "category": "Привод колеса",
     "subcategories": [
       {
-        "name": "Drive Shaft",
+        "name": "Приводной вал",
         "slug": "drive-shaft"
       },
       {
-        "name": "Bellow",
+        "name": "Пыльник привода",
         "slug": "bellow"
       },
       {
-        "name": "Constant-velocity joint, shaft",
+        "name": "ШРУС, вал",
         "slug": "constant-velocity-joint-shaft"
       },
       {
-        "name": "Tripod Hub",
+        "name": "Муфта с шипами",
         "slug": "tripod-hub"
       },
       {
-        "name": "Assembly Parts",
+        "name": "Крепеж, комплектующие",
         "slug": "assembly-parts"
       },
       {
-        "name": "Planetary Axle Gear",
+        "name": "Планетарный мост",
         "slug": "planetary-axle-gear"
       }
     ],
@@ -973,62 +973,62 @@
   },
   {
     "id": 17,
-    "category": "Fuel Supply System",
+    "category": "Система подачи топлива",
     "subcategories": [
       {
-        "name": "Fuel Filter, housing",
+        "name": "Топливный фильтр, корпус",
         "slug": "fuel-filter-housing"
       },
       {
-        "name": "Fuel Pump, Parts",
+        "name": "Топливный насос, комплектующие",
         "slug": "fuel-pump-parts"
       },
       {
-        "name": "Fuel Radiator",
+        "name": "Топливный радиатор",
         "slug": "fuel-radiator"
       },
       {
-        "name": "Fuel Preheater",
+        "name": "Предварительный нагреватель топлива",
         "slug": "fuel-preheater"
       },
       {
-        "name": "Fuel Tank, Parts",
+        "name": "Топливный бак, комплектующие",
         "slug": "fuel-tank-parts"
       },
       {
-        "name": "Fuel Lines",
+        "name": "Соединительные элементы, провода",
         "slug": "fuel-lines"
       },
       {
-        "name": "Fuel Sender Unit",
+        "name": "Датчик уровня топлива",
         "slug": "fuel-sender-unit"
       },
       {
-        "name": "Pulsation Damper",
+        "name": "Гаситель пульсаций",
         "slug": "pulsation-damper"
       },
       {
-        "name": "Fuel cock, Maintenance",
+        "name": "Топливный кран, обслуживание",
         "slug": "fuel-cock-maintenance"
       },
       {
-        "name": "Fuel Pressure Regulator, Switch",
+        "name": "Датчик давления, выключатель",
         "slug": "fuel-pressure-regulator-switch"
       },
       {
-        "name": "Valves",
+        "name": "Топливный клапан",
         "slug": "valves"
       },
       {
-        "name": "Water Sensor",
+        "name": "Датчик уровня воды",
         "slug": "water-sensor"
       },
       {
-        "name": "Fuel Delivery Unit, Complete",
+        "name": "Трубка забора топлива в сборе",
         "slug": "fuel-delivery-unit-complete"
       },
       {
-        "name": "Tools",
+        "name": "Инструменты",
         "slug": "tools"
       }
     ],
@@ -1037,82 +1037,82 @@
   },
   {
     "id": 18,
-    "category": "Steering",
+    "category": "Рулевое управление",
     "subcategories": [
       {
-        "name": "Tie Rod Assembly, Parts",
+        "name": "Рулевая тяга, составляющие",
         "slug": "tie-rod-assembly-parts"
       },
       {
-        "name": "Steering Joints",
+        "name": "Рулевой наконечник / рулевая тяга",
         "slug": "steering-joints"
       },
       {
-        "name": "Oil Steering",
+        "name": "Масло ГУР",
         "slug": "oil-steering"
       },
       {
-        "name": "Steering Gear, Pump",
+        "name": "Рулевая рейка / насос ГУР",
         "slug": "steering-gear-pump"
       },
       {
-        "name": "Steering Mounting",
+        "name": "Подвеска рулевого управления",
         "slug": "steering-mounting"
       },
       {
-        "name": "Steering Column",
+        "name": "Колонка, вал рулевого управления",
         "slug": "steering-column"
       },
       {
-        "name": "Oil Pressure Switch",
+        "name": "Датчик давления масла",
         "slug": "oil-pressure-switch"
       },
       {
-        "name": "Steering Box",
+        "name": "Корпус рулевого механизма",
         "slug": "steering-box"
       },
       {
-        "name": "Filter, power steering",
+        "name": "Фильтр рулевого управления",
         "slug": "filter-power-steering"
       },
       {
-        "name": "Control Arm, Bush",
+        "name": "Рулевая сошка, Втулка",
         "slug": "control-arm-bush"
       },
       {
-        "name": "Steering Linkage",
+        "name": "Передаточные элементы рулевого управления",
         "slug": "steering-linkage"
       },
       {
-        "name": "Expansion Tank",
+        "name": "Расширительный бачок",
         "slug": "expansion-tank"
       },
       {
-        "name": "Bellow, Seal",
+        "name": "Гофрированный кожух, прокладки",
         "slug": "bellow-seal"
       },
       {
-        "name": "Steering Damper",
+        "name": "Рулевой амортизатор",
         "slug": "steering-damper"
       },
       {
-        "name": "Steering Hose, Pipe",
+        "name": "Шланги, тросики рулевого провода",
         "slug": "steering-hose-pipe"
       },
       {
-        "name": "Steering Wheel, Parts",
+        "name": "Руль, комплектующие",
         "slug": "steering-wheel-parts"
       },
       {
-        "name": "Steering Angle Sensor",
+        "name": "Датчик угла поворота",
         "slug": "steering-angle-sensor"
       },
       {
-        "name": "Control, Regulation",
+        "name": "Управление, регулировка",
         "slug": "control-regulation"
       },
       {
-        "name": "Oil Dipstick",
+        "name": "Указатель уровня масла",
         "slug": "oil-dipstick"
       }
     ],
@@ -1121,54 +1121,54 @@
   },
   {
     "id": 19,
-    "category": "Cooling System",
+    "category": "Охлаждение двигателя",
     "subcategories": [
       {
-        "name": "Antifreeze",
+        "name": "Антифриз",
         "slug": "antifreeze"
       },
       {
-        "name": "Radiator, Oil Cooler",
+        "name": "Радиатор охлаждения / масляный радиатор",
         "slug": "radiator-oil-cooler"
       },
       {
-        "name": "Radiator Fan",
+        "name": "Вентилятор радиатора",
         "slug": "radiator-fan"
       },
       {
-        "name": "Thermostat, Gasket",
+        "name": "Термостат, прокладка",
         "slug": "thermostat-gasket"
       },
       {
-        "name": "Sensors, temperature",
+        "name": "Датчики температуры",
         "slug": "sensors-temperature"
       },
       {
-        "name": "Water Pump, Gasket",
+        "name": "Водяной насос, прокладка",
         "slug": "water-pump-gasket"
       },
       {
-        "name": "Relay",
+        "name": "Реле",
         "slug": "relay"
       },
       {
-        "name": "Hoses, Pipes, Flanges",
+        "name": "Шланг радиатора",
         "slug": "hoses-pipes-flanges"
       },
       {
-        "name": "Air Cooling",
+        "name": "Система воздушного охлаждения",
         "slug": "air-cooling"
       },
       {
-        "name": "Cooling Module",
+        "name": "Модуль охлаждения",
         "slug": "cooling-module"
       },
       {
-        "name": "Control Unit",
+        "name": "Блок управления",
         "slug": "control-unit"
       },
       {
-        "name": "Tools, Parts",
+        "name": "Инструменты, Запчасти",
         "slug": "tools-parts"
       }
     ],
@@ -1177,78 +1177,78 @@
   },
   {
     "id": 20,
-    "category": "Exhaust System",
+    "category": "Система выпуска",
     "subcategories": [
       {
-        "name": "Exhaust System, complete",
+        "name": "Глушитель в сборе",
         "slug": "exhaust-system-complete"
       },
       {
-        "name": "Silencer",
+        "name": "Глушитель",
         "slug": "silencer"
       },
       {
-        "name": "Sensors",
+        "name": "Датчики",
         "slug": "sensors"
       },
       {
-        "name": "Resonator",
+        "name": "Резонатор",
         "slug": "resonator"
       },
       {
-        "name": "Lambda Sensor",
+        "name": "Лямбда-зонд",
         "slug": "lambda-sensor"
       },
       {
-        "name": "Manifold",
+        "name": "Коллектор",
         "slug": "manifold"
       },
       {
-        "name": "Catalytic Converter",
+        "name": "Катализатор",
         "slug": "catalytic-converter"
       },
       {
-        "name": "Heat Shield",
+        "name": "Защита от перегрева",
         "slug": "heat-shield"
       },
       {
-        "name": "Soot, Particulate filter Regeneration",
+        "name": "Регенерация фильтра (с, ч)",
         "slug": "soot-particulate-filter-regeneration"
       },
       {
-        "name": "Euro1, Euro2, D3 Conversion",
+        "name": "Переоснащение Евро 1, Евро 2, D3",
         "slug": "euro1-euro2-d3-conversion"
       },
       {
-        "name": "Soot, Particulate Filter",
+        "name": "Сажевый, частичный фильтр",
         "slug": "soot-particulate-filter"
       },
       {
-        "name": "Exhaust Pipes",
+        "name": "Трубы",
         "slug": "exhaust-pipes"
       },
       {
-        "name": "Charger",
+        "name": "Нагнетатель выхлопа",
         "slug": "charger"
       },
       {
-        "name": "Exhaust Gas Door",
+        "name": "Выпускная заслонка",
         "slug": "exhaust-gas-door"
       },
       {
-        "name": "Silencer, sport set",
+        "name": "Глушитель для спор. авто.",
         "slug": "silencer-sport-set"
       },
       {
-        "name": "Assembly Parts, Gaskets",
+        "name": "Монтажные детали, Прокладки",
         "slug": "assembly-parts-gaskets"
       },
       {
-        "name": "Urea Injection",
+        "name": "Впрыск карбамида",
         "slug": "urea-injection"
       },
       {
-        "name": "Baffle",
+        "name": "Насадка",
         "slug": "baffle"
       }
     ],
@@ -1257,22 +1257,22 @@
   },
   {
     "id": 21,
-    "category": "Outer Accessories",
+    "category": "Наружные аксессуары",
     "subcategories": [
       {
-        "name": "Car cover",
+        "name": "Чехол на автомобиль",
         "slug": "car-cover"
       },
       {
-        "name": "Gas Springs",
+        "name": "Газовые пружины",
         "slug": "gas-springs"
       },
       {
-        "name": "Wind Deflector, Mounted parts",
+        "name": "Аэродефлектор, Навесные части",
         "slug": "wind-deflector-mounted-parts"
       },
       {
-        "name": "Snow Chains",
+        "name": "Колесные цепи противоскольжения",
         "slug": "snow-chains"
       }
     ],
@@ -1281,66 +1281,66 @@
   },
   {
     "id": 22,
-    "category": "Air Conditioning",
+    "category": "Кондиционер",
     "subcategories": [
       {
-        "name": "Refrigerant, Freon",
+        "name": "Охлаждающая жидкость, фреон",
         "slug": "refrigerant-freon"
       },
       {
-        "name": "Compressor, Parts",
+        "name": "Компрессор, детали",
         "slug": "compressor-parts"
       },
       {
-        "name": "Condenser",
+        "name": "Радиатор кондиционера",
         "slug": "condenser"
       },
       {
-        "name": "Vaporizer",
+        "name": "Испаритель",
         "slug": "vaporizer"
       },
       {
-        "name": "Sensors",
+        "name": "Датчики",
         "slug": "sensors"
       },
       {
-        "name": "Valves",
+        "name": "Клапаны",
         "slug": "valves"
       },
       {
-        "name": "Dryer",
+        "name": "Осушитель",
         "slug": "dryer"
       },
       {
-        "name": "Relay",
+        "name": "Реле",
         "slug": "relay"
       },
       {
-        "name": "Control Unit",
+        "name": "Блок управления",
         "slug": "control-unit"
       },
       {
-        "name": "Hoses, Pipes",
+        "name": "Шланги, провода",
         "slug": "hoses-pipes"
       },
       {
-        "name": "Additional Resistor",
+        "name": "Дополнительный резистор",
         "slug": "additional-resistor"
       },
       {
-        "name": "Controls, Regulation",
+        "name": "Управление, регулирование",
         "slug": "controls-regulation"
       },
       {
-        "name": "Switch",
+        "name": "Переключатель",
         "slug": "switch"
       },
       {
-        "name": "Repair Kit",
+        "name": "Ремонтный комплект",
         "slug": "repair-kit"
       },
       {
-        "name": "Mounting",
+        "name": "Крепеж",
         "slug": "mounting"
       }
     ],
@@ -1349,42 +1349,42 @@
   },
   {
     "id": 23,
-    "category": "Heating, Ventilation",
+    "category": "Отопление, вентиляция",
     "subcategories": [
       {
-        "name": "Air Filter, saloon",
+        "name": "Фильтр салона",
         "slug": "air-filter-saloon"
       },
       {
-        "name": "Interior Heat Exchanger",
+        "name": "Радиатор печки салона",
         "slug": "interior-heat-exchanger"
       },
       {
-        "name": "Blower, Parts",
+        "name": "Вентилятор",
         "slug": "blower-parts"
       },
       {
-        "name": "Valves, Controls",
+        "name": "Клапан, управление",
         "slug": "valves-controls"
       },
       {
-        "name": "Control Units",
+        "name": "Блок управления",
         "slug": "control-units"
       },
       {
-        "name": "Hoses, Pipes",
+        "name": "Шланги, трубки",
         "slug": "hoses-pipes"
       },
       {
-        "name": "Coolant Water Preheating",
+        "name": "Подогрев охлаждающей жидкости",
         "slug": "coolant-water-preheating"
       },
       {
-        "name": "Heater Flap Box",
+        "name": "Заслонка печки",
         "slug": "heater-flap-box"
       },
       {
-        "name": "Actuators",
+        "name": "Элементы управления",
         "slug": "actuators"
       }
     ],
@@ -1393,34 +1393,34 @@
   },
   {
     "id": 24,
-    "category": "Axle Drive",
+    "category": "Полный привод",
     "subcategories": [
       {
-        "name": "Oil",
+        "name": "Масла",
         "slug": "oil"
       },
       {
-        "name": "Propshaft",
+        "name": "Продольный вал",
         "slug": "propshaft"
       },
       {
-        "name": "Differential",
+        "name": "Дифференциал",
         "slug": "differential"
       },
       {
-        "name": "Transfer Case",
+        "name": "Раздаточная коробка",
         "slug": "transfer-case"
       },
       {
-        "name": "Clutch Haldex",
+        "name": "Сцепление Haldex",
         "slug": "clutch-haldex"
       },
       {
-        "name": "Switches, valves",
+        "name": "Переключатель, вентили",
         "slug": "switches-valves"
       },
       {
-        "name": "Filters",
+        "name": "Фильтры",
         "slug": "filters"
       }
     ],
@@ -1429,34 +1429,34 @@
   },
   {
     "id": 25,
-    "category": "Carrier Equipment",
+    "category": "Для перевозки груза",
     "subcategories": [
       {
-        "name": "Roof Rack",
+        "name": "Рейлинги",
         "slug": "roof-rack"
       },
       {
-        "name": "Trailer Hitch",
+        "name": "Прицепное оборудование",
         "slug": "trailer-hitch"
       },
       {
-        "name": "Electric Kit, Fifth Whee",
+        "name": "Электрокомплект прицепа",
         "slug": "electric-kit-fifth-whee"
       },
       {
-        "name": "Coupling Carrier",
+        "name": "Кронштейн",
         "slug": "coupling-carrier"
       },
       {
-        "name": "Rear Rack",
+        "name": "Кронштейн хвостовой части",
         "slug": "rear-rack"
       },
       {
-        "name": "Mounting Kit, towbar",
+        "name": "Монтажный комплект прицепа",
         "slug": "mounting-kit-towbar"
       },
       {
-        "name": "Parts, towbar",
+        "name": "Детали прицепа",
         "slug": "parts-towbar"
       }
     ],
@@ -1465,18 +1465,18 @@
   },
   {
     "id": 26,
-    "category": "Fuel Mixture Formation",
+    "category": "Подготовка топливной смеси",
     "subcategories": [
       {
-        "name": "Mixture Formation",
+        "name": "Приготовление смеси",
         "slug": "mixture-formation"
       },
       {
-        "name": "Carburettor System",
+        "name": "Система карбюратора",
         "slug": "carburettor-system"
       },
       {
-        "name": "Exhaust Emission Control",
+        "name": "Нейтрализация ОГ",
         "slug": "exhaust-emission-control"
       }
     ],
@@ -1485,38 +1485,38 @@
   },
   {
     "id": 27,
-    "category": "Locking System",
+    "category": "Замок",
     "subcategories": [
       {
-        "name": "Central Locking System",
+        "name": "Центральный замок",
         "slug": "central-locking-system"
       },
       {
-        "name": "Locks, exterior",
+        "name": "Внешний замок",
         "slug": "locks-exterior"
       },
       {
-        "name": "Locks, interior",
+        "name": "Внутренний замок",
         "slug": "locks-interior"
       },
       {
-        "name": "Remote Control, central locking",
+        "name": "ДУ, центральный замок",
         "slug": "remote-control-central-locking"
       },
       {
-        "name": "Lock Barrel, Set",
+        "name": "Цилиндр замка, комплект",
         "slug": "lock-barrel-set"
       },
       {
-        "name": "Lock Set",
+        "name": "Комплект замка",
         "slug": "lock-set"
       },
       {
-        "name": "Button, Switch",
+        "name": "Kнопка, переключатель",
         "slug": "button-switch"
       },
       {
-        "name": "Handles",
+        "name": "Ручки",
         "slug": "handles"
       }
     ],
@@ -1525,14 +1525,14 @@
   },
   {
     "id": 28,
-    "category": "Power Take Off (PTO)",
+    "category": "Вспомогательная, рабочая передача",
     "subcategories": [
       {
-        "name": "Gaskets",
+        "name": "Прокладки",
         "slug": "gaskets"
       },
       {
-        "name": "Oil",
+        "name": "Масло",
         "slug": "oil"
       }
     ],
@@ -1541,26 +1541,26 @@
   },
   {
     "id": 29,
-    "category": "Security Systems",
+    "category": "Система безопасности",
     "subcategories": [
       {
-        "name": "Safety Belt System",
+        "name": "Система ремней безопасности",
         "slug": "safety-belt-system"
       },
       {
-        "name": "Alarm System",
+        "name": "Сигнализация",
         "slug": "alarm-system"
       },
       {
-        "name": "Immobilizer",
+        "name": "Противоугонное устройство",
         "slug": "immobilizer"
       },
       {
-        "name": "Air Bag System",
+        "name": "Система подушек безопасности",
         "slug": "air-bag-system"
       },
       {
-        "name": "Lane Assistant",
+        "name": "Ассистент полосы движения",
         "slug": "lane-assistant"
       }
     ],
@@ -1569,78 +1569,78 @@
   },
   {
     "id": 30,
-    "category": "Interior Equipment",
+    "category": "Внутренняя отделка",
     "subcategories": [
       {
-        "name": "Accessories",
+        "name": "Аксессуары",
         "slug": "accessories"
       },
       {
-        "name": "Gas Springs",
+        "name": "Газовые пружины",
         "slug": "gas-springs"
       },
       {
-        "name": "Hand, Foot Lever System",
+        "name": "Ручное, педальное управление",
         "slug": "hand-foot-lever-system"
       },
       {
-        "name": "Seats",
+        "name": "Сидения",
         "slug": "seats"
       },
       {
-        "name": "Panelling",
+        "name": "Облицовка",
         "slug": "panelling"
       },
       {
-        "name": "Centre Console",
+        "name": "Центральная консоль",
         "slug": "centre-console"
       },
       {
-        "name": "Cigarette Lighter",
+        "name": "Прикуриватель",
         "slug": "cigarette-lighter"
       },
       {
-        "name": "Floor Mats",
+        "name": "Коврики",
         "slug": "floor-mats"
       },
       {
-        "name": "Boot, Сargo Area",
+        "name": "Багажник, грузовой отсек",
         "slug": "boot-сargo-area"
       },
       {
-        "name": "Handles",
+        "name": "Ручки",
         "slug": "handles"
       },
       {
-        "name": "Dashboard",
+        "name": "Панель приборов",
         "slug": "dashboard"
       },
       {
-        "name": "Window Regulator",
+        "name": "Регулятор стеклопакета",
         "slug": "window-regulator"
       },
       {
-        "name": "Fastening Clips",
+        "name": "Клипсы, крепежи",
         "slug": "fastening-clips"
       },
       {
-        "name": "Armrests",
+        "name": "Подлокотник",
         "slug": "armrests"
       },
       {
-        "name": "Glove Compartment",
+        "name": "Вещевой ящик",
         "slug": "glove-compartment"
       },
       {
-        "name": "Cupholder",
+        "name": "Подстаканник",
         "slug": "cupholder"
       },
       {
-        "name": "Sun Visor",
+        "name": "Солнцезащитный козырёк",
         "slug": "sun-visor"
       },
       {
-        "name": "Ashtray",
+        "name": "Пепельница",
         "slug": "ashtray"
       }
     ],
@@ -1649,54 +1649,54 @@
   },
   {
     "id": 31,
-    "category": "Comfort Systems",
+    "category": "Комфорт",
     "subcategories": [
       {
-        "name": "Seat Heating",
+        "name": "Обогрев сидений",
         "slug": "seat-heating"
       },
       {
-        "name": "Parktronic, Reverse Alarm",
+        "name": "Парктроник, сигнал заднего хода",
         "slug": "parktronic-reverse-alarm"
       },
       {
-        "name": "Window Regulator",
+        "name": "Стеклоподъемник",
         "slug": "window-regulator"
       },
       {
-        "name": "Motors, Relay, Switch",
+        "name": "Электроприводы, реле",
         "slug": "motors-relay-switch"
       },
       {
-        "name": "Cruise Control",
+        "name": "Круиз контроль",
         "slug": "cruise-control"
       },
       {
-        "name": "Speeding Alarm",
+        "name": "Предупреждение превышения скорости",
         "slug": "speeding-alarm"
       },
       {
-        "name": "Rain Sensor",
+        "name": "Датчики",
         "slug": "rain-sensor"
       },
       {
-        "name": "Pumps",
+        "name": "Насосы",
         "slug": "pumps"
       },
       {
-        "name": "Central Locking",
+        "name": "Центральный замок",
         "slug": "central-locking"
       },
       {
-        "name": "Parking Heater",
+        "name": "Автономное отопление",
         "slug": "parking-heater"
       },
       {
-        "name": "Tailgate control",
+        "name": "Управление задней дверью",
         "slug": "tailgate-control"
       },
       {
-        "name": "Engine Preheater System (electric)",
+        "name": "Подогрев двигателя (электро)",
         "slug": "engine-preheater-system-electric"
       }
     ],
@@ -1705,34 +1705,34 @@
   },
   {
     "id": 32,
-    "category": "Compressed Air System",
+    "category": "Пневматическая система",
     "subcategories": [
       {
-        "name": "Brake, Slave Cylinder",
+        "name": "Тормозной, рабочий цилиндр",
         "slug": "brake-slave-cylinder"
       },
       {
-        "name": "Silencer",
+        "name": "Глушитель",
         "slug": "silencer"
       },
       {
-        "name": "Air Dryer, Cartridge",
+        "name": "Воздухоосушитель, картридж",
         "slug": "air-dryer-cartridge"
       },
       {
-        "name": "Hoses, Pipes",
+        "name": "Провода, шланги",
         "slug": "hoses-pipes"
       },
       {
-        "name": "Pressure Regulator",
+        "name": "Регулятор давления",
         "slug": "pressure-regulator"
       },
       {
-        "name": "Coupling Head",
+        "name": "Соединительная головка",
         "slug": "coupling-head"
       },
       {
-        "name": "Valves",
+        "name": "Клапаны",
         "slug": "valves"
       }
     ],
@@ -1741,22 +1741,22 @@
   },
   {
     "id": 33,
-    "category": "Communication Systems",
+    "category": "Коммуникационные системы",
     "subcategories": [
       {
-        "name": "Navigation",
+        "name": "Навигация",
         "slug": "navigation"
       },
       {
-        "name": "Audio System",
+        "name": "Аудиосистема",
         "slug": "audio-system"
       },
       {
-        "name": "Aerial",
+        "name": "Антенны",
         "slug": "aerial"
       },
       {
-        "name": "Gauge, Indications",
+        "name": "Дисплеи, Индикация",
         "slug": "gauge-indications"
       }
     ],
@@ -1765,18 +1765,18 @@
   },
   {
     "id": 34,
-    "category": "Electric Drive",
+    "category": "Электропривод",
     "subcategories": [
       {
-        "name": "Cooling System, Hybrid",
+        "name": "Система охлаждения, гибрид",
         "slug": "cooling-system-hybrid"
       },
       {
-        "name": "Charge Connector",
+        "name": "Порт для зарядки",
         "slug": "charge-connector"
       },
       {
-        "name": "Cooling System, Electric Drive",
+        "name": "Система охлажд., эл.привод",
         "slug": "cooling-system-electric-drive"
       }
     ],
@@ -1785,22 +1785,22 @@
   },
   {
     "id": 35,
-    "category": "Auto Chemical",
+    "category": "Химия",
     "subcategories": [
       {
-        "name": "Body",
+        "name": "Кузов",
         "slug": "body"
       },
       {
-        "name": "Salon",
+        "name": "Салон",
         "slug": "salon"
       },
       {
-        "name": "Wheels",
+        "name": "Колёса",
         "slug": "wheels"
       },
       {
-        "name": "Glass",
+        "name": "Стёкла",
         "slug": "glass"
       }
     ],
