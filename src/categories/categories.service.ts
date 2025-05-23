@@ -109,7 +109,7 @@ export class CategoriesService {
       );
       jsonData = JSON.parse(readFileSync(filePath, 'utf8'));
       repository = this.categoryRepositoryRu;
-    } else {
+    } else if (locale === 'en') {
       const filePath = join(
         process.cwd(),
         'src',
