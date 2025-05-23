@@ -89,6 +89,8 @@ export class CategoriesService {
 
   async loadAllFromFile(locale: string) {
     let jsonData;
+    let repository: Repository<Category | CategoryRu | CategoryLv>;
+
     if (locale === 'lv') {
       const filePath = join(
         process.cwd(),
@@ -97,6 +99,7 @@ export class CategoriesService {
         'final_all_categoriesLV.json',
       );
       jsonData = JSON.parse(readFileSync(filePath, 'utf8'));
+      repository = this.categoryRepositoryLv;
     } else if (locale === 'ru') {
       const filePath = join(
         process.cwd(),
@@ -105,6 +108,7 @@ export class CategoriesService {
         'final_all_categoriesRU.json',
       );
       jsonData = JSON.parse(readFileSync(filePath, 'utf8'));
+      repository = this.categoryRepositoryRu;
     } else {
       const filePath = join(
         process.cwd(),
@@ -113,7 +117,11 @@ export class CategoriesService {
         'final_all_categories.json',
       );
       jsonData = JSON.parse(readFileSync(filePath, 'utf8'));
+      repository = this.categoryRepository;
     }
+
+    // Очистка таблицы перед вставкой новых данных
+    await repository.clear();
 
     const results: Category[] = [];
     for (const item of jsonData) {
@@ -129,4 +137,47 @@ export class CategoriesService {
 
     return results;
   }
+
+  // async loadAllFromFile(locale: string) {
+  //   let jsonData;
+  //   if (locale === 'lv') {
+  //     const filePath = join(
+  //       process.cwd(),
+  //       'src',
+  //       'data',
+  //       'final_all_categoriesLV.json',
+  //     );
+  //     jsonData = JSON.parse(readFileSync(filePath, 'utf8'));
+  //   } else if (locale === 'ru') {
+  //     const filePath = join(
+  //       process.cwd(),
+  //       'src',
+  //       'data',
+  //       'final_all_categoriesRU.json',
+  //     );
+  //     jsonData = JSON.parse(readFileSync(filePath, 'utf8'));
+  //   } else {
+  //     const filePath = join(
+  //       process.cwd(),
+  //       'src',
+  //       'data',
+  //       'final_all_categories.json',
+  //     );
+  //     jsonData = JSON.parse(readFileSync(filePath, 'utf8'));
+  //   }
+
+  //   const results: Category[] = [];
+  //   for (const item of jsonData) {
+  //     const saved = await this.createCategory({
+  //       locale: locale,
+  //       category: item.category,
+  //       subcategories: item.subcategories,
+  //       image: item.image,
+  //       slug: item.slug,
+  //     });
+  //     results.push(saved);
+  //   }
+
+  //   return results;
+  // }
 }

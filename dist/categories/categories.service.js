@@ -91,18 +91,23 @@ let CategoriesService = class CategoriesService {
     }
     async loadAllFromFile(locale) {
         let jsonData;
+        let repository;
         if (locale === 'lv') {
             const filePath = (0, path_1.join)(process.cwd(), 'src', 'data', 'final_all_categoriesLV.json');
             jsonData = JSON.parse((0, fs_1.readFileSync)(filePath, 'utf8'));
+            repository = this.categoryRepositoryLv;
         }
         else if (locale === 'ru') {
             const filePath = (0, path_1.join)(process.cwd(), 'src', 'data', 'final_all_categoriesRU.json');
             jsonData = JSON.parse((0, fs_1.readFileSync)(filePath, 'utf8'));
+            repository = this.categoryRepositoryRu;
         }
         else {
             const filePath = (0, path_1.join)(process.cwd(), 'src', 'data', 'final_all_categories.json');
             jsonData = JSON.parse((0, fs_1.readFileSync)(filePath, 'utf8'));
+            repository = this.categoryRepository;
         }
+        await repository.clear();
         const results = [];
         for (const item of jsonData) {
             const saved = await this.createCategory({
