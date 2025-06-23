@@ -11,10 +11,34 @@ export declare class ProductsService {
     private modelRepository;
     private modificationRepository;
     constructor(productRepository: Repository<Product>, categoryRepository: Repository<Category>, brandRepository: Repository<Brand>, modelRepository: Repository<Model>, modificationRepository: Repository<Modification>);
-    getProductsByFilters(filters: {
-        categorySlug?: string;
-        brandSlug?: string;
-        modelSlug?: string;
-        modificationSlug?: string;
-    }): Promise<Product[]>;
+    getCatalogProducts(params: {
+        categoryId: number;
+        modelId?: number;
+        modificationId?: number;
+        manufacturerId?: number;
+        warehouseId?: number;
+        makeId?: number;
+        sortBy?: 'name' | 'price';
+        sortDir?: 'ASC' | 'DESC';
+        page?: number;
+        limit?: number;
+    }): Promise<any>;
+    getProductDetailsBySku(sku: string): Promise<{
+        attributes: any;
+        photos: any;
+        stock: any;
+        oeNumbers: any;
+        compatibility: any;
+        id: string;
+        name: string;
+        sku: string;
+        price: number;
+        description: string;
+        category: Category;
+        brands: Brand[];
+        models: Model[];
+        modifications: Modification[];
+    } | null>;
+    searchByArticle(articleId: number): Promise<any>;
+    searchByOem(oemNumber: number): Promise<any>;
 }

@@ -19,15 +19,21 @@ export class CategoriesService {
     private readonly categoryRepositoryLv: Repository<CategoryLv>,
   ) {}
 
-  async getAllCategories(locale: string): Promise<Category[]> {
-    if (locale === 'lv') {
-      return this.categoryRepositoryLv.find();
-    } else if (locale === 'ru') {
-      return this.categoryRepositoryRu.find();
-    } else {
-      return this.categoryRepository.find();
-    }
+  async getAllCategories() {
+    return await this.categoryRepository.query(
+      `SELECT id, name FROM Categories ORDER BY name;`,
+    );
   }
+
+  // async getAllCategories(locale: string): Promise<Category[]> {
+  //   if (locale === 'lv') {
+  //     return this.categoryRepositoryLv.find();
+  //   } else if (locale === 'ru') {
+  //     return this.categoryRepositoryRu.find();
+  //   } else {
+  //     return this.categoryRepository.find();
+  //   }
+  // }
 
   async findBySlug(slug: string): Promise<Category | null> {
     try {
@@ -35,6 +41,7 @@ export class CategoriesService {
         where: { slug },
         // relations: ['subcategories'],
       });
+      console.log(category);
 
       if (!category) {
         return null;

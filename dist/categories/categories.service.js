@@ -28,22 +28,15 @@ let CategoriesService = class CategoriesService {
         this.categoryRepositoryRu = categoryRepositoryRu;
         this.categoryRepositoryLv = categoryRepositoryLv;
     }
-    async getAllCategories(locale) {
-        if (locale === 'lv') {
-            return this.categoryRepositoryLv.find();
-        }
-        else if (locale === 'ru') {
-            return this.categoryRepositoryRu.find();
-        }
-        else {
-            return this.categoryRepository.find();
-        }
+    async getAllCategories() {
+        return await this.categoryRepository.query(`SELECT id, name FROM Categories ORDER BY name;`);
     }
     async findBySlug(slug) {
         try {
             const category = await this.categoryRepository.findOne({
                 where: { slug },
             });
+            console.log(category);
             if (!category) {
                 return null;
             }

@@ -12,5 +12,8 @@ export declare class AuthService {
     login(dto: LoginDto): Promise<{
         access_token: string;
     }>;
+    checkEmail(email: string): Promise<{
+        available: boolean;
+    }>;
     private generateToken;
 }

@@ -20,10 +20,11 @@ let CategoriesController = class CategoriesController {
     constructor(categoriesService) {
         this.categoriesService = categoriesService;
     }
-    async getAll(locale = 'en') {
-        return this.categoriesService.getAllCategories(locale);
+    async getAll() {
+        return this.categoriesService.getAllCategories();
     }
     async getCategoryBySlug(slug) {
+        console.log(slug);
         if (!slug) {
             throw new common_1.HttpException('Slug parameter is required', common_1.HttpStatus.BAD_REQUEST);
         }
@@ -40,9 +41,8 @@ let CategoriesController = class CategoriesController {
 exports.CategoriesController = CategoriesController;
 __decorate([
     (0, common_1.Get)(),
-    __param(0, (0, common_1.Query)('locale')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], CategoriesController.prototype, "getAll", null);
 __decorate([

@@ -17,6 +17,7 @@ const user_module_1 = require("./user/user.module");
 const auth_module_1 = require("./auth/auth.module");
 const categories_module_1 = require("./categories/categories.module");
 const car_info_module_1 = require("./car-info/car-info.module");
+const stripe_module_1 = require("./stripe/stripe.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -47,6 +48,7 @@ exports.AppModule = AppModule = __decorate([
             auth_module_1.AuthModule,
             categories_module_1.CategoriesModule,
             car_info_module_1.CarInfoModule,
+            stripe_module_1.StripeModule,
         ],
     })
 ], AppModule);

@@ -14,13 +14,19 @@ import { Category } from './category.entity';
 export class CategoriesController {
   constructor(private readonly categoriesService: CategoriesService) {}
 
+  // @Get()
+  // async getAll(@Query('locale') locale: string = 'en'): Promise<Category[]> {
+  //   return this.categoriesService.getAllCategories(locale);
+  // }
+
   @Get()
-  async getAll(@Query('locale') locale: string = 'en'): Promise<Category[]> {
-    return this.categoriesService.getAllCategories(locale);
+  async getAll() {
+    return this.categoriesService.getAllCategories();
   }
 
   @Get('bySlug')
   async getCategoryBySlug(@Query('slug') slug: string) {
+    console.log(slug);
     if (!slug) {
       throw new HttpException(
         'Slug parameter is required',

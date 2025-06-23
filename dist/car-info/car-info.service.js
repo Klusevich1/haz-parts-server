@@ -20,37 +20,32 @@ const car_brand_entity_1 = require("./entities/car-brand.entity");
 const fs_1 = require("fs");
 const path_1 = require("path");
 let CarInfoService = class CarInfoService {
-    carBrandRepository;
-    constructor(carBrandRepository) {
-        this.carBrandRepository = carBrandRepository;
+    makeRepository;
+    modelRepository;
+    modificationRepository;
+    constructor(makeRepository, modelRepository, modificationRepository) {
+        this.makeRepository = makeRepository;
+        this.modelRepository = modelRepository;
+        this.modificationRepository = modificationRepository;
     }
     async getAllBrands() {
-        return this.carBrandRepository.find();
+        return await this.makeRepository.query(`SELECT id, name, logo_url FROM Makes ORDER BY name;`);
     }
-    async getAllBrandsNames() {
-        const raw = await this.carBrandRepository
-            .createQueryBuilder('brand')
-            .select('brand.name', 'name')
-            .orderBy('brand.name', 'ASC')
-            .getRawMany();
-        return raw;
+    async getModelsByMake(makeId) {
+        return await this.modelRepository.query(`SELECT id, name, model_url FROM Models WHERE make_id = ? ORDER BY name;`, [makeId]);
     }
-    async getModelsByBrandName(brandName) {
-        const brand = await this.carBrandRepository.findOne({
-            where: { name: brandName.toUpperCase() },
-            relations: ['models'],
-        });
-        if (!brand) {
-            throw new Error(`Бренд ${brandName} не найден`);
-        }
-        return brand.models;
+    async getModificationsByModel(modelId) {
+        return await this.modificationRepository.query(`SELECT id, name, power, year_from, year_to
+     FROM ModelModifications
+     WHERE model_id = ?
+     ORDER BY year_from;`, [modelId]);
     }
     async loadCarDataFromFile() {
         const filePath = (0, path_1.join)(process.cwd(), 'src', 'data', 'car_info.json');
         const carData = JSON.parse((0, fs_1.readFileSync)(filePath, 'utf8'));
         const results = [];
         for (const brand of carData) {
-            const saved = await this.carBrandRepository.save(brand);
+            const saved = await this.makeRepository.save(brand);
             results.push(saved);
         }
         return {
@@ -63,6 +58,8 @@ exports.CarInfoService = CarInfoService;
 exports.CarInfoService = CarInfoService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, typeorm_1.InjectRepository)(car_brand_entity_1.CarBrand)),
-    __metadata("design:paramtypes", [typeorm_2.Repository])
+    __metadata("design:paramtypes", [typeorm_2.Repository,
+        typeorm_2.Repository,
+        typeorm_2.Repository])
 ], CarInfoService);
 //# sourceMappingURL=car-info.service.js.map

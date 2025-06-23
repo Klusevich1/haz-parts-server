@@ -12,10 +12,19 @@ export declare class AuthController {
     login(dto: LoginDto): Promise<{
         access_token: string;
     }>;
+    checkEmail(email: string): Promise<{
+        available: boolean;
+    }>;
     sendConfirmationCode(email: string): Promise<void>;
     verifyCodeAndRegister(dto: RegisterDto & {
         code: string;
     }): Promise<{
         access_token: string;
     } | undefined>;
+    verifyEmailUpdate(body: {
+        email: string;
+        code: string;
+    }): {
+        success: boolean;
+    };
 }

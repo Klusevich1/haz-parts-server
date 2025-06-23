@@ -42,6 +42,14 @@ export class AuthService {
     return this.generateToken(user.id);
   }
 
+  async checkEmail(email: string) {
+    const existing = await this.userService.findByEmail(email);
+    if (existing) {
+      throw new ConflictException('Email уже используется');
+    }
+    return { available: true };
+  }
+
   private generateToken(userId: number) {
     return {
       access_token: this.jwtService.sign({ sub: userId }),

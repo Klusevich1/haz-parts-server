@@ -3,7 +3,7 @@ import { Category } from './category.entity';
 export declare class CategoriesController {
     private readonly categoriesService;
     constructor(categoriesService: CategoriesService);
-    getAll(locale?: string): Promise<Category[]>;
+    getAll(): Promise<any>;
     getCategoryBySlug(slug: string): Promise<Category[]>;
     importFromFile(locale?: string): Promise<Category[]>;
 }

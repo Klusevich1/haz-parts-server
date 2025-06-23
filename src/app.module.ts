@@ -9,6 +9,7 @@ import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 import { CategoriesModule } from './categories/categories.module';
 import { CarInfoModule } from './car-info/car-info.module';
+import { StripeModule } from './stripe/stripe.module';
 
 @Module({
   imports: [
@@ -36,6 +37,7 @@ import { CarInfoModule } from './car-info/car-info.module';
     AuthModule,
     CategoriesModule,
     CarInfoModule,
+    StripeModule,
   ],
 })
 export class AppModule {}

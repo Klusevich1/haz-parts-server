@@ -5,7 +5,7 @@ export declare class CategoriesService {
     private readonly categoryRepositoryRu;
     private readonly categoryRepositoryLv;
     constructor(categoryRepository: Repository<Category>, categoryRepositoryRu: Repository<CategoryRu>, categoryRepositoryLv: Repository<CategoryLv>);
-    getAllCategories(locale: string): Promise<Category[]>;
+    getAllCategories(): Promise<any>;
     findBySlug(slug: string): Promise<Category | null>;
     createCategory(data: {
         locale: string;

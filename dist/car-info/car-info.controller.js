@@ -23,11 +23,11 @@ let CarInfoController = class CarInfoController {
     async getAllBrands() {
         return this.carInfoService.getAllBrands();
     }
-    async getAllBrandsNames() {
-        return this.carInfoService.getAllBrandsNames();
+    async getByMake(makeId) {
+        return this.carInfoService.getModelsByMake(makeId);
     }
-    async getModelsByBrand(brand) {
-        return this.carInfoService.getModelsByBrandName(brand);
+    async getByModel(modelId) {
+        return this.carInfoService.getModificationsByModel(modelId);
     }
     async importCarData() {
         return this.carInfoService.loadCarDataFromFile();
@@ -35,24 +35,25 @@ let CarInfoController = class CarInfoController {
 };
 exports.CarInfoController = CarInfoController;
 __decorate([
-    (0, common_1.Get)(),
+    (0, common_1.Get)('/brands'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], CarInfoController.prototype, "getAllBrands", null);
 __decorate([
-    (0, common_1.Get)('brands'),
+    (0, common_1.Get)('/models'),
+    __param(0, (0, common_1.Query)('makeId', common_1.ParseIntPipe)),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
-], CarInfoController.prototype, "getAllBrandsNames", null);
+], CarInfoController.prototype, "getByMake", null);
 __decorate([
-    (0, common_1.Get)('models'),
-    __param(0, (0, common_1.Query)('brand')),
+    (0, common_1.Get)('/modifications'),
+    __param(0, (0, common_1.Query)('modelId', common_1.ParseIntPipe)),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
-], CarInfoController.prototype, "getModelsByBrand", null);
+], CarInfoController.prototype, "getByModel", null);
 __decorate([
     (0, common_1.Post)('import'),
     __metadata("design:type", Function),

@@ -17,6 +17,7 @@ const common_1 = require("@nestjs/common");
 const auth_service_1 = require("./auth.service");
 const register_dto_1 = require("./dto/register.dto");
 const login_dto_1 = require("./dto/login.dto");
+const jwt_auth_guard_1 = require("../common/guards/jwt-auth.guard");
 const email_verification_service_1 = require("./email-verification.service");
 let AuthController = class AuthController {
     authService;
@@ -32,6 +33,9 @@ let AuthController = class AuthController {
     login(dto) {
         return this.authService.login(dto);
     }
+    checkEmail(email) {
+        return this.authService.checkEmail(email);
+    }
     async sendConfirmationCode(email) {
         return this.emailVerificationService.sendCode(email);
     }
@@ -40,6 +44,13 @@ let AuthController = class AuthController {
         if (isValid) {
             return this.authService.register(dto);
         }
+    }
+    verifyEmailUpdate(body) {
+        const isValid = this.emailVerificationService.verifyCode(body.email, body.code);
+        if (!isValid) {
+            throw new common_1.BadRequestException('Неверный или истёкший код');
+        }
+        return { success: true };
     }
 };
 exports.AuthController = AuthController;
@@ -58,6 +69,13 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], AuthController.prototype, "login", null);
 __decorate([
+    (0, common_1.Post)('check-email'),
+    __param(0, (0, common_1.Body)('email')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], AuthController.prototype, "checkEmail", null);
+__decorate([
     (0, common_1.Post)('send-confirmation-code'),
     __param(0, (0, common_1.Body)('email')),
     __metadata("design:type", Function),
@@ -71,6 +89,14 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "verifyCodeAndRegister", null);
+__decorate([
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
+    (0, common_1.Post)('verify-email-update'),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], AuthController.prototype, "verifyEmailUpdate", null);
 exports.AuthController = AuthController = __decorate([
     (0, common_1.Controller)('auth'),
     __metadata("design:paramtypes", [auth_service_1.AuthService,

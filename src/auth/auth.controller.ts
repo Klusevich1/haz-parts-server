@@ -1,4 +1,11 @@
-import { Controller, Post, Body, UseGuards, Req } from '@nestjs/common';
+import {
+  Controller,
+  Post,
+  Body,
+  UseGuards,
+  Req,
+  BadRequestException,
+} from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { RegisterDto } from './dto/register.dto';
 import { LoginDto } from './dto/login.dto';
@@ -24,6 +31,11 @@ export class AuthController {
     return this.authService.login(dto);
   }
 
+  @Post('check-email')
+  checkEmail(@Body('email') email: string) {
+    return this.authService.checkEmail(email);
+  }
+
   @Post('send-confirmation-code')
   async sendConfirmationCode(@Body('email') email: string) {
     return this.emailVerificationService.sendCode(email);
@@ -38,5 +50,22 @@ export class AuthController {
     if (isValid) {
       return this.authService.register(dto);
     }
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Post('verify-email-update')
+  verifyEmailUpdate(
+    @Body() body: { email: string; code: string },
+  ) {
+    const isValid = this.emailVerificationService.verifyCode(
+      body.email,
+      body.code,
+    );
+
+    if (!isValid) {
+      throw new BadRequestException('Неверный или истёкший код');
+    }
+
+    return { success: true };
   }
 }
