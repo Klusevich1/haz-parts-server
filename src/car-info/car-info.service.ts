@@ -1,43 +1,75 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { CarBrand } from './entities/car-brand.entity';
 import { readFileSync } from 'fs';
 import { join } from 'path';
-import { CarModel } from './entities/car-model.entity';
-import { Model, Modification } from 'src/products/product.entity';
+import { Make } from 'src/entities/make.entity';
+import { Model } from 'src/entities/model.entity';
+import { ModelModification } from 'src/entities/model-modification.entity';
 
 @Injectable()
 export class CarInfoService {
   constructor(
-    @InjectRepository(CarBrand)
-    private readonly makeRepository: Repository<CarBrand>,
+    @InjectRepository(Make)
+    private readonly makeRepository: Repository<Make>,
+
+    @InjectRepository(Model)
     private readonly modelRepository: Repository<Model>,
-    private readonly modificationRepository: Repository<Modification>,
+
+    @InjectRepository(ModelModification)
+    private readonly modificationRepository: Repository<ModelModification>,
   ) {}
 
   async getAllBrands() {
     return await this.makeRepository.query(
-      `SELECT id, name, logo_url FROM Makes ORDER BY name;`,
+      `SELECT DISTINCT mk.id, mk.name, mk.logo_url, mk.slug
+       FROM Makes mk
+       JOIN Models mdl ON mdl.make_id = mk.id
+       ORDER BY mk.name;
+      `,
     );
   }
 
   async getModelsByMake(makeId: number) {
     return await this.modelRepository.query(
-      `SELECT id, name, model_url FROM Models WHERE make_id = ? ORDER BY name;`,
+      `SELECT id, name, model_url, slug FROM Models WHERE make_id = ? ORDER BY name;`,
       [makeId],
     );
   }
 
   async getModificationsByModel(modelId: number) {
     return await this.modificationRepository.query(
-      `SELECT id, name, power, year_from, year_to
+      `SELECT id, name, power, year_from, year_to, slug
      FROM ModelModifications
      WHERE model_id = ?
      ORDER BY year_from;`,
       [modelId],
     );
   }
+
+  // async getMakeIdBySlug(slug: string): Promise<number | null> {
+  //   const result = await this.makeRepository.query(
+  //     `SELECT id FROM Makes WHERE slug = ? LIMIT 1`,
+  //     [slug],
+  //   );
+  //   return result[0]?.id || null;
+  // }
+
+  // async getModelIdBySlug(slug: string): Promise<number | null> {
+  //   const result = await this.modelRepository.query(
+  //     `SELECT id FROM Models WHERE slug = ? LIMIT 1`,
+  //     [slug],
+  //   );
+  //   return result[0]?.id || null;
+  // }
+
+  // async getModificationIdBySlug(slug: string): Promise<number | null> {
+  //   const result = await this.modificationRepository.query(
+  //     `SELECT id FROM ModelModifications WHERE slug = ? LIMIT 1`,
+  //     [slug],
+  //   );
+  //   return result[0]?.id || null;
+  // }
 
   async loadCarDataFromFile() {
     const filePath = join(process.cwd(), 'src', 'data', 'car_info.json');

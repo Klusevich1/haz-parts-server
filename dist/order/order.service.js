@@ -15,22 +15,60 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.OrderService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
+const order_entity_1 = require("../entities/order.entity");
 const typeorm_2 = require("typeorm");
-const order_entity_1 = require("./order.entity");
+const nodemailer = require("nodemailer");
+const config_1 = require("@nestjs/config");
 let OrderService = class OrderService {
     orderRepository;
-    constructor(orderRepository) {
+    configService;
+    transporter;
+    constructor(orderRepository, configService) {
         this.orderRepository = orderRepository;
+        this.configService = configService;
+        this.transporter = nodemailer.createTransport({
+            host: 'smtp.zoho.eu',
+            port: 465,
+            secure: true,
+            auth: {
+                user: process.env.ZOHO_ORDER_USER,
+                pass: process.env.ZOHO_ORDER_PASS,
+            },
+        });
     }
-    async createOrder(createOrderDto) {
-        const newOrder = this.orderRepository.create(createOrderDto);
-        return await this.orderRepository.save(newOrder);
+    async createOrder(dto) {
+        const lastOrder = await this.orderRepository
+            .createQueryBuilder('order')
+            .orderBy('order.order_number', 'DESC')
+            .getOne();
+        const nextOrderNumber = lastOrder ? lastOrder.orderNumber + 1 : 100000;
+        const newOrder = this.orderRepository.create({
+            ...dto,
+            orderNumber: nextOrderNumber,
+        });
+        await this.orderRepository.save(newOrder);
+        const itemLines = dto.items
+            .map((item) => `• ${item.name} (${item.quantity} x ${item.price} €) [${item.hub}]`)
+            .join('\n');
+        const mailOptions = {
+            from: '"Hazparts Order" <order@hazparts.com>',
+            to: process.env.ZOHO_ORDER_USER,
+            subject: `New order №${nextOrderNumber}`,
+            text: `Order №${nextOrderNumber}\nFullname: ${dto.fullname}\nEmail: ${dto.email}\nDelivery Method: ${dto.deliveryMethod}\nPaymane Method: ${dto.payment}\nProducts:\n${itemLines}`,
+        };
+        await this.transporter.sendMail(mailOptions);
+        return {
+            success: true,
+            message: `Заказ №${nextOrderNumber} успешно оформлен`,
+            orderNumber: nextOrderNumber,
+        };
     }
 };
 exports.OrderService = OrderService;
 exports.OrderService = OrderService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, typeorm_1.InjectRepository)(order_entity_1.Order)),
-    __metadata("design:paramtypes", [typeorm_2.Repository])
+    __metadata("design:paramtypes", [typeorm_2.Repository,
+        config_1.ConfigService])
 ], OrderService);
 //# sourceMappingURL=order.service.js.map

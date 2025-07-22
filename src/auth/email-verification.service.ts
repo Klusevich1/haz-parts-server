@@ -13,16 +13,16 @@ interface CodeEntry {
 export class EmailVerificationService {
   // Лучше Redis или БД, если на прод
   private codes = new Map<string, CodeEntry>();
-  private CODE_LIFETIME_MS = 5 * 60 * 1000; // 5 минут
-  private RESEND_TIMEOUT_MS = 60 * 1000; // 1 минута
+  private CODE_LIFETIME_MS = 5 * 60 * 1000;
+  private RESEND_TIMEOUT_MS = 60 * 1000;
 
   private transporter = nodemailer.createTransport({
     host: 'smtp.zoho.eu',
     port: 465,
     secure: true,
     auth: {
-      user: process.env.ZOHO_USER,
-      pass: process.env.ZOHO_PASS,
+      user: process.env.ZOHO_NOTICE_USER,
+      pass: process.env.ZOHO_NOTICE_PASS,
     },
   });
 

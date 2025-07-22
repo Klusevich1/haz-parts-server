@@ -60,17 +60,15 @@ let UserService = class UserService {
         return this.save(user);
     }
     async getAddresses(userId) {
-        const user = await this.userRepo.findOne({
-            where: { id: userId },
-            relations: ['addresses'],
-        });
+        const user = await this.userRepo.findOne({ where: { id: userId } });
         if (!user) {
             throw new common_1.NotFoundException('Пользователь не найден');
         }
-        return user.addresses;
+        const addresses = await this.userRepo.query(`SELECT * FROM address WHERE user_id = ?`, [userId]);
+        return addresses;
     }
     async addAddress(userId, dto) {
-        const user = await this.findById(userId);
+        const user = await this.userRepo.findOne({ where: { id: userId } });
         if (!user) {
             throw new common_1.NotFoundException('Пользователь не найден');
         }

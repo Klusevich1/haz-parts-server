@@ -21,8 +21,8 @@ let OrderController = class OrderController {
     constructor(orderService) {
         this.orderService = orderService;
     }
-    async create(createOrderDto) {
-        return this.orderService.createOrder(createOrderDto);
+    create(dto) {
+        return this.orderService.createOrder(dto);
     }
 };
 exports.OrderController = OrderController;
@@ -31,10 +31,10 @@ __decorate([
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_order_dto_1.CreateOrderDto]),
-    __metadata("design:returntype", Promise)
+    __metadata("design:returntype", void 0)
 ], OrderController.prototype, "create", null);
 exports.OrderController = OrderController = __decorate([
-    (0, common_1.Controller)('orders'),
+    (0, common_1.Controller)('order'),
     __metadata("design:paramtypes", [order_service_1.OrderService])
 ], OrderController);
 //# sourceMappingURL=order.controller.js.map

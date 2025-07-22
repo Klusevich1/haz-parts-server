@@ -2,189 +2,222 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Category, CategoryLv, CategoryRu } from './category.entity';
 import { readFileSync } from 'fs';
 import { join } from 'path';
+import { Category } from 'src/entities/category.entity';
 
 @Injectable()
 export class CategoriesService {
   constructor(
     @InjectRepository(Category)
     private readonly categoryRepository: Repository<Category>,
-
-    @InjectRepository(CategoryRu)
-    private readonly categoryRepositoryRu: Repository<CategoryRu>,
-
-    @InjectRepository(CategoryLv)
-    private readonly categoryRepositoryLv: Repository<CategoryLv>,
   ) {}
 
   async getAllCategories() {
     return await this.categoryRepository.query(
-      `SELECT id, name FROM Categories ORDER BY name;`,
+      `SELECT c.id, c.name, c.slug, c.group_id, cg.name as group_name
+       FROM Categories c
+       LEFT JOIN CategoryGroups cg ON c.group_id = cg.id
+       ORDER BY cg.name, c.name;`,
+    );
+  }
+
+  async findByModification(
+    modificationId: number,
+    // locale: string,
+  ): Promise<Category[]> {
+    console.log(modificationId);
+    return this.categoryRepository.query(
+      `
+      SELECT DISTINCT c.*, cg.name as group_name
+      FROM Categories c
+      JOIN Products p ON p.category_id = c.id
+      JOIN ProductVehicleCompatibility pvc ON pvc.product_id = p.id
+      LEFT JOIN CategoryGroups cg ON c.group_id = cg.id
+      WHERE pvc.modification_id = ?
+      `,
+      [modificationId],
     );
   }
 
   // async getAllCategories(locale: string): Promise<Category[]> {
-  //   if (locale === 'lv') {
-  //     return this.categoryRepositoryLv.find();
-  //   } else if (locale === 'ru') {
-  //     return this.categoryRepositoryRu.find();
-  //   } else {
-  //     return this.categoryRepository.find();
-  //   }
+  //   return this.categoryRepository.find();
   // }
 
   async findBySlug(slug: string): Promise<Category | null> {
     try {
-      const category = await this.categoryRepository.findOne({
-        where: { slug },
-        // relations: ['subcategories'],
-      });
-      console.log(category);
+      const result = await this.categoryRepository.query(
+        `
+      SELECT c.id, c.name, c.slug, c.group_id, cg.name AS group_name
+      FROM Categories c
+      LEFT JOIN CategoryGroups cg ON c.group_id = cg.id
+      WHERE c.slug = ?
+      LIMIT 1
+      `,
+        [slug],
+      );
 
-      if (!category) {
+      if (!result || result.length === 0) {
         return null;
       }
 
-      return {
-        id: category.id,
-        category: category.category,
-        subcategories: category.subcategories,
-        image: category.image,
-        slug: category.slug,
-      };
+      return result[0];
     } catch (error) {
       console.error('Error finding category by slug:', error);
       throw error;
     }
   }
 
-  async createCategory(data: {
-    locale: string;
-    category: string;
-    subcategories: { name: string; slug: string }[];
-    image: string;
-    slug: string;
-  }) {
-    if (data.locale === 'ru') {
-      const category = this.categoryRepositoryRu.create({
-        category: data.category,
-        subcategories: data.subcategories,
-        image: data.image,
-        slug: data.slug,
-      });
-      return this.categoryRepositoryRu.save(category);
-    } else if (data.locale === 'lv') {
-      const category = this.categoryRepositoryLv.create({
-        category: data.category,
-        subcategories: data.subcategories,
-        image: data.image,
-        slug: data.slug,
-      });
-      return this.categoryRepositoryLv.save(category);
-    } else {
-      const category = this.categoryRepository.create({
-        category: data.category,
-        subcategories: data.subcategories,
-        image: data.image,
-        slug: data.slug,
-      });
-      return this.categoryRepository.save(category);
+  async findGroupByCategoryId(
+    groupId: number,
+  ): Promise<{ group_name: string; categories: Category[] } | null> {
+    try {
+      const categories = await this.categoryRepository.query(
+        `
+      SELECT c.id, c.name, c.slug, c.group_id, cg.name AS group_name
+      FROM Categories c
+      LEFT JOIN CategoryGroups cg ON c.group_id = cg.id
+      WHERE c.group_id = ?
+      ORDER BY c.name
+      `,
+        [groupId],
+      );
+
+      return {
+        group_name: categories.group_name,
+        categories,
+      };
+    } catch (error) {
+      console.error('Error in findGroupByCategorySlug:', error);
+      throw error;
     }
   }
-
-  async loadAllFromFile(locale: string) {
-    let jsonData;
-    let repository: Repository<Category | CategoryRu | CategoryLv>;
-
-    if (locale === 'lv') {
-      const filePath = join(
-        process.cwd(),
-        'src',
-        'data',
-        'final_all_categoriesLV.json',
-      );
-      jsonData = JSON.parse(readFileSync(filePath, 'utf8'));
-      repository = this.categoryRepositoryLv;
-    } else if (locale === 'ru') {
-      const filePath = join(
-        process.cwd(),
-        'src',
-        'data',
-        'final_all_categoriesRU.json',
-      );
-      jsonData = JSON.parse(readFileSync(filePath, 'utf8'));
-      repository = this.categoryRepositoryRu;
-    } else {
-      const filePath = join(
-        process.cwd(),
-        'src',
-        'data',
-        'final_all_categories.json',
-      );
-      jsonData = JSON.parse(readFileSync(filePath, 'utf8'));
-      repository = this.categoryRepository;
-    }
-
-    // Очистка таблицы перед вставкой новых данных
-    await repository.clear();
-
-    const results: Category[] = [];
-    for (const item of jsonData) {
-      const saved = await this.createCategory({
-        locale: locale,
-        category: item.category,
-        subcategories: item.subcategories,
-        image: item.image,
-        slug: item.slug,
-      });
-      results.push(saved);
-    }
-
-    return results;
-  }
-
-  // async loadAllFromFile(locale: string) {
-  //   let jsonData;
-  //   if (locale === 'lv') {
-  //     const filePath = join(
-  //       process.cwd(),
-  //       'src',
-  //       'data',
-  //       'final_all_categoriesLV.json',
-  //     );
-  //     jsonData = JSON.parse(readFileSync(filePath, 'utf8'));
-  //   } else if (locale === 'ru') {
-  //     const filePath = join(
-  //       process.cwd(),
-  //       'src',
-  //       'data',
-  //       'final_all_categoriesRU.json',
-  //     );
-  //     jsonData = JSON.parse(readFileSync(filePath, 'utf8'));
-  //   } else {
-  //     const filePath = join(
-  //       process.cwd(),
-  //       'src',
-  //       'data',
-  //       'final_all_categories.json',
-  //     );
-  //     jsonData = JSON.parse(readFileSync(filePath, 'utf8'));
-  //   }
-
-  //   const results: Category[] = [];
-  //   for (const item of jsonData) {
-  //     const saved = await this.createCategory({
-  //       locale: locale,
-  //       category: item.category,
-  //       subcategories: item.subcategories,
-  //       image: item.image,
-  //       slug: item.slug,
-  //     });
-  //     results.push(saved);
-  //   }
-
-  //   return results;
-  // }
 }
+
+// async createCategory(data: {
+//   locale: string;
+//   category: string;
+//   subcategories: { name: string; slug: string }[];
+//   image: string;
+//   slug: string;
+// }) {
+//   if (data.locale === 'ru') {
+//     const category = this.categoryRepositoryRu.create({
+//       category: data.category,
+//       subcategories: data.subcategories,
+//       image: data.image,
+//       slug: data.slug,
+//     });
+//     return this.categoryRepositoryRu.save(category);
+//   } else if (data.locale === 'lv') {
+//     const category = this.categoryRepositoryLv.create({
+//       category: data.category,
+//       subcategories: data.subcategories,
+//       image: data.image,
+//       slug: data.slug,
+//     });
+//     return this.categoryRepositoryLv.save(category);
+//   } else {
+//     const category = this.categoryRepository.create({
+//       name: data.category,
+//       subcategories: data.subcategories,
+//       image: data.image,
+//       slug: data.slug,
+//     });
+//     return this.categoryRepository.save(category);
+//   }
+// }
+
+// async loadAllFromFile(locale: string) {
+//   let jsonData;
+//   let repository: Repository<Category | CategoryRu | CategoryLv>;
+
+//   if (locale === 'lv') {
+//     const filePath = join(
+//       process.cwd(),
+//       'src',
+//       'data',
+//       'final_all_categoriesLV.json',
+//     );
+//     jsonData = JSON.parse(readFileSync(filePath, 'utf8'));
+//     repository = this.categoryRepositoryLv;
+//   } else if (locale === 'ru') {
+//     const filePath = join(
+//       process.cwd(),
+//       'src',
+//       'data',
+//       'final_all_categoriesRU.json',
+//     );
+//     jsonData = JSON.parse(readFileSync(filePath, 'utf8'));
+//     repository = this.categoryRepositoryRu;
+//   } else {
+//     const filePath = join(
+//       process.cwd(),
+//       'src',
+//       'data',
+//       'final_all_categories.json',
+//     );
+//     jsonData = JSON.parse(readFileSync(filePath, 'utf8'));
+//     repository = this.categoryRepository;
+//   }
+
+//   // Очистка таблицы перед вставкой новых данных
+//   await repository.clear();
+
+//   const results: Category[] = [];
+//   for (const item of jsonData) {
+//     const saved = await this.createCategory({
+//       locale: locale,
+//       category: item.category,
+//       subcategories: item.subcategories,
+//       image: item.image,
+//       slug: item.slug,
+//     });
+//     results.push(saved);
+//   }
+
+//   return results;
+// }
+
+// async loadAllFromFile(locale: string) {
+//   let jsonData;
+//   if (locale === 'lv') {
+//     const filePath = join(
+//       process.cwd(),
+//       'src',
+//       'data',
+//       'final_all_categoriesLV.json',
+//     );
+//     jsonData = JSON.parse(readFileSync(filePath, 'utf8'));
+//   } else if (locale === 'ru') {
+//     const filePath = join(
+//       process.cwd(),
+//       'src',
+//       'data',
+//       'final_all_categoriesRU.json',
+//     );
+//     jsonData = JSON.parse(readFileSync(filePath, 'utf8'));
+//   } else {
+//     const filePath = join(
+//       process.cwd(),
+//       'src',
+//       'data',
+//       'final_all_categories.json',
+//     );
+//     jsonData = JSON.parse(readFileSync(filePath, 'utf8'));
+//   }
+
+//   const results: Category[] = [];
+//   for (const item of jsonData) {
+//     const saved = await this.createCategory({
+//       locale: locale,
+//       category: item.category,
+//       subcategories: item.subcategories,
+//       image: item.image,
+//       slug: item.slug,
+//     });
+//     results.push(saved);
+//   }
+
+//   return results;
+// }

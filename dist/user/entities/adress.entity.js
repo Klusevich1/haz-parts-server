@@ -48,6 +48,7 @@ __decorate([
 ], Address.prototype, "postcode", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => user_entity_1.User, (user) => user.addresses, { onDelete: 'CASCADE' }),
+    (0, typeorm_1.JoinColumn)({ name: 'user_id' }),
     __metadata("design:type", user_entity_1.User)
 ], Address.prototype, "user", void 0);
 exports.Address = Address = __decorate([

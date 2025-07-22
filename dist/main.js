@@ -7,7 +7,7 @@ async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     app.enableCors({
         origin: '*',
-        methods: 'POST,GET,PATCH',
+        methods: 'POST,GET,PATCH,DELETE',
     });
     app.useGlobalPipes(new common_1.ValidationPipe({
         whitelist: true,

@@ -10,16 +10,16 @@ exports.CarInfoModule = void 0;
 const common_1 = require("@nestjs/common");
 const car_info_service_1 = require("./car-info.service");
 const car_info_controller_1 = require("./car-info.controller");
-const car_brand_entity_1 = require("./entities/car-brand.entity");
-const car_model_entity_1 = require("./entities/car-model.entity");
-const car_modification_entity_1 = require("./entities/car-modification.entity");
 const typeorm_1 = require("@nestjs/typeorm");
+const make_entity_1 = require("../entities/make.entity");
+const model_entity_1 = require("../entities/model.entity");
+const model_modification_entity_1 = require("../entities/model-modification.entity");
 let CarInfoModule = class CarInfoModule {
 };
 exports.CarInfoModule = CarInfoModule;
 exports.CarInfoModule = CarInfoModule = __decorate([
     (0, common_1.Module)({
-        imports: [typeorm_1.TypeOrmModule.forFeature([car_brand_entity_1.CarBrand, car_model_entity_1.CarModel, car_modification_entity_1.CarModification])],
+        imports: [typeorm_1.TypeOrmModule.forFeature([make_entity_1.Make, model_entity_1.Model, model_modification_entity_1.ModelModification])],
         controllers: [car_info_controller_1.CarInfoController],
         providers: [car_info_service_1.CarInfoService],
     })

@@ -10,7 +10,6 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const config_1 = require("@nestjs/config");
-const application_module_1 = require("./application/application.module");
 const order_module_1 = require("./order/order.module");
 const products_module_1 = require("./products/products.module");
 const user_module_1 = require("./user/user.module");
@@ -18,6 +17,8 @@ const auth_module_1 = require("./auth/auth.module");
 const categories_module_1 = require("./categories/categories.module");
 const car_info_module_1 = require("./car-info/car-info.module");
 const stripe_module_1 = require("./stripe/stripe.module");
+const ids_module_1 = require("./ids/ids.module");
+const cart_module_1 = require("./cart/cart.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -29,18 +30,18 @@ exports.AppModule = AppModule = __decorate([
                 imports: [config_1.ConfigModule],
                 inject: [config_1.ConfigService],
                 useFactory: (configService) => ({
-                    type: 'postgres',
+                    type: 'mysql',
                     host: configService.get('DB_HOST', 'localhost'),
-                    port: configService.get('DB_PORT', 5432),
-                    username: configService.get('DB_USER', 'postgres'),
-                    password: configService.get('DB_PASSWORD', 'password'),
-                    database: configService.get('DB_NAME', 'mydatabase'),
+                    port: configService.get('DB_PORT', 3306),
+                    username: configService.get('DB_USER', 'root'),
+                    password: configService.get('DB_PASSWORD', ''),
+                    database: configService.get('DB_NAME', 'mydb'),
+                    entities: [__dirname + '/entities/*.entity{.ts,.js}'],
                     autoLoadEntities: true,
-                    synchronize: true,
+                    synchronize: false,
                 }),
             }),
             products_module_1.ProductsModule,
-            application_module_1.ApplicationModule,
             car_info_module_1.CarInfoModule,
             order_module_1.OrderModule,
             products_module_1.ProductsModule,
@@ -49,6 +50,8 @@ exports.AppModule = AppModule = __decorate([
             categories_module_1.CategoriesModule,
             car_info_module_1.CarInfoModule,
             stripe_module_1.StripeModule,
+            ids_module_1.IdsModule,
+            cart_module_1.CartModule,
         ],
     })
 ], AppModule);

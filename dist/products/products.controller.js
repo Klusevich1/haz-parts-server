@@ -20,47 +20,104 @@ let ProductsController = class ProductsController {
     constructor(productsService) {
         this.productsService = productsService;
     }
-    async getCatalogProducts(categoryId, modelId, modificationId, manufacturerId, makeId, warehouseId, sortBy = 'name', sortDir = 'ASC', page = 1, limit = 24) {
+    async getCatalogProducts(categoryId, makeId, modelId, modificationId, manufacturers, warehouses, sortBy = '', sortDir = 'ASC', page = 1, limit = 24) {
+        const makeIdNum = makeId ? parseInt(makeId, 10) : undefined;
+        const modelIdNum = modelId ? parseInt(modelId, 10) : undefined;
+        const modificationIdNum = modificationId
+            ? parseInt(modificationId, 10)
+            : undefined;
+        const manufacturerIds = manufacturers.length
+            ? manufacturers?.split('~').map((id) => parseInt(id, 10))
+            : [];
+        const warehouseIds = warehouses.length
+            ? warehouses?.split('~').map((id) => parseInt(id, 10))
+            : [];
         return this.productsService.getCatalogProducts({
             categoryId,
-            modelId: modelId ?? undefined,
-            modificationId: modificationId ?? undefined,
-            manufacturerId: manufacturerId ?? undefined,
-            makeId: makeId ?? undefined,
-            warehouseId: warehouseId ?? undefined,
+            makeIdNum: makeIdNum ?? undefined,
+            modelIdNum: modelIdNum ?? undefined,
+            modificationIdNum: modificationIdNum ?? undefined,
+            manufacturerIds,
+            warehouseIds,
             sortBy,
             sortDir,
             page,
             limit,
         });
     }
+    async getCatalogManufacturers(categoryId, modificationId) {
+        return this.productsService.getCatalogManufacturers({
+            categoryId,
+            modificationId: modificationId ? Number(modificationId) : undefined,
+        });
+    }
+    async getCatalogWarehouses(categoryId, modificationId) {
+        return this.productsService.getCatalogWarehouses({
+            categoryId,
+            modificationId: modificationId ? Number(modificationId) : undefined,
+        });
+    }
+    async getArticleProduct(skuFragment, page = 1, limit = 24) {
+        return this.productsService.searchBySku(skuFragment, page, limit);
+    }
+    async getOemProduct(oemNumber, page = 1, limit = 24) {
+        return this.productsService.searchByOem(oemNumber, page, limit);
+    }
     async getProduct(sku) {
         return this.productsService.getProductDetailsBySku(sku);
-    }
-    async getArticleProduct(articleId) {
-        return this.productsService.searchByArticle(articleId);
-    }
-    async getOemProduct(articleId) {
-        return this.productsService.searchByOem(articleId);
     }
 };
 exports.ProductsController = ProductsController;
 __decorate([
     (0, common_1.Get)('catalog'),
     __param(0, (0, common_1.Query)('categoryId', common_1.ParseIntPipe)),
-    __param(1, (0, common_1.Query)('modelId', new common_1.DefaultValuePipe(null), common_1.ParseIntPipe)),
-    __param(2, (0, common_1.Query)('modificationId', new common_1.DefaultValuePipe(null), common_1.ParseIntPipe)),
-    __param(3, (0, common_1.Query)('manufacturerId', new common_1.DefaultValuePipe(null), common_1.ParseIntPipe)),
-    __param(4, (0, common_1.Query)('makeId', new common_1.DefaultValuePipe(null), common_1.ParseIntPipe)),
-    __param(5, (0, common_1.Query)('warehouseId', new common_1.DefaultValuePipe(null), common_1.ParseIntPipe)),
+    __param(1, (0, common_1.Query)('makeId')),
+    __param(2, (0, common_1.Query)('modelId')),
+    __param(3, (0, common_1.Query)('modificationId')),
+    __param(4, (0, common_1.Query)('manufacturers')),
+    __param(5, (0, common_1.Query)('warehouses')),
     __param(6, (0, common_1.Query)('sortBy')),
     __param(7, (0, common_1.Query)('sortDir')),
     __param(8, (0, common_1.Query)('page', new common_1.DefaultValuePipe(1), common_1.ParseIntPipe)),
     __param(9, (0, common_1.Query)('limit', new common_1.DefaultValuePipe(24), common_1.ParseIntPipe)),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number, Object, Object, Object, Object, Object, String, String, Number, Number]),
+    __metadata("design:paramtypes", [Number, String, String, String, String, String, String, String, Number, Number]),
     __metadata("design:returntype", Promise)
 ], ProductsController.prototype, "getCatalogProducts", null);
+__decorate([
+    (0, common_1.Get)('manufacturers'),
+    __param(0, (0, common_1.Query)('categoryId', common_1.ParseIntPipe)),
+    __param(1, (0, common_1.Query)('modificationId')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, Number]),
+    __metadata("design:returntype", Promise)
+], ProductsController.prototype, "getCatalogManufacturers", null);
+__decorate([
+    (0, common_1.Get)('warehouses'),
+    __param(0, (0, common_1.Query)('categoryId', common_1.ParseIntPipe)),
+    __param(1, (0, common_1.Query)('modificationId')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, Number]),
+    __metadata("design:returntype", Promise)
+], ProductsController.prototype, "getCatalogWarehouses", null);
+__decorate([
+    (0, common_1.Get)('/searchBySku'),
+    __param(0, (0, common_1.Query)('skuFragment')),
+    __param(1, (0, common_1.Query)('page')),
+    __param(2, (0, common_1.Query)('limit')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object, Object]),
+    __metadata("design:returntype", Promise)
+], ProductsController.prototype, "getArticleProduct", null);
+__decorate([
+    (0, common_1.Get)('/searchByOem'),
+    __param(0, (0, common_1.Query)('oemNumber')),
+    __param(1, (0, common_1.Query)('page')),
+    __param(2, (0, common_1.Query)('limit')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object, Object]),
+    __metadata("design:returntype", Promise)
+], ProductsController.prototype, "getOemProduct", null);
 __decorate([
     (0, common_1.Get)(':sku'),
     __param(0, (0, common_1.Param)('sku')),
@@ -68,20 +125,6 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], ProductsController.prototype, "getProduct", null);
-__decorate([
-    (0, common_1.Get)('/searchByArticle/:articleId'),
-    __param(0, (0, common_1.Query)('articleId')),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number]),
-    __metadata("design:returntype", Promise)
-], ProductsController.prototype, "getArticleProduct", null);
-__decorate([
-    (0, common_1.Get)('/searchByOem/:articleId'),
-    __param(0, (0, common_1.Query)('articleId')),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number]),
-    __metadata("design:returntype", Promise)
-], ProductsController.prototype, "getOemProduct", null);
 exports.ProductsController = ProductsController = __decorate([
     (0, common_1.Controller)('products'),
     __metadata("design:paramtypes", [products_service_1.ProductsService])

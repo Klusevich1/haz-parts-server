@@ -4,7 +4,7 @@ import { User } from './entities/user.entity';
 import { UserService } from './user.service';
 import { UserController } from './user.controller';
 import { Address } from './entities/adress.entity';
-import { Order } from '../order/order.entity';
+import { Order } from '../entities/order.entity';
 
 @Module({
   imports: [TypeOrmModule.forFeature([User, Address, Order])],

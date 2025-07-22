@@ -1,7 +1,13 @@
 // user.entity.ts
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, OneToMany } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+  OneToMany,
+} from 'typeorm';
 import { Address } from './adress.entity';
-import { Order } from '../../order/order.entity';
+import { Order } from '../../entities/order.entity';
 
 @Entity()
 export class User {
@@ -31,9 +37,6 @@ export class User {
 
   @OneToMany(() => Address, (address) => address.user, { cascade: true })
   addresses: Address[];
-
-  @OneToMany(() => Order, (order) => order.user)
-  orders: Order[];
 
   @CreateDateColumn()
   createdAt: Date;

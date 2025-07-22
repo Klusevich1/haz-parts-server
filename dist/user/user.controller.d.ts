@@ -6,20 +6,20 @@ export declare class UserController {
     private readonly userService;
     constructor(userService: UserService);
     getProfile(user: {
-        userId: number;
+        id: number;
     }): Promise<import("./entities/user.entity").User | null>;
     getUserAddresses(user: {
-        userId: number;
+        id: number;
     }): Promise<import("./entities/adress.entity").Address[]>;
     changePassword(user: {
-        userId: number;
+        id: number;
     }, dto: ChangePasswordDto): Promise<{
         message: string;
     }>;
     addUserAddress(user: {
-        userId: number;
+        id: number;
     }, dto: AddAddressDto): Promise<import("./entities/adress.entity").Address>;
     updateProfile(user: {
-        userId: number;
+        id: number;
     }, dto: UpdateUserDto): Promise<import("./entities/user.entity").User>;
 }

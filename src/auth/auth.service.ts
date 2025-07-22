@@ -50,9 +50,9 @@ export class AuthService {
     return { available: true };
   }
 
-  private generateToken(userId: number) {
+  private generateToken(id: number) {
     return {
-      access_token: this.jwtService.sign({ sub: userId }),
+      access_token: this.jwtService.sign({ sub: id }),
     };
   }
 }

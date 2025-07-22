@@ -35,20 +35,20 @@ let CarInfoController = class CarInfoController {
 };
 exports.CarInfoController = CarInfoController;
 __decorate([
-    (0, common_1.Get)('/brands'),
+    (0, common_1.Get)('brands'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], CarInfoController.prototype, "getAllBrands", null);
 __decorate([
-    (0, common_1.Get)('/models'),
+    (0, common_1.Get)('models'),
     __param(0, (0, common_1.Query)('makeId', common_1.ParseIntPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
 ], CarInfoController.prototype, "getByMake", null);
 __decorate([
-    (0, common_1.Get)('/modifications'),
+    (0, common_1.Get)('modifications'),
     __param(0, (0, common_1.Query)('modelId', common_1.ParseIntPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),

@@ -48,9 +48,9 @@ let AuthService = class AuthService {
         }
         return { available: true };
     }
-    generateToken(userId) {
+    generateToken(id) {
         return {
-            access_token: this.jwtService.sign({ sub: userId }),
+            access_token: this.jwtService.sign({ sub: id }),
         };
     }
 };

@@ -13,7 +13,7 @@ const user_entity_1 = require("./entities/user.entity");
 const user_service_1 = require("./user.service");
 const user_controller_1 = require("./user.controller");
 const adress_entity_1 = require("./entities/adress.entity");
-const order_entity_1 = require("../order/order.entity");
+const order_entity_1 = require("../entities/order.entity");
 let UserModule = class UserModule {
 };
 exports.UserModule = UserModule;

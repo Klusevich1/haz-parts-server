@@ -1,53 +1,27 @@
-import {
-  IsNumber,
-  IsNotEmpty,
-  IsArray,
-  IsOptional,
-  IsString,
-} from 'class-validator';
+import { IsArray, IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class CreateOrderDto {
-  @IsString()
-  @IsNotEmpty()
-  orderNumber: number;
-
-  @IsString()
-  @IsNotEmpty()
-  name: string;
-
-  @IsString()
-  @IsOptional()
-  lastName: string;
-
-  @IsString()
-  @IsNotEmpty()
-  userPhone: string;
-
-  @IsString()
-  @IsOptional()
-  userMail?: string;
-
   @IsNumber()
-  @IsNotEmpty()
-  orderPrice: number;
+  userId: number;
+
+  @IsString()
+  fullname: string;
+
+  @IsString()
+  email: string;
 
   @IsArray()
-  @IsNotEmpty()
-  cartItems: any[];
+  items: any[];
 
   @IsString()
-  @IsNotEmpty()
-  deliveryType: string;
+  deliveryMethod: string;
 
   @IsString()
-  @IsOptional()
-  deliveryAddress: string;
+  address: string;
 
   @IsString()
-  @IsOptional()
-  paymentMethod?: string;
+  payment: string;
 
   @IsString()
-  @IsOptional()
   comment?: string;
 }

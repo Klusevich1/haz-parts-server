@@ -20,45 +20,42 @@ let CategoriesController = class CategoriesController {
     constructor(categoriesService) {
         this.categoriesService = categoriesService;
     }
-    async getAll() {
+    async getAll(locale, modificationId) {
+        if (modificationId) {
+            return this.categoriesService.findByModification(modificationId);
+        }
         return this.categoriesService.getAllCategories();
     }
     async getCategoryBySlug(slug) {
-        console.log(slug);
-        if (!slug) {
-            throw new common_1.HttpException('Slug parameter is required', common_1.HttpStatus.BAD_REQUEST);
-        }
-        const category = await this.categoriesService.findBySlug(slug);
-        if (!category) {
-            throw new common_1.HttpException('Category not found', common_1.HttpStatus.NOT_FOUND);
-        }
-        return [category];
+        return this.categoriesService.findBySlug(slug);
     }
-    async importFromFile(locale = 'en') {
-        return this.categoriesService.loadAllFromFile(locale);
+    async getGroupCategory(groupId) {
+        return this.categoriesService.findGroupByCategoryId(groupId);
     }
 };
 exports.CategoriesController = CategoriesController;
 __decorate([
     (0, common_1.Get)(),
+    __param(0, (0, common_1.Query)('locale')),
+    __param(1, (0, common_1.Query)('modificationId')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [String, Number]),
     __metadata("design:returntype", Promise)
 ], CategoriesController.prototype, "getAll", null);
 __decorate([
-    (0, common_1.Get)('bySlug'),
-    __param(0, (0, common_1.Query)('slug')),
+    (0, common_1.Get)(':slug'),
+    __param(0, (0, common_1.Param)('slug')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], CategoriesController.prototype, "getCategoryBySlug", null);
 __decorate([
-    (0, common_1.Post)('import-from-file'),
-    __param(0, (0, common_1.Query)('locale')),
+    (0, common_1.Get)('group-by-id/:groupId'),
+    __param(0, (0, common_1.Param)('groupId')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
-], CategoriesController.prototype, "importFromFile", null);
+], CategoriesController.prototype, "getGroupCategory", null);
 exports.CategoriesController = CategoriesController = __decorate([
     (0, common_1.Controller)('categories'),
     __metadata("design:paramtypes", [categories_service_1.CategoriesService])

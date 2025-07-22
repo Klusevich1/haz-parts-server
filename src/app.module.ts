@@ -1,8 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import {  } from './products/products.module';
-import { ApplicationModule } from './application/application.module';
+import {} from './products/products.module';
 import { OrderModule } from './order/order.module';
 import { ProductsModule } from './products/products.module';
 import { UserModule } from './user/user.module';
@@ -10,6 +9,9 @@ import { AuthModule } from './auth/auth.module';
 import { CategoriesModule } from './categories/categories.module';
 import { CarInfoModule } from './car-info/car-info.module';
 import { StripeModule } from './stripe/stripe.module';
+import { CacheModule } from '@nestjs/cache-manager';
+import { IdsModule } from './ids/ids.module';
+import { CartModule } from './cart/cart.module';
 
 @Module({
   imports: [
@@ -18,18 +20,24 @@ import { StripeModule } from './stripe/stripe.module';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => ({
-        type: 'postgres',
+        type: 'mysql',
         host: configService.get<string>('DB_HOST', 'localhost'),
-        port: configService.get<number>('DB_PORT', 5432),
-        username: configService.get<string>('DB_USER', 'postgres'),
-        password: configService.get<string>('DB_PASSWORD', 'password'),
-        database: configService.get<string>('DB_NAME', 'mydatabase'),
+        port: configService.get<number>('DB_PORT', 3306),
+        username: configService.get<string>('DB_USER', 'root'),
+        password: configService.get<string>('DB_PASSWORD', ''),
+        database: configService.get<string>('DB_NAME', 'mydb'),
+        entities: [__dirname + '/entities/*.entity{.ts,.js}'],
         autoLoadEntities: true,
-        synchronize: true, // Только для разработки, в проде отключить!
+        synchronize: false, // ❗ true - только в dev-режиме!
       }),
     }),
+    // CacheModule.register({
+    //   store: 'redis',
+    //   host: process.env.REDIS_HOST || 'localhost', // Используем переменные окружения
+    //   port: parseInt(process.env.REDIS_PORT, 10) || 6379,
+    //   ttl: parseInt(process.env.REDIS_TTL, 10) || 1800, // Время жизни кеша
+    // }),
     ProductsModule,
-    ApplicationModule,
     CarInfoModule,
     OrderModule,
     ProductsModule,
@@ -38,6 +46,8 @@ import { StripeModule } from './stripe/stripe.module';
     CategoriesModule,
     CarInfoModule,
     StripeModule,
+    IdsModule,
+    CartModule,
   ],
 })
 export class AppModule {}

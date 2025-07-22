@@ -12,7 +12,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.User = void 0;
 const typeorm_1 = require("typeorm");
 const adress_entity_1 = require("./adress.entity");
-const order_entity_1 = require("../../order/order.entity");
 let User = class User {
     id;
     email;
@@ -23,7 +22,6 @@ let User = class User {
     default_pm;
     default_dm;
     addresses;
-    orders;
     createdAt;
 };
 exports.User = User;
@@ -63,10 +61,6 @@ __decorate([
     (0, typeorm_1.OneToMany)(() => adress_entity_1.Address, (address) => address.user, { cascade: true }),
     __metadata("design:type", Array)
 ], User.prototype, "addresses", void 0);
-__decorate([
-    (0, typeorm_1.OneToMany)(() => order_entity_1.Order, (order) => order.user),
-    __metadata("design:type", Array)
-], User.prototype, "orders", void 0);
 __decorate([
     (0, typeorm_1.CreateDateColumn)(),
     __metadata("design:type", Date)

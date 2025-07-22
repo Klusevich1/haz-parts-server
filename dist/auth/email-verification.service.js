@@ -18,8 +18,8 @@ let EmailVerificationService = class EmailVerificationService {
         port: 465,
         secure: true,
         auth: {
-            user: process.env.ZOHO_USER,
-            pass: process.env.ZOHO_PASS,
+            user: process.env.ZOHO_NOTICE_USER,
+            pass: process.env.ZOHO_NOTICE_PASS,
         },
     });
     async sendCode(email) {

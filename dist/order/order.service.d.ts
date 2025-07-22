@@ -1,8 +1,15 @@
+import { Order } from '../entities/order.entity';
 import { Repository } from 'typeorm';
-import { Order } from './order.entity';
 import { CreateOrderDto } from './create-order.dto';
+import { ConfigService } from '@nestjs/config';
 export declare class OrderService {
     private readonly orderRepository;
-    constructor(orderRepository: Repository<Order>);
-    createOrder(createOrderDto: CreateOrderDto): Promise<Order>;
+    private readonly configService;
+    private transporter;
+    constructor(orderRepository: Repository<Order>, configService: ConfigService);
+    createOrder(dto: CreateOrderDto): Promise<{
+        success: boolean;
+        message: string;
+        orderNumber: number;
+    }>;
 }

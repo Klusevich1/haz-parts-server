@@ -1,44 +1,73 @@
+import { Category } from 'src/entities/category.entity';
+import { Make } from 'src/entities/make.entity';
+import { ModelModification } from 'src/entities/model-modification.entity';
+import { Model } from 'src/entities/model.entity';
+import { Product } from 'src/entities/product.entity';
 import { Repository } from 'typeorm';
-import { Product } from './product.entity';
-import { Brand } from './product.entity';
-import { Model } from './product.entity';
-import { Modification } from './product.entity';
-import { Category } from 'src/categories/category.entity';
 export declare class ProductsService {
     private productRepository;
     private categoryRepository;
-    private brandRepository;
+    private makeRepository;
     private modelRepository;
     private modificationRepository;
-    constructor(productRepository: Repository<Product>, categoryRepository: Repository<Category>, brandRepository: Repository<Brand>, modelRepository: Repository<Model>, modificationRepository: Repository<Modification>);
+    constructor(productRepository: Repository<Product>, categoryRepository: Repository<Category>, makeRepository: Repository<Make>, modelRepository: Repository<Model>, modificationRepository: Repository<ModelModification>);
     getCatalogProducts(params: {
         categoryId: number;
-        modelId?: number;
-        modificationId?: number;
-        manufacturerId?: number;
-        warehouseId?: number;
-        makeId?: number;
-        sortBy?: 'name' | 'price';
+        makeIdNum?: number;
+        modelIdNum?: number;
+        modificationIdNum?: number;
+        manufacturerIds?: number[];
+        warehouseIds?: number[];
+        sortBy?: 'availability' | 'price' | '';
         sortDir?: 'ASC' | 'DESC';
         page?: number;
         limit?: number;
-    }): Promise<any>;
+    }): Promise<{
+        result: any;
+        totalCount: any;
+        warehouseDetails: never[];
+    }>;
+    getCatalogManufacturers(params: {
+        categoryId: number;
+        modelId?: number;
+        modificationId?: number;
+        makeId?: number;
+        warehouseId?: number;
+    }): Promise<{
+        id: number;
+        name: string;
+    }[]>;
+    getCatalogWarehouses(params: {
+        categoryId: number;
+        modelId?: number;
+        modificationId?: number;
+        makeId?: number;
+        warehouseId?: number;
+    }): Promise<{
+        id: number;
+        name: string;
+    }[]>;
     getProductDetailsBySku(sku: string): Promise<{
         attributes: any;
         photos: any;
+        manufacturer_name: any;
         stock: any;
         oeNumbers: any;
         compatibility: any;
-        id: string;
+        id: number;
         name: string;
         sku: string;
-        price: number;
-        description: string;
-        category: Category;
-        brands: Brand[];
-        models: Model[];
-        modifications: Modification[];
+        category_id: number;
+        manufacturer_id: number;
     } | null>;
-    searchByArticle(articleId: number): Promise<any>;
-    searchByOem(oemNumber: number): Promise<any>;
+    searchBySku(skuFragment: string, page?: number, limit?: number): Promise<{
+        result: any;
+        totalCount: any;
+        warehouseDetails: never[];
+    }>;
+    searchByOem(oemNumber: string, page?: number, limit?: number): Promise<{
+        result: any;
+        totalCount: any;
+        warehouseDetails: never[];
+    }>;
 }

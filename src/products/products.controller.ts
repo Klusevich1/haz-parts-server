@@ -6,8 +6,10 @@ import {
   Param,
   ParseIntPipe,
   Query,
+  Req,
 } from '@nestjs/common';
 import { ProductsService } from './products.service';
+import { Request } from 'express';
 
 @Controller('products')
 export class ProductsController {
@@ -16,28 +18,35 @@ export class ProductsController {
   @Get('catalog')
   async getCatalogProducts(
     @Query('categoryId', ParseIntPipe) categoryId: number,
-    @Query('modelId', new DefaultValuePipe(null), ParseIntPipe)
-    modelId: number | null,
-    @Query('modificationId', new DefaultValuePipe(null), ParseIntPipe)
-    modificationId: number | null,
-    @Query('manufacturerId', new DefaultValuePipe(null), ParseIntPipe)
-    manufacturerId: number | null,
-    @Query('makeId', new DefaultValuePipe(null), ParseIntPipe)
-    makeId: number | null,
-    @Query('warehouseId', new DefaultValuePipe(null), ParseIntPipe)
-    warehouseId: number | null,
-    @Query('sortBy') sortBy: 'name' | 'price' = 'name',
+    @Query('makeId') makeId: string,
+    @Query('modelId') modelId: string,
+    @Query('modificationId') modificationId: string,
+    @Query('manufacturers') manufacturers: string,
+    @Query('warehouses') warehouses: string,
+    @Query('sortBy') sortBy: 'availability' | 'price' | '' = '',
     @Query('sortDir') sortDir: 'ASC' | 'DESC' = 'ASC',
     @Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number = 1,
     @Query('limit', new DefaultValuePipe(24), ParseIntPipe) limit: number = 24,
   ) {
+    const makeIdNum = makeId ? parseInt(makeId, 10) : undefined;
+    const modelIdNum = modelId ? parseInt(modelId, 10) : undefined;
+    const modificationIdNum = modificationId
+      ? parseInt(modificationId, 10)
+      : undefined;
+    const manufacturerIds = manufacturers.length
+      ? manufacturers?.split('~').map((id) => parseInt(id, 10))
+      : [];
+    const warehouseIds = warehouses.length
+      ? warehouses?.split('~').map((id) => parseInt(id, 10))
+      : [];
+
     return this.productsService.getCatalogProducts({
       categoryId,
-      modelId: modelId ?? undefined,
-      modificationId: modificationId ?? undefined,
-      manufacturerId: manufacturerId ?? undefined,
-      makeId: makeId ?? undefined,
-      warehouseId: warehouseId ?? undefined,
+      makeIdNum: makeIdNum ?? undefined,
+      modelIdNum: modelIdNum ?? undefined,
+      modificationIdNum: modificationIdNum ?? undefined,
+      manufacturerIds,
+      warehouseIds,
       sortBy,
       sortDir,
       page,
@@ -45,18 +54,48 @@ export class ProductsController {
     });
   }
 
+  @Get('manufacturers')
+  async getCatalogManufacturers(
+    @Query('categoryId', ParseIntPipe) categoryId: number,
+    @Query('modificationId') modificationId?: number,
+  ) {
+    return this.productsService.getCatalogManufacturers({
+      categoryId,
+      modificationId: modificationId ? Number(modificationId) : undefined,
+    });
+  }
+
+  @Get('warehouses')
+  async getCatalogWarehouses(
+    @Query('categoryId', ParseIntPipe) categoryId: number,
+    @Query('modificationId') modificationId?: number,
+  ) {
+    return this.productsService.getCatalogWarehouses({
+      categoryId,
+      modificationId: modificationId ? Number(modificationId) : undefined,
+    });
+  }
+
+  @Get('/searchBySku')
+  async getArticleProduct(
+    @Query('skuFragment') skuFragment: string,
+    @Query('page') page = 1,
+    @Query('limit') limit = 24,
+  ) {
+    return this.productsService.searchBySku(skuFragment, page, limit);
+  }
+
+  @Get('/searchByOem')
+  async getOemProduct(
+    @Query('oemNumber') oemNumber: string,
+    @Query('page') page = 1,
+    @Query('limit') limit = 24,
+  ) {
+    return this.productsService.searchByOem(oemNumber, page, limit);
+  }
+
   @Get(':sku')
   async getProduct(@Param('sku') sku: string) {
     return this.productsService.getProductDetailsBySku(sku);
-  }
-
-  @Get('/searchByArticle/:articleId')
-  async getArticleProduct(@Query('articleId') articleId: number) {
-    return this.productsService.searchByArticle(articleId);
-  }
-
-  @Get('/searchByOem/:articleId')
-  async getOemProduct(@Query('articleId') articleId: number) {
-    return this.productsService.searchByOem(articleId);
   }
 }

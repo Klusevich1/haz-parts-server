@@ -1,13 +1,10 @@
 export declare class CreateOrderDto {
-    orderNumber: number;
-    name: string;
-    lastName: string;
-    userPhone: string;
-    userMail?: string;
-    orderPrice: number;
-    cartItems: any[];
-    deliveryType: string;
-    deliveryAddress: string;
-    paymentMethod?: string;
+    userId: number;
+    fullname: string;
+    email: string;
+    items: any[];
+    deliveryMethod: string;
+    address: string;
+    payment: string;
     comment?: string;
 }

@@ -26,19 +26,20 @@ let UserController = class UserController {
         this.userService = userService;
     }
     async getProfile(user) {
-        return this.userService.findById(user.userId);
+        return this.userService.findById(user.id);
     }
     getUserAddresses(user) {
-        return this.userService.getAddresses(user.userId);
+        return this.userService.getAddresses(user.id);
     }
     changePassword(user, dto) {
-        return this.userService.changePassword(user.userId, dto);
+        return this.userService.changePassword(user.id, dto);
     }
     addUserAddress(user, dto) {
-        return this.userService.addAddress(user.userId, dto);
+        console.log(dto);
+        return this.userService.addAddress(user.id, dto);
     }
     async updateProfile(user, dto) {
-        return this.userService.updateProfile(user.userId, dto);
+        return this.userService.updateProfile(user.id, dto);
     }
 };
 exports.UserController = UserController;

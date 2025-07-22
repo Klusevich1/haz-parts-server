@@ -16,9 +16,11 @@ exports.CarInfoService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
-const car_brand_entity_1 = require("./entities/car-brand.entity");
 const fs_1 = require("fs");
 const path_1 = require("path");
+const make_entity_1 = require("../entities/make.entity");
+const model_entity_1 = require("../entities/model.entity");
+const model_modification_entity_1 = require("../entities/model-modification.entity");
 let CarInfoService = class CarInfoService {
     makeRepository;
     modelRepository;
@@ -29,13 +31,17 @@ let CarInfoService = class CarInfoService {
         this.modificationRepository = modificationRepository;
     }
     async getAllBrands() {
-        return await this.makeRepository.query(`SELECT id, name, logo_url FROM Makes ORDER BY name;`);
+        return await this.makeRepository.query(`SELECT DISTINCT mk.id, mk.name, mk.logo_url, mk.slug
+       FROM Makes mk
+       JOIN Models mdl ON mdl.make_id = mk.id
+       ORDER BY mk.name;
+      `);
     }
     async getModelsByMake(makeId) {
-        return await this.modelRepository.query(`SELECT id, name, model_url FROM Models WHERE make_id = ? ORDER BY name;`, [makeId]);
+        return await this.modelRepository.query(`SELECT id, name, model_url, slug FROM Models WHERE make_id = ? ORDER BY name;`, [makeId]);
     }
     async getModificationsByModel(modelId) {
-        return await this.modificationRepository.query(`SELECT id, name, power, year_from, year_to
+        return await this.modificationRepository.query(`SELECT id, name, power, year_from, year_to, slug
      FROM ModelModifications
      WHERE model_id = ?
      ORDER BY year_from;`, [modelId]);
@@ -57,7 +63,9 @@ let CarInfoService = class CarInfoService {
 exports.CarInfoService = CarInfoService;
 exports.CarInfoService = CarInfoService = __decorate([
     (0, common_1.Injectable)(),
-    __param(0, (0, typeorm_1.InjectRepository)(car_brand_entity_1.CarBrand)),
+    __param(0, (0, typeorm_1.InjectRepository)(make_entity_1.Make)),
+    __param(1, (0, typeorm_1.InjectRepository)(model_entity_1.Model)),
+    __param(2, (0, typeorm_1.InjectRepository)(model_modification_entity_1.ModelModification)),
     __metadata("design:paramtypes", [typeorm_2.Repository,
         typeorm_2.Repository,
         typeorm_2.Repository])
