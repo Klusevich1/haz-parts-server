@@ -37,7 +37,6 @@ import { RedisModule } from './redis/redis.module';
           keepAliveInitialDelay: 10000,
           enableKeepAlive: true,
           connectTimeout: 10000,
-          acquireTimeout: 10000,
         },
       }),
     }),
