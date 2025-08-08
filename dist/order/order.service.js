@@ -54,7 +54,7 @@ let OrderService = class OrderService {
             from: '"Hazparts Order" <order@hazparts.com>',
             to: process.env.ZOHO_ORDER_USER,
             subject: `New order №${nextOrderNumber}`,
-            text: `Order №${nextOrderNumber}\nFullname: ${dto.fullname}\nEmail: ${dto.email}\nDelivery Method: ${dto.deliveryMethod}\nPaymane Method: ${dto.payment}\nProducts:\n${itemLines}`,
+            text: `Order №${nextOrderNumber}\nFullname: ${dto.fullname}\nEmail: ${dto.email}\nDelivery Method: ${dto.deliveryMethod}\nPayment Method: ${dto.payment}\nProducts:\n${itemLines}\nOrder amount with taxes: ${dto.sum} €`,
         };
         await this.transporter.sendMail(mailOptions);
         return {

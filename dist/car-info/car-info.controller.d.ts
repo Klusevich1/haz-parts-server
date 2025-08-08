@@ -5,8 +5,4 @@ export declare class CarInfoController {
     getAllBrands(): Promise<any>;
     getByMake(makeId: number): Promise<any>;
     getByModel(modelId: number): Promise<any>;
-    importCarData(): Promise<{
-        message: string;
-        count: any;
-    }>;
 }

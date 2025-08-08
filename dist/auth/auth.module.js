@@ -15,6 +15,8 @@ const auth_controller_1 = require("./auth.controller");
 const user_module_1 = require("../user/user.module");
 const jwt_strategy_1 = require("./jwt.strategy");
 const email_verification_service_1 = require("./email-verification.service");
+const redis_module_1 = require("../redis/redis.module");
+const config_1 = require("@nestjs/config");
 let AuthModule = class AuthModule {
 };
 exports.AuthModule = AuthModule;
@@ -22,14 +24,22 @@ exports.AuthModule = AuthModule = __decorate([
     (0, common_1.Module)({
         imports: [
             passport_1.PassportModule,
-            jwt_1.JwtModule.register({
-                secret: process.env.JWT_SECRET || 'secret_key',
-                signOptions: { expiresIn: '7d' },
+            jwt_1.JwtModule.registerAsync({
+                imports: [config_1.ConfigModule],
+                inject: [config_1.ConfigService],
+                useFactory: async (config) => ({
+                    secret: config.get('JWT_SECRET'),
+                    signOptions: {
+                        expiresIn: '15m',
+                    },
+                }),
             }),
-            user_module_1.UserModule,
+            (0, common_1.forwardRef)(() => user_module_1.UserModule),
+            redis_module_1.RedisModule,
         ],
         providers: [auth_service_1.AuthService, email_verification_service_1.EmailVerificationService, jwt_strategy_1.JwtStrategy],
         controllers: [auth_controller_1.AuthController],
+        exports: [jwt_1.JwtModule],
     })
 ], AuthModule);
 //# sourceMappingURL=auth.module.js.map

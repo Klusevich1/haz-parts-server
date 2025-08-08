@@ -11,10 +11,16 @@ import { ChangePasswordDto } from './dto/change-password.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { Address } from './entities/adress.entity';
 import { AddAddressDto } from './dto/add-address.dto';
+import { Order } from 'src/entities/order.entity';
+import { JwtService } from '@nestjs/jwt';
+import { RedisService } from 'src/redis/redis.service';
 
 @Injectable()
 export class UserService {
   constructor(
+    private readonly jwtService: JwtService,
+    private readonly redisService: RedisService,
+
     @InjectRepository(User)
     private readonly userRepo: Repository<User>,
 
@@ -27,6 +33,7 @@ export class UserService {
   }
 
   findById(id: number): Promise<User | null> {
+    console.log(id);
     return this.userRepo.findOne({ where: { id } });
   }
 
@@ -75,11 +82,26 @@ export class UserService {
     }
 
     const addresses = await this.userRepo.query(
-      `SELECT * FROM address WHERE user_id = ?`,
+      `SELECT * FROM Address WHERE user_id = ?`,
       [userId],
     );
 
     return addresses;
+  }
+
+  async getOrders(userId: number): Promise<Order[]> {
+    const user = await this.userRepo.findOne({ where: { id: userId } });
+
+    if (!user) {
+      throw new NotFoundException('Пользователь не найден');
+    }
+
+    const orders = await this.userRepo.query(
+      `SELECT * FROM Orders WHERE user_id = ?`,
+      [userId],
+    );
+
+    return orders;
   }
 
   async addAddress(userId: number, dto: AddAddressDto): Promise<Address> {
@@ -88,11 +110,26 @@ export class UserService {
       throw new NotFoundException('Пользователь не найден');
     }
 
+    const addressCount = await this.addressRepo.count({
+      where: { user: { id: userId } },
+    });
+    if (addressCount >= 15) {
+      throw new BadRequestException('Превышено количество адресов (макс. 15)');
+    }
+
     const address = this.addressRepo.create({
       ...dto,
       user,
     });
 
     return this.addressRepo.save(address);
+  }
+
+  async logout(refreshToken: string) {
+    const payload = this.jwtService.verify(refreshToken, {
+      secret: process.env.JWT_REFRESH_SECRET,
+    });
+
+    await this.redisService.del(`refresh:${payload.jti}`);
   }
 }

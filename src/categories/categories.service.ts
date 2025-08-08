@@ -13,29 +13,46 @@ export class CategoriesService {
     private readonly categoryRepository: Repository<Category>,
   ) {}
 
-  async getAllCategories() {
+  async getAllCategories(lang: 'ru' | 'en' | 'lv') {
+    const validLangs = ['ru', 'en', 'lv'];
+    const columnSuffix = validLangs.includes(lang) ? lang : 'ru';
+
     return await this.categoryRepository.query(
-      `SELECT c.id, c.name, c.slug, c.group_id, cg.name as group_name
-       FROM Categories c
-       LEFT JOIN CategoryGroups cg ON c.group_id = cg.id
-       ORDER BY cg.name, c.name;`,
+      `
+    SELECT 
+      c.id, 
+      c.name_${columnSuffix} AS name, 
+      c.slug, 
+      c.group_id, 
+      cg.name_${columnSuffix} AS group_name
+    FROM Categories c
+    LEFT JOIN CategoryGroups cg ON c.group_id = cg.id
+    ORDER BY cg.name_${columnSuffix}, c.name_${columnSuffix};
+    `,
     );
   }
 
   async findByModification(
     modificationId: number,
-    // locale: string,
+    lang: 'ru' | 'en' | 'lv',
   ): Promise<Category[]> {
-    console.log(modificationId);
+    const validLangs = ['ru', 'en', 'lv'];
+    const columnSuffix = validLangs.includes(lang) ? lang : 'ru';
+
     return this.categoryRepository.query(
       `
-      SELECT DISTINCT c.*, cg.name as group_name
-      FROM Categories c
-      JOIN Products p ON p.category_id = c.id
-      JOIN ProductVehicleCompatibility pvc ON pvc.product_id = p.id
-      LEFT JOIN CategoryGroups cg ON c.group_id = cg.id
-      WHERE pvc.modification_id = ?
-      `,
+    SELECT DISTINCT 
+      c.id,
+      c.slug,
+      c.group_id,
+      c.name_${columnSuffix} AS name,
+      cg.name_${columnSuffix} AS group_name
+    FROM Categories c
+    JOIN Products p ON p.category_id = c.id
+    JOIN ProductVehicleCompatibility pvc ON pvc.product_id = p.id
+    LEFT JOIN CategoryGroups cg ON c.group_id = cg.id
+    WHERE pvc.modification_id = ?
+    `,
       [modificationId],
     );
   }
@@ -44,11 +61,17 @@ export class CategoriesService {
   //   return this.categoryRepository.find();
   // }
 
-  async findBySlug(slug: string): Promise<Category | null> {
+  async findBySlug(
+    slug: string,
+    lang: 'ru' | 'en' | 'lv',
+  ): Promise<Category | null> {
     try {
+      const validLangs = ['ru', 'en', 'lv'];
+      const columnSuffix = validLangs.includes(lang) ? lang : 'en';
+
       const result = await this.categoryRepository.query(
         `
-      SELECT c.id, c.name, c.slug, c.group_id, cg.name AS group_name
+      SELECT c.id, c.name_${columnSuffix} AS name, c.slug, c.group_id, cg.name_${columnSuffix} AS group_name
       FROM Categories c
       LEFT JOIN CategoryGroups cg ON c.group_id = cg.id
       WHERE c.slug = ?
@@ -70,15 +93,18 @@ export class CategoriesService {
 
   async findGroupByCategoryId(
     groupId: number,
+    lang: 'ru' | 'en' | 'lv',
   ): Promise<{ group_name: string; categories: Category[] } | null> {
     try {
+      const validLangs = ['ru', 'en', 'lv'];
+      const columnSuffix = validLangs.includes(lang) ? lang : 'en';
       const categories = await this.categoryRepository.query(
         `
-      SELECT c.id, c.name, c.slug, c.group_id, cg.name AS group_name
+      SELECT c.id, c.name_${columnSuffix} AS name, c.slug, c.group_id, cg.name_${columnSuffix} AS group_name
       FROM Categories c
       LEFT JOIN CategoryGroups cg ON c.group_id = cg.id
       WHERE c.group_id = ?
-      ORDER BY c.name
+      ORDER BY c.name_${columnSuffix}
       `,
         [groupId],
       );

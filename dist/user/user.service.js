@@ -19,10 +19,16 @@ const user_entity_1 = require("./entities/user.entity");
 const typeorm_2 = require("typeorm");
 const bcrypt = require("bcrypt");
 const adress_entity_1 = require("./entities/adress.entity");
+const jwt_1 = require("@nestjs/jwt");
+const redis_service_1 = require("../redis/redis.service");
 let UserService = class UserService {
+    jwtService;
+    redisService;
     userRepo;
     addressRepo;
-    constructor(userRepo, addressRepo) {
+    constructor(jwtService, redisService, userRepo, addressRepo) {
+        this.jwtService = jwtService;
+        this.redisService = redisService;
         this.userRepo = userRepo;
         this.addressRepo = addressRepo;
     }
@@ -30,6 +36,7 @@ let UserService = class UserService {
         return this.userRepo.findOne({ where: { email } });
     }
     findById(id) {
+        console.log(id);
         return this.userRepo.findOne({ where: { id } });
     }
     create(user) {
@@ -64,13 +71,27 @@ let UserService = class UserService {
         if (!user) {
             throw new common_1.NotFoundException('Пользователь не найден');
         }
-        const addresses = await this.userRepo.query(`SELECT * FROM address WHERE user_id = ?`, [userId]);
+        const addresses = await this.userRepo.query(`SELECT * FROM Address WHERE user_id = ?`, [userId]);
         return addresses;
+    }
+    async getOrders(userId) {
+        const user = await this.userRepo.findOne({ where: { id: userId } });
+        if (!user) {
+            throw new common_1.NotFoundException('Пользователь не найден');
+        }
+        const orders = await this.userRepo.query(`SELECT * FROM Orders WHERE user_id = ?`, [userId]);
+        return orders;
     }
     async addAddress(userId, dto) {
         const user = await this.userRepo.findOne({ where: { id: userId } });
         if (!user) {
             throw new common_1.NotFoundException('Пользователь не найден');
+        }
+        const addressCount = await this.addressRepo.count({
+            where: { user: { id: userId } },
+        });
+        if (addressCount >= 15) {
+            throw new common_1.BadRequestException('Превышено количество адресов (макс. 15)');
         }
         const address = this.addressRepo.create({
             ...dto,
@@ -78,13 +99,21 @@ let UserService = class UserService {
         });
         return this.addressRepo.save(address);
     }
+    async logout(refreshToken) {
+        const payload = this.jwtService.verify(refreshToken, {
+            secret: process.env.JWT_REFRESH_SECRET,
+        });
+        await this.redisService.del(`refresh:${payload.jti}`);
+    }
 };
 exports.UserService = UserService;
 exports.UserService = UserService = __decorate([
     (0, common_1.Injectable)(),
-    __param(0, (0, typeorm_1.InjectRepository)(user_entity_1.User)),
-    __param(1, (0, typeorm_1.InjectRepository)(adress_entity_1.Address)),
-    __metadata("design:paramtypes", [typeorm_2.Repository,
+    __param(2, (0, typeorm_1.InjectRepository)(user_entity_1.User)),
+    __param(3, (0, typeorm_1.InjectRepository)(adress_entity_1.Address)),
+    __metadata("design:paramtypes", [jwt_1.JwtService,
+        redis_service_1.RedisService,
+        typeorm_2.Repository,
         typeorm_2.Repository])
 ], UserService);
 //# sourceMappingURL=user.service.js.map

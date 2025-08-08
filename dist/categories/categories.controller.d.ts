@@ -3,9 +3,9 @@ import { Category } from 'src/entities/category.entity';
 export declare class CategoriesController {
     private readonly categoriesService;
     constructor(categoriesService: CategoriesService);
-    getAll(locale?: string, modificationId?: number): Promise<Category[]>;
-    getCategoryBySlug(slug: string): Promise<Category | null>;
-    getGroupCategory(groupId: number): Promise<{
+    getAll(locale?: string, modificationId?: number, lang?: 'ru' | 'en' | 'lv'): Promise<Category[]>;
+    getCategoryBySlug(slug: string, lang?: 'ru' | 'en' | 'lv'): Promise<Category | null>;
+    getGroupCategory(groupId: number, lang?: 'ru' | 'en' | 'lv'): Promise<{
         group_name: string;
         categories: Category[];
     } | null>;

@@ -6,7 +6,7 @@ import {
   Unique,
 } from 'typeorm';
 
-@Entity('orders')
+@Entity('Orders')
 @Unique(['orderNumber'])
 export class Order {
   @PrimaryGeneratedColumn()
@@ -35,6 +35,9 @@ export class Order {
 
   @Column({ nullable: true })
   comment?: string;
+
+  @Column('decimal', { precision: 10, scale: 2 })
+  sum: number;
 
   @Column('json')
   items: any[];

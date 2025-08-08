@@ -31,12 +31,26 @@ let UserController = class UserController {
     getUserAddresses(user) {
         return this.userService.getAddresses(user.id);
     }
+    getUserOrders(user) {
+        return this.userService.getOrders(user.id);
+    }
     changePassword(user, dto) {
         return this.userService.changePassword(user.id, dto);
     }
     addUserAddress(user, dto) {
         console.log(dto);
         return this.userService.addAddress(user.id, dto);
+    }
+    async logout(token, res) {
+        if (token)
+            await this.userService.logout(token);
+        res.clearCookie('refresh_token', {
+            httpOnly: true,
+            secure: true,
+            sameSite: 'lax',
+            path: '/',
+        });
+        return { ok: true };
     }
     async updateProfile(user, dto) {
         return this.userService.updateProfile(user.id, dto);
@@ -61,6 +75,14 @@ __decorate([
 ], UserController.prototype, "getUserAddresses", null);
 __decorate([
     (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
+    (0, common_1.Get)('orders'),
+    __param(0, (0, user_decorator_1.User)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], UserController.prototype, "getUserOrders", null);
+__decorate([
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     (0, common_1.Post)('change-password'),
     __param(0, (0, user_decorator_1.User)()),
     __param(1, (0, common_1.Body)()),
@@ -77,6 +99,14 @@ __decorate([
     __metadata("design:paramtypes", [Object, add_address_dto_1.AddAddressDto]),
     __metadata("design:returntype", void 0)
 ], UserController.prototype, "addUserAddress", null);
+__decorate([
+    (0, common_1.Post)('logout'),
+    __param(0, (0, common_1.Body)('refresh_token')),
+    __param(1, (0, common_1.Res)({ passthrough: true })),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Object]),
+    __metadata("design:returntype", Promise)
+], UserController.prototype, "logout", null);
 __decorate([
     (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     (0, common_1.Patch)('update'),

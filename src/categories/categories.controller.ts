@@ -19,21 +19,28 @@ export class CategoriesController {
   async getAll(
     @Query('locale') locale?: string,
     @Query('modificationId') modificationId?: number,
+    @Query('lang') lang: 'ru' | 'en' | 'lv' = 'en',
   ): Promise<Category[]> {
     if (modificationId) {
-      return this.categoriesService.findByModification(modificationId);
+      return this.categoriesService.findByModification(modificationId, lang);
     }
-    return this.categoriesService.getAllCategories();
+    return this.categoriesService.getAllCategories(lang);
   }
 
   @Get(':slug')
-  async getCategoryBySlug(@Param('slug') slug: string) {
-    return this.categoriesService.findBySlug(slug);
+  async getCategoryBySlug(
+    @Param('slug') slug: string,
+    @Query('lang') lang: 'ru' | 'en' | 'lv' = 'en',
+  ) {
+    return this.categoriesService.findBySlug(slug, lang);
   }
 
   @Get('group-by-id/:groupId')
-  async getGroupCategory(@Param('groupId') groupId: number) {
-    return this.categoriesService.findGroupByCategoryId(groupId);
+  async getGroupCategory(
+    @Param('groupId') groupId: number,
+    @Query('lang') lang: 'ru' | 'en' | 'lv' = 'en',
+  ) {
+    return this.categoriesService.findGroupByCategoryId(groupId, lang);
   }
 
   // @Get()

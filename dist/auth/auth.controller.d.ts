@@ -8,11 +8,16 @@ export declare class AuthController {
     constructor(authService: AuthService, emailVerificationService: EmailVerificationService);
     register(dto: RegisterDto): Promise<{
         access_token: string;
+        refresh_token: string;
     }>;
     login(dto: LoginDto): Promise<{
         access_token: string;
+        refresh_token: string;
     }>;
-    checkEmail(email: string): Promise<{
+    checkEmail(dto: {
+        email: string;
+        mode: 'login' | 'register' | 'forgot';
+    }): Promise<{
         available: boolean;
     }>;
     sendConfirmationCode(email: string): Promise<void>;
@@ -20,7 +25,24 @@ export declare class AuthController {
         code: string;
     }): Promise<{
         access_token: string;
+        refresh_token: string;
     } | undefined>;
+    verifyResetCode(dto: {
+        email: string;
+        code: string;
+    }): Promise<{
+        reset_token: string;
+    }>;
+    resetPassword(dto: {
+        reset_token: string;
+        newPassword: string;
+    }): Promise<{
+        message: string;
+    }>;
+    refresh(token: string): Promise<{
+        access_token: string;
+        refresh_token: string;
+    }>;
     verifyEmailUpdate(body: {
         email: string;
         code: string;

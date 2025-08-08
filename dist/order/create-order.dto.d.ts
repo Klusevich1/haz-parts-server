@@ -3,6 +3,7 @@ export declare class CreateOrderDto {
     fullname: string;
     email: string;
     items: any[];
+    sum: number;
     deliveryMethod: string;
     address: string;
     payment: string;

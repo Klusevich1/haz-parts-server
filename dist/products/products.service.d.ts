@@ -23,7 +23,7 @@ export declare class ProductsService {
         page?: number;
         limit?: number;
     }): Promise<{
-        result: any;
+        result: never[];
         totalCount: any;
         warehouseDetails: never[];
     }>;
@@ -47,13 +47,14 @@ export declare class ProductsService {
         id: number;
         name: string;
     }[]>;
-    getProductDetailsBySku(sku: string): Promise<{
+    getProductDetailsBySku(sku: string, lang: 'ru' | 'en' | 'lv'): Promise<{
         attributes: any;
         photos: any;
         manufacturer_name: any;
         stock: any;
         oeNumbers: any;
         compatibility: any;
+        equivalentsData: any;
         id: number;
         name: string;
         sku: string;

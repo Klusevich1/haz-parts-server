@@ -14,12 +14,18 @@ const user_service_1 = require("./user.service");
 const user_controller_1 = require("./user.controller");
 const adress_entity_1 = require("./entities/adress.entity");
 const order_entity_1 = require("../entities/order.entity");
+const auth_module_1 = require("../auth/auth.module");
+const redis_module_1 = require("../redis/redis.module");
 let UserModule = class UserModule {
 };
 exports.UserModule = UserModule;
 exports.UserModule = UserModule = __decorate([
     (0, common_1.Module)({
-        imports: [typeorm_1.TypeOrmModule.forFeature([user_entity_1.User, adress_entity_1.Address, order_entity_1.Order])],
+        imports: [
+            typeorm_1.TypeOrmModule.forFeature([user_entity_1.User, adress_entity_1.Address, order_entity_1.Order]),
+            (0, common_1.forwardRef)(() => auth_module_1.AuthModule),
+            redis_module_1.RedisModule,
+        ],
         providers: [user_service_1.UserService],
         controllers: [user_controller_1.UserController],
         exports: [user_service_1.UserService],

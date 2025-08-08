@@ -16,8 +16,6 @@ exports.CarInfoService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
-const fs_1 = require("fs");
-const path_1 = require("path");
 const make_entity_1 = require("../entities/make.entity");
 const model_entity_1 = require("../entities/model.entity");
 const model_modification_entity_1 = require("../entities/model-modification.entity");
@@ -45,19 +43,6 @@ let CarInfoService = class CarInfoService {
      FROM ModelModifications
      WHERE model_id = ?
      ORDER BY year_from;`, [modelId]);
-    }
-    async loadCarDataFromFile() {
-        const filePath = (0, path_1.join)(process.cwd(), 'src', 'data', 'car_info.json');
-        const carData = JSON.parse((0, fs_1.readFileSync)(filePath, 'utf8'));
-        const results = [];
-        for (const brand of carData) {
-            const saved = await this.makeRepository.save(brand);
-            results.push(saved);
-        }
-        return {
-            message: 'Данные успешно загружены в базу',
-            count: results.length,
-        };
     }
 };
 exports.CarInfoService = CarInfoService;

@@ -21,6 +21,7 @@ let Order = class Order {
     address;
     payment;
     comment;
+    sum;
     items;
     createdAt;
 };
@@ -62,6 +63,10 @@ __decorate([
     __metadata("design:type", String)
 ], Order.prototype, "comment", void 0);
 __decorate([
+    (0, typeorm_1.Column)('decimal', { precision: 10, scale: 2 }),
+    __metadata("design:type", Number)
+], Order.prototype, "sum", void 0);
+__decorate([
     (0, typeorm_1.Column)('json'),
     __metadata("design:type", Array)
 ], Order.prototype, "items", void 0);
@@ -70,7 +75,7 @@ __decorate([
     __metadata("design:type", Date)
 ], Order.prototype, "createdAt", void 0);
 exports.Order = Order = __decorate([
-    (0, typeorm_1.Entity)('orders'),
+    (0, typeorm_1.Entity)('Orders'),
     (0, typeorm_1.Unique)(['orderNumber'])
 ], Order);
 //# sourceMappingURL=order.entity.js.map

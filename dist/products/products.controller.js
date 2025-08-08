@@ -63,8 +63,8 @@ let ProductsController = class ProductsController {
     async getOemProduct(oemNumber, page = 1, limit = 24) {
         return this.productsService.searchByOem(oemNumber, page, limit);
     }
-    async getProduct(sku) {
-        return this.productsService.getProductDetailsBySku(sku);
+    async getProduct(sku, lang = 'en') {
+        return this.productsService.getProductDetailsBySku(sku, lang);
     }
 };
 exports.ProductsController = ProductsController;
@@ -121,8 +121,9 @@ __decorate([
 __decorate([
     (0, common_1.Get)(':sku'),
     __param(0, (0, common_1.Param)('sku')),
+    __param(1, (0, common_1.Query)('lang')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [String, String]),
     __metadata("design:returntype", Promise)
 ], ProductsController.prototype, "getProduct", null);
 exports.ProductsController = ProductsController = __decorate([

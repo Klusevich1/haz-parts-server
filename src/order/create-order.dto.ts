@@ -13,6 +13,9 @@ export class CreateOrderDto {
   @IsArray()
   items: any[];
 
+  @IsNumber()
+  sum: number;
+
   @IsString()
   deliveryMethod: string;
 

@@ -10,8 +10,4 @@ export declare class CarInfoService {
     getAllBrands(): Promise<any>;
     getModelsByMake(makeId: number): Promise<any>;
     getModificationsByModel(modelId: number): Promise<any>;
-    loadCarDataFromFile(): Promise<{
-        message: string;
-        count: any;
-    }>;
 }

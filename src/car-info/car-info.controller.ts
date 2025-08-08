@@ -19,9 +19,4 @@ export class CarInfoController {
   async getByModel(@Query('modelId', ParseIntPipe) modelId: number) {
     return this.carInfoService.getModificationsByModel(modelId);
   }
-
-  @Post('import')
-  async importCarData() {
-    return this.carInfoService.loadCarDataFromFile();
-  }
 }

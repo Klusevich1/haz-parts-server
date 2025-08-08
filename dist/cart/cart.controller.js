@@ -27,7 +27,7 @@ let CartController = class CartController {
         return this.cartService.getCart(req.user.id);
     }
     addOrUpdateItem(req, dto) {
-        console.log(req.user);
+        console.log(dto);
         return this.cartService.addOrUpdateItem(req.user.id, dto);
     }
     updateItemQuantity(req, productId, hub, dto) {

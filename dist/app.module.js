@@ -19,6 +19,7 @@ const car_info_module_1 = require("./car-info/car-info.module");
 const stripe_module_1 = require("./stripe/stripe.module");
 const ids_module_1 = require("./ids/ids.module");
 const cart_module_1 = require("./cart/cart.module");
+const redis_module_1 = require("./redis/redis.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -39,6 +40,15 @@ exports.AppModule = AppModule = __decorate([
                     entities: [__dirname + '/entities/*.entity{.ts,.js}'],
                     autoLoadEntities: true,
                     synchronize: false,
+                    extra: {
+                        connectionLimit: 10,
+                        waitForConnections: true,
+                        queueLimit: 0,
+                        keepAliveInitialDelay: 10000,
+                        enableKeepAlive: true,
+                        connectTimeout: 10000,
+                        acquireTimeout: 10000,
+                    },
                 }),
             }),
             products_module_1.ProductsModule,
@@ -52,6 +62,7 @@ exports.AppModule = AppModule = __decorate([
             stripe_module_1.StripeModule,
             ids_module_1.IdsModule,
             cart_module_1.CartModule,
+            redis_module_1.RedisModule,
         ],
     })
 ], AppModule);

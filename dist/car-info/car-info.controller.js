@@ -29,9 +29,6 @@ let CarInfoController = class CarInfoController {
     async getByModel(modelId) {
         return this.carInfoService.getModificationsByModel(modelId);
     }
-    async importCarData() {
-        return this.carInfoService.loadCarDataFromFile();
-    }
 };
 exports.CarInfoController = CarInfoController;
 __decorate([
@@ -54,12 +51,6 @@ __decorate([
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
 ], CarInfoController.prototype, "getByModel", null);
-__decorate([
-    (0, common_1.Post)('import'),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", Promise)
-], CarInfoController.prototype, "importCarData", null);
 exports.CarInfoController = CarInfoController = __decorate([
     (0, common_1.Controller)('car-info'),
     __metadata("design:paramtypes", [car_info_service_1.CarInfoService])

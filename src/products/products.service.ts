@@ -23,6 +23,178 @@ export class ProductsService {
     private modificationRepository: Repository<ModelModification>,
   ) {}
 
+  // async getCatalogProducts(params: {
+  //   categoryId: number;
+  //   makeIdNum?: number;
+  //   modelIdNum?: number;
+  //   modificationIdNum?: number;
+  //   manufacturerIds?: number[];
+  //   warehouseIds?: number[];
+  //   sortBy?: 'availability' | 'price' | '';
+  //   sortDir?: 'ASC' | 'DESC';
+  //   page?: number;
+  //   limit?: number;
+  // }) {
+  //   const {
+  //     categoryId,
+  //     makeIdNum,
+  //     modelIdNum,
+  //     modificationIdNum,
+  //     manufacturerIds,
+  //     warehouseIds,
+  //     sortBy = '',
+  //     sortDir = 'ASC',
+  //     page = 1,
+  //     limit = 24,
+  //   } = params;
+
+  //   const safeLimit = Math.min(Math.max(limit || 24, 1), 100);
+  //   const safePage = Math.max(page || 1, 1);
+  //   // const safeSortDir = sortDir?.toUpperCase() === 'DESC' ? 'DESC' : 'ASC';
+
+  //   const offset = (safePage - 1) * safeLimit;
+
+  //   // JOINS
+  //   const joins: string[] = [
+  //     'JOIN Manufacturers mfr ON mfr.id = p.manufacturer_id',
+  //     'LEFT JOIN ProductStock ps ON ps.product_id = p.id',
+  //     `LEFT JOIN (
+  //       SELECT product_id, MIN(photo_url) AS photo_url
+  //       FROM ProductPhotos
+  //       GROUP BY product_id
+  //      ) pp ON pp.product_id = p.id`,
+  //   ];
+
+  //   if (modificationIdNum || modelIdNum || makeIdNum) {
+  //     joins.push(
+  //       'LEFT JOIN ProductVehicleCompatibility pvc ON pvc.product_id = p.id',
+  //     );
+  //     joins.push(
+  //       'LEFT JOIN ModelModifications mm ON mm.id = pvc.modification_id',
+  //     );
+  //     joins.push('LEFT JOIN Models mdl ON mdl.id = mm.model_id');
+  //     joins.push('LEFT JOIN Makes mk ON mk.id = mdl.make_id');
+  //   }
+  //   if (warehouseIds?.length) {
+  //     joins.push('LEFT JOIN Warehouses w ON w.id = ps.warehouse_id');
+  //   }
+  //   const joinClause = joins.join('\n');
+
+  //   // PARAMS
+  //   const conditions: string[] = ['p.category_id = ?'];
+  //   const paramsWhere: any[] = [categoryId];
+
+  //   if (manufacturerIds?.length) {
+  //     conditions.push(
+  //       `p.manufacturer_id IN (${manufacturerIds.map(() => '?').join(',')})`,
+  //     );
+  //     paramsWhere.push(...manufacturerIds);
+  //   }
+  //   if (makeIdNum) {
+  //     conditions.push('mk.id = ?');
+  //     paramsWhere.push(makeIdNum);
+  //   }
+  //   if (modelIdNum) {
+  //     conditions.push('mdl.id = ?');
+  //     paramsWhere.push(modelIdNum);
+  //   }
+  //   if (modificationIdNum) {
+  //     conditions.push(`
+  //       EXISTS (
+  //         SELECT 1
+  //         FROM ProductVehicleCompatibility pvc
+  //         WHERE pvc.product_id = p.id AND pvc.modification_id = ?
+  //       )
+  //     `);
+  //     paramsWhere.push(modificationIdNum);
+  //   }
+
+  //   if (warehouseIds?.length) {
+  //     conditions.push(`w.id IN (${warehouseIds.map(() => '?').join(',')})`);
+  //     paramsWhere.push(...warehouseIds);
+  //   }
+
+  //   paramsWhere.push(limit, offset);
+
+  //   const whereClause = conditions.length
+  //     ? `WHERE ${conditions.join(' AND ')}`
+  //     : '';
+
+  //   // SORT
+  //   const allowedSortFields = ['availability', 'price'];
+  //   const allowedSortDirs = ['ASC', 'DESC'];
+
+  //   const sortField = allowedSortFields.includes(sortBy) ? sortBy : '';
+  //   const direction = allowedSortDirs.includes(sortDir) ? sortDir : 'ASC';
+
+  //   let orderClause = '';
+  //   if (sortField === 'price') {
+  //     orderClause = `ORDER BY MIN(ps.price) ${direction}`;
+  //   } else if (sortField === 'availability') {
+  //     orderClause = `ORDER BY SUM(ps.quantity) ${direction}`;
+  //   }
+
+  //   const validatedLimit = Number.isInteger(limit) ? limit : 24;
+  //   const validatedOffset = Number.isInteger(offset) ? offset : 0;
+
+  //   const query = `
+  //   SELECT
+  //     p.id,
+  //     p.name,
+  //     p.sku,
+  //     pp.photo_url,
+  //     mfr.name AS manufacturer_name
+  //   FROM Products p
+  //   ${joinClause}
+  //   ${whereClause}
+  //   GROUP BY p.id, p.name, p.sku, pp.photo_url, mfr.name
+  //   ${orderClause}
+  //   LIMIT ${validatedLimit} OFFSET ${validatedOffset};
+  //   `;
+
+  //   const countQuery = `
+  //       SELECT COUNT(DISTINCT p.id) as total
+  //       FROM Products p
+  //       ${joinClause}
+  //       ${whereClause}
+  //     `;
+
+  //     console.log(query)
+  //     console.log(paramsWhere)
+  //   const [result, totalCountQuery] = await Promise.all([
+  //     this.productRepository.query(query, paramsWhere),
+  //     this.productRepository.query(countQuery, paramsWhere.slice(0, -2)),
+  //   ]);
+
+  //   let warehouseDetails = [];
+  //   if (result.length > 0) {
+  //     const productIds = result.map((p) => p.id);
+
+  //     warehouseDetails = await this.productRepository.query(
+  //       `
+  //   SELECT
+  //     ps.product_id,
+  //     JSON_OBJECT(
+  //       'warehouse_id', w.id,
+  //       'warehouse', w.name,
+  //       'quantity', ps.quantity,
+  //       'price', ps.price,
+  //       'min_order_quantity', ps.min_order_quantity,
+  //       'returnable', ps.returnable,
+  //       'delivery_time', ps.delivery_time
+  //     ) AS detail
+  //   FROM ProductStock ps
+  //   JOIN Warehouses w ON w.id = ps.warehouse_id
+  //   WHERE ps.product_id IN (?)
+  //   `,
+  //       [productIds],
+  //     );
+  //   }
+
+  //   const totalCount = totalCountQuery[0]?.total ?? 0;
+  //   return { result, totalCount, warehouseDetails };
+  // }
+
   async getCatalogProducts(params: {
     categoryId: number;
     makeIdNum?: number;
@@ -48,35 +220,10 @@ export class ProductsService {
       limit = 24,
     } = params;
 
-    const offset = (page - 1) * limit;
+    const safeLimit = Math.min(Math.max(limit || 24, 1), 100);
+    const safePage = Math.max(page || 1, 1);
+    const offset = (safePage - 1) * safeLimit;
 
-    // JOINS
-    const joins: string[] = [
-      'JOIN Manufacturers mfr ON mfr.id = p.manufacturer_id',
-      'JOIN ProductStock ps ON ps.product_id = p.id',
-      `LEFT JOIN (
-        SELECT product_id, MIN(photo_url) AS photo_url
-        FROM ProductPhotos
-        GROUP BY product_id
-       ) pp ON pp.product_id = p.id`,
-    ];
-
-    if (modificationIdNum || modelIdNum || makeIdNum) {
-      joins.push(
-        'LEFT JOIN ProductVehicleCompatibility pvc ON pvc.product_id = p.id',
-      );
-      joins.push(
-        'LEFT JOIN ModelModifications mm ON mm.id = pvc.modification_id',
-      );
-      joins.push('LEFT JOIN Models mdl ON mdl.id = mm.model_id');
-      joins.push('LEFT JOIN Makes mk ON mk.id = mdl.make_id');
-    }
-    if (warehouseIds?.length) {
-      joins.push('LEFT JOIN Warehouses w ON w.id = ps.warehouse_id');
-    }
-    const joinClause = joins.join('\n');
-
-    // PARAMS
     const conditions: string[] = ['p.category_id = ?'];
     const paramsWhere: any[] = [categoryId];
 
@@ -95,7 +242,7 @@ export class ProductsService {
       paramsWhere.push(modelIdNum);
     }
     if (modificationIdNum) {
-      conditions.push('mm.id = ?');
+      conditions.push('pvc.modification_id = ?');
       paramsWhere.push(modificationIdNum);
     }
 
@@ -103,8 +250,6 @@ export class ProductsService {
       conditions.push(`w.id IN (${warehouseIds.map(() => '?').join(',')})`);
       paramsWhere.push(...warehouseIds);
     }
-
-    paramsWhere.push(limit, offset);
 
     const whereClause = conditions.length
       ? `WHERE ${conditions.join(' AND ')}`
@@ -127,37 +272,83 @@ export class ProductsService {
     const validatedLimit = Number.isInteger(limit) ? limit : 24;
     const validatedOffset = Number.isInteger(offset) ? offset : 0;
 
-    const query = `
-    SELECT
-      p.id,
-      p.name,
-      p.sku,
-      pp.photo_url,
-      mfr.name AS manufacturer_name
-    FROM Products p
-    ${joinClause}
-    ${whereClause}
-    GROUP BY p.id, p.name, p.sku, ps.price, pp.photo_url, mfr.name
-    ${orderClause}
-    LIMIT ${validatedLimit} OFFSET ${validatedOffset};
+    const idJoinClause = [
+      'LEFT JOIN ProductStock ps ON ps.product_id = p.id',
+      ...(modificationIdNum || modelIdNum || makeIdNum
+        ? [
+            'LEFT JOIN ProductVehicleCompatibility pvc ON pvc.product_id = p.id',
+            'LEFT JOIN ModelModifications mm ON mm.id = pvc.modification_id',
+            'LEFT JOIN Models mdl ON mdl.id = mm.model_id',
+            'LEFT JOIN Makes mk ON mk.id = mdl.make_id',
+          ]
+        : []),
+      ...(warehouseIds?.length
+        ? ['LEFT JOIN Warehouses w ON w.id = ps.warehouse_id']
+        : []),
+    ].join('\n');
+
+    const idQuery = `
+      SELECT DISTINCT p.id
+      FROM Products p
+      ${idJoinClause}
+      ${whereClause}
+      LIMIT ${safeLimit} OFFSET ${offset};
     `;
 
     const countQuery = `
         SELECT COUNT(DISTINCT p.id) as total
         FROM Products p
-        ${joinClause}
+        ${idJoinClause}
         ${whereClause}
       `;
 
-    const [result, totalCountQuery] = await Promise.all([
-      this.productRepository.query(query, paramsWhere),
-      this.productRepository.query(countQuery, paramsWhere.slice(0, -2)),
+    const [idsRaw, totalCountRaw] = await Promise.all([
+      this.productRepository.query(idQuery, paramsWhere),
+      this.productRepository.query(countQuery, paramsWhere),
     ]);
+
+    const productIds = idsRaw.map((p) => p.id);
+    const totalCount = totalCountRaw[0]?.total ?? 0;
+
+    let result = [];
+    if (productIds.length > 0) {
+      const sortField = ['availability', 'price'].includes(sortBy)
+        ? sortBy
+        : '';
+      const direction = ['ASC', 'DESC'].includes(sortDir) ? sortDir : 'ASC';
+
+      let orderClause = '';
+      if (sortField === 'price') {
+        orderClause = `ORDER BY MIN(ps.price) ${direction}`;
+      } else if (sortField === 'availability') {
+        orderClause = `ORDER BY SUM(ps.quantity) ${direction}`;
+      }
+
+      const mainQuery = `
+      SELECT
+        p.id,
+        p.name,
+        p.sku,
+        pp.photo_url,
+        mfr.name AS manufacturer_name
+      FROM Products p
+      JOIN Manufacturers mfr ON mfr.id = p.manufacturer_id
+      LEFT JOIN ProductStock ps ON ps.product_id = p.id
+      LEFT JOIN (
+        SELECT product_id, MIN(photo_url) AS photo_url
+        FROM ProductPhotos
+        GROUP BY product_id
+      ) pp ON pp.product_id = p.id
+      WHERE p.id IN (${productIds.map(() => '?').join(',')})
+      GROUP BY p.id, p.name, p.sku, pp.photo_url, mfr.name
+      ${orderClause};
+    `;
+
+      result = await this.productRepository.query(mainQuery, productIds);
+    }
 
     let warehouseDetails = [];
     if (result.length > 0) {
-      const productIds = result.map((p) => p.id);
-
       warehouseDetails = await this.productRepository.query(
         `
     SELECT
@@ -173,64 +364,14 @@ export class ProductsService {
       ) AS detail
     FROM ProductStock ps
     JOIN Warehouses w ON w.id = ps.warehouse_id
-    WHERE ps.product_id IN (?)
+    WHERE ps.product_id IN (${productIds.map(() => '?').join(',')})
     `,
-        [productIds],
+        productIds,
       );
     }
 
-    const totalCount = totalCountQuery[0]?.total ?? 0;
     return { result, totalCount, warehouseDetails };
   }
-
-  //   const result = await this.productRepository.query(
-  //     `
-  //   SELECT
-  //   p.id,
-  //   p.name,
-  //   p.sku,
-  //   ps.price,
-  //   mfr.name AS manufacturer_name,
-  //   COUNT(*) OVER() AS total_count,
-  //   GROUP_CONCAT(DISTINCT w.name ORDER BY w.name SEPARATOR ', ') AS warehouses
-  //     FROM Products p
-  //     JOIN Manufacturers mfr ON mfr.id = p.manufacturer_id
-  //     LEFT JOIN ProductVehicleCompatibility pvc ON pvc.product_id = p.id
-  //     LEFT JOIN ModelModifications mm ON mm.id = pvc.modification_id
-  //     LEFT JOIN Models mdl ON mdl.id = mm.model_id
-  //     LEFT JOIN Makes mk ON mk.id = mdl.make_id
-  //     LEFT JOIN ProductStock ps ON ps.product_id = p.id
-  //     LEFT JOIN Warehouses w ON w.id = ps.warehouse_id
-  //     WHERE p.category_id = ?
-  //     AND (? IS NULL OR p.manufacturer_id = ?)
-  //       AND (? IS NULL OR mk.slug = ?)
-  //       AND (? IS NULL OR mdl.slug = ?)
-  //       AND (? IS NULL OR mm.slug = ?)
-  //       AND (? IS NULL OR w.id = ?)
-  //       GROUP BY p.id, p.name, p.sku, mfr.name, ps.price
-  //       ORDER BY
-  //       CASE WHEN ? = 'price' THEN MIN(ps.price) END ${sortDir},
-  //       CASE WHEN ? != 'name' THEN p.name END ${sortDir}
-  //       LIMIT ? OFFSET ?
-  //   `,
-  //     [
-  //       categoryId,
-  //       manufacturerId ?? null,
-  //       manufacturerId ?? null,
-  //       makeSlug ?? null,
-  //       makeSlug ?? null,
-  //       modelSlug ?? null,
-  //       modelSlug ?? null,
-  //       modificationSlug ?? null,
-  //       modificationSlug ?? null,
-  //       warehouseId ?? null,
-  //       warehouseId ?? null,
-  //       sortBy ?? null,
-  //       sortBy ?? null,
-  //       limit,
-  //       offset,
-  //     ],
-  //   );
 
   async getCatalogManufacturers(params: {
     categoryId: number;
@@ -301,7 +442,9 @@ export class ProductsService {
     return result;
   }
 
-  async getProductDetailsBySku(sku: string) {
+  async getProductDetailsBySku(sku: string, lang: 'ru' | 'en' | 'lv') {
+    const validLangs = ['ru', 'en', 'lv'];
+    const columnSuffix = validLangs.includes(lang) ? lang : 'en';
     const product = await this.productRepository.findOne({
       where: { sku },
     });
@@ -317,9 +460,12 @@ export class ProductsService {
       stock,
       oeNumbers,
       compatibility,
+      equivalentsData,
     ] = await Promise.all([
       this.productRepository.query(
-        `SELECT name, value FROM ProductAttributes WHERE product_id = ?`,
+        `SELECT name_${columnSuffix} AS name, value_${columnSuffix} AS value 
+         FROM ProductAttributes 
+         WHERE product_id = ?`,
         [productId],
       ),
       this.productRepository.query(
@@ -356,6 +502,16 @@ export class ProductsService {
        WHERE pvc.product_id = ?`,
         [productId],
       ),
+      (async () => {
+        const productRow = await this.productRepository.findOne({
+          where: { id: productId },
+        });
+        if (!productRow) return [];
+        const mainSku = productRow.sku;
+
+        const { result } = await this.searchBySku(mainSku, 1, 100);
+        return result.filter((item) => item.sku !== mainSku);
+      })(),
     ]);
 
     return {
@@ -366,6 +522,7 @@ export class ProductsService {
       stock,
       oeNumbers,
       compatibility,
+      equivalentsData,
     };
   }
 
@@ -383,7 +540,30 @@ export class ProductsService {
       'LEFT JOIN Warehouses w ON w.id = ps.warehouse_id',
     ];
 
-    const query = `
+    // 1. Получаем все sku (введённые + эквиваленты)
+    const originalProducts = await this.productRepository.query(
+      `SELECT p.id, p.sku FROM Products p WHERE p.sku LIKE ?`,
+      [`%${skuFragment}%`],
+    );
+    const originalProductIds = originalProducts.map((p) => p.id);
+
+    const equivalentSkusRows = originalProductIds.length
+      ? await this.productRepository.query(
+          `SELECT sku FROM ProductEquivalents WHERE product_id IN (?)`,
+          [originalProductIds],
+        )
+      : [];
+
+    const equivalentSkus = equivalentSkusRows.map((row) => row.sku);
+
+    const allSkusSet = new Set([
+      ...originalProducts.map((p) => p.sku),
+      ...equivalentSkus,
+    ]);
+    const allSkus = Array.from(allSkusSet);
+
+    // 2. Общий запрос по всем sku (введённые + эквиваленты)
+    const resultQuery = `
     SELECT
       p.id,
       p.name,
@@ -392,58 +572,69 @@ export class ProductsService {
       mfr.name AS manufacturer_name
     FROM Products p
     ${joins.join('\n')}
-    WHERE p.sku LIKE ?
+    WHERE p.sku IN (${allSkus.map(() => '?').join(',')})
     GROUP BY p.id, p.name, p.sku, ps.price, pp.photo_url, mfr.name
     ORDER BY SUM(ps.quantity) DESC
-    LIMIT ? OFFSET ?;
+    LIMIT ? OFFSET ?
   `;
 
     const countQuery = `
     SELECT COUNT(DISTINCT p.id) as total
     FROM Products p
     ${joins.join('\n')}
-    WHERE p.sku LIKE ?
+    WHERE p.sku IN (${allSkus.map(() => '?').join(',')})
   `;
 
-    const params = [`%${skuFragment}%`, limit, offset];
+    if (allSkus.length === 0) {
+      return {
+        result: [],
+        totalCount: 0,
+        warehouseDetails: [],
+      };
+    }
 
     const [result, totalCountQuery] = await Promise.all([
-      this.productRepository.query(query, params),
-      this.productRepository.query(countQuery, [`%${skuFragment}%`]),
+      this.productRepository.query(resultQuery, [...allSkus, limit, offset]),
+      this.productRepository.query(countQuery, allSkus),
     ]);
 
     let warehouseDetails = [];
     if (result.length > 0) {
-      const productIds = result.map((p) => p.id);
-
-      warehouseDetails = await this.productRepository.query(
-        `
-      SELECT
-        ps.product_id,
-        JSON_OBJECT(
-          'warehouse_id', w.id,
-          'warehouse', w.name,
-          'quantity', ps.quantity,
-          'price', ps.price,
-          'min_order_quantity', ps.min_order_quantity,
-          'returnable', ps.returnable,
-          'delivery_time', ps.delivery_time
-        ) AS detail
-      FROM ProductStock ps
-      JOIN Warehouses w ON w.id = ps.warehouse_id
-      WHERE ps.product_id IN (?)
-    `,
-        [productIds],
-      );
+      warehouseDetails = result.length
+        ? await this.productRepository.query(
+            `
+        SELECT
+          ps.product_id,
+          JSON_OBJECT(
+            'warehouse_id', w.id,
+            'warehouse', w.name,
+            'quantity', ps.quantity,
+            'price', ps.price,
+            'min_order_quantity', ps.min_order_quantity,
+            'returnable', ps.returnable,
+            'delivery_time', ps.delivery_time
+          ) AS detail
+        FROM ProductStock ps
+        JOIN Warehouses w ON w.id = ps.warehouse_id
+        WHERE ps.product_id IN (${result.map(() => '?').join(',')})
+      `,
+            result.map((r) => r.id),
+          )
+        : [];
     }
 
     const totalCount = totalCountQuery[0]?.total ?? 0;
 
-    return { result, totalCount, warehouseDetails };
+    return {
+      result,
+      totalCount,
+      warehouseDetails,
+    };
   }
 
   async searchByOem(oemNumber: string, page = 1, limit = 24) {
     const offset = (page - 1) * limit;
+    console.log(oemNumber);
 
     const joins = [
       'JOIN ProductOENumbers po ON po.product_id = p.id',
@@ -466,7 +657,7 @@ export class ProductsService {
       mfr.name AS manufacturer_name
     FROM Products p
     ${joins.join('\n')}
-    WHERE po.oe_number = ?
+    WHERE po.oe_number LIKE ?
     GROUP BY p.id, p.name, p.sku, ps.price, pp.photo_url, mfr.name
     ORDER BY SUM(ps.quantity) DESC
     LIMIT ? OFFSET ?;
@@ -476,12 +667,13 @@ export class ProductsService {
     SELECT COUNT(DISTINCT p.id) as total
     FROM Products p
     ${joins.join('\n')}
-    WHERE po.oe_number = ?
+    WHERE po.oe_number LIKE ?
+
   `;
 
     const [result, totalCountQuery] = await Promise.all([
-      this.productRepository.query(query, [oemNumber, limit, offset]),
-      this.productRepository.query(countQuery, [oemNumber]),
+      this.productRepository.query(query, [`%${oemNumber}%`, limit, offset]),
+      this.productRepository.query(countQuery, [`%${oemNumber}%]`]),
     ]);
 
     let warehouseDetails = [];
@@ -503,9 +695,9 @@ export class ProductsService {
         ) AS detail
       FROM ProductStock ps
       JOIN Warehouses w ON w.id = ps.warehouse_id
-      WHERE ps.product_id IN (?)
+      WHERE ps.product_id IN (${productIds.map(() => '?').join(',')})
     `,
-        [productIds],
+        [...productIds],
       );
     }
 

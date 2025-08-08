@@ -46,45 +46,4 @@ export class CarInfoService {
       [modelId],
     );
   }
-
-  // async getMakeIdBySlug(slug: string): Promise<number | null> {
-  //   const result = await this.makeRepository.query(
-  //     `SELECT id FROM Makes WHERE slug = ? LIMIT 1`,
-  //     [slug],
-  //   );
-  //   return result[0]?.id || null;
-  // }
-
-  // async getModelIdBySlug(slug: string): Promise<number | null> {
-  //   const result = await this.modelRepository.query(
-  //     `SELECT id FROM Models WHERE slug = ? LIMIT 1`,
-  //     [slug],
-  //   );
-  //   return result[0]?.id || null;
-  // }
-
-  // async getModificationIdBySlug(slug: string): Promise<number | null> {
-  //   const result = await this.modificationRepository.query(
-  //     `SELECT id FROM ModelModifications WHERE slug = ? LIMIT 1`,
-  //     [slug],
-  //   );
-  //   return result[0]?.id || null;
-  // }
-
-  async loadCarDataFromFile() {
-    const filePath = join(process.cwd(), 'src', 'data', 'car_info.json');
-    const carData = JSON.parse(readFileSync(filePath, 'utf8'));
-
-    const results: any = [];
-
-    for (const brand of carData) {
-      const saved = await this.makeRepository.save(brand);
-      results.push(saved);
-    }
-
-    return {
-      message: 'Данные успешно загружены в базу',
-      count: results.length,
-    };
-  }
 }

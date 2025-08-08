@@ -16,6 +16,7 @@ class CreateOrderDto {
     fullname;
     email;
     items;
+    sum;
     deliveryMethod;
     address;
     payment;
@@ -38,6 +39,10 @@ __decorate([
     (0, class_validator_1.IsArray)(),
     __metadata("design:type", Array)
 ], CreateOrderDto.prototype, "items", void 0);
+__decorate([
+    (0, class_validator_1.IsNumber)(),
+    __metadata("design:type", Number)
+], CreateOrderDto.prototype, "sum", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)

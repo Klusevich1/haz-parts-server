@@ -23,9 +23,7 @@ let CartService = class CartService {
         this.repo = repo;
     }
     async getCart(userId) {
-        return this.repo.query(`SELECT * FROM cartitems WHERE user_id = ?`, [
-            userId,
-        ]);
+        return this.repo.find({ where: { userId } });
     }
     async addOrUpdateItem(userId, dto) {
         const existing = await this.repo.findOne({
@@ -34,6 +32,10 @@ let CartService = class CartService {
         if (existing) {
             existing.quantity += dto.quantity;
             return this.repo.save(existing);
+        }
+        const totalItems = await this.repo.count({ where: { userId } });
+        if (totalItems >= 100) {
+            throw new common_1.BadRequestException('Превышено максимальное количество товаров в корзине');
         }
         const newItem = this.repo.create({ ...dto, userId });
         return this.repo.save(newItem);
@@ -48,7 +50,7 @@ let CartService = class CartService {
         return this.repo.save(item);
     }
     async removeItem(userId, productId, hub) {
-        return this.repo.delete({ userId, productId: productId, hub });
+        return this.repo.delete({ userId: userId, productId: productId, hub });
     }
     async clearCart(userId) {
         return this.repo.delete({ userId: userId });

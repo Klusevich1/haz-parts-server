@@ -8,6 +8,7 @@ export declare class Order {
     address: string;
     payment: string;
     comment?: string;
+    sum: number;
     items: any[];
     createdAt: Date;
 }

@@ -33,17 +33,31 @@ let AuthController = class AuthController {
     login(dto) {
         return this.authService.login(dto);
     }
-    checkEmail(email) {
-        return this.authService.checkEmail(email);
+    checkEmail(dto) {
+        return this.authService.checkEmail(dto.email, dto.mode);
     }
     async sendConfirmationCode(email) {
         return this.emailVerificationService.sendCode(email);
     }
     async verifyCodeAndRegister(dto) {
-        const isValid = this.emailVerificationService.verifyCode(dto.email, dto.code);
+        const isValid = await this.emailVerificationService.verifyCode(dto.email, dto.code);
         if (isValid) {
+            console.log(isValid);
             return this.authService.register(dto);
         }
+    }
+    async verifyResetCode(dto) {
+        const isValid = this.emailVerificationService.verifyCode(dto.email, dto.code);
+        if (!isValid)
+            throw new Error('Код неверен');
+        const token = await this.authService.generateResetToken(dto.email);
+        return { reset_token: token };
+    }
+    async resetPassword(dto) {
+        return this.authService.resetPasswordByToken(dto.reset_token, dto.newPassword);
+    }
+    async refresh(token) {
+        return this.authService.refreshToken(token);
     }
     verifyEmailUpdate(body) {
         const isValid = this.emailVerificationService.verifyCode(body.email, body.code);
@@ -70,9 +84,9 @@ __decorate([
 ], AuthController.prototype, "login", null);
 __decorate([
     (0, common_1.Post)('check-email'),
-    __param(0, (0, common_1.Body)('email')),
+    __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], AuthController.prototype, "checkEmail", null);
 __decorate([
@@ -89,6 +103,27 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "verifyCodeAndRegister", null);
+__decorate([
+    (0, common_1.Post)('verify-reset-code'),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], AuthController.prototype, "verifyResetCode", null);
+__decorate([
+    (0, common_1.Post)('reset-password'),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], AuthController.prototype, "resetPassword", null);
+__decorate([
+    (0, common_1.Post)('refresh'),
+    __param(0, (0, common_1.Body)('refresh_token')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], AuthController.prototype, "refresh", null);
 __decorate([
     (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
     (0, common_1.Post)('verify-email-update'),

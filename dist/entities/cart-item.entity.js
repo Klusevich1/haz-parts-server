@@ -80,6 +80,6 @@ __decorate([
     __metadata("design:type", Date)
 ], CartItem.prototype, "updatedAt", void 0);
 exports.CartItem = CartItem = __decorate([
-    (0, typeorm_1.Entity)('cartitems')
+    (0, typeorm_1.Entity)('Cartitems')
 ], CartItem);
 //# sourceMappingURL=cart-item.entity.js.map

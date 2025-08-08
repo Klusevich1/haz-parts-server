@@ -12,6 +12,7 @@ import { StripeModule } from './stripe/stripe.module';
 import { CacheModule } from '@nestjs/cache-manager';
 import { IdsModule } from './ids/ids.module';
 import { CartModule } from './cart/cart.module';
+import { RedisModule } from './redis/redis.module';
 
 @Module({
   imports: [
@@ -29,6 +30,15 @@ import { CartModule } from './cart/cart.module';
         entities: [__dirname + '/entities/*.entity{.ts,.js}'],
         autoLoadEntities: true,
         synchronize: false, // ❗ true - только в dev-режиме!
+        extra: {
+          connectionLimit: 10,
+          waitForConnections: true,
+          queueLimit: 0,
+          keepAliveInitialDelay: 10000,
+          enableKeepAlive: true,
+          connectTimeout: 10000,
+          acquireTimeout: 10000,
+        },
       }),
     }),
     // CacheModule.register({
@@ -48,6 +58,7 @@ import { CartModule } from './cart/cart.module';
     StripeModule,
     IdsModule,
     CartModule,
+    RedisModule,
   ],
 })
 export class AppModule {}

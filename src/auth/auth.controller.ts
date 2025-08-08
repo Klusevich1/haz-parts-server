@@ -32,8 +32,14 @@ export class AuthController {
   }
 
   @Post('check-email')
-  checkEmail(@Body('email') email: string) {
-    return this.authService.checkEmail(email);
+  checkEmail(
+    @Body()
+    dto: {
+      email: string;
+      mode: 'login' | 'register' | 'forgot';
+    },
+  ) {
+    return this.authService.checkEmail(dto.email, dto.mode);
   }
 
   @Post('send-confirmation-code')
@@ -43,20 +49,46 @@ export class AuthController {
 
   @Post('verify-confirmation-code')
   async verifyCodeAndRegister(@Body() dto: RegisterDto & { code: string }) {
-    const isValid = this.emailVerificationService.verifyCode(
+    const isValid = await this.emailVerificationService.verifyCode(
       dto.email,
       dto.code,
     );
     if (isValid) {
+      console.log(isValid)
       return this.authService.register(dto);
     }
   }
 
+  @Post('verify-reset-code')
+  async verifyResetCode(@Body() dto: { email: string; code: string }) {
+    const isValid = this.emailVerificationService.verifyCode(
+      dto.email,
+      dto.code,
+    );
+
+    if (!isValid) throw new Error('Код неверен');
+
+    const token = await this.authService.generateResetToken(dto.email);
+    return { reset_token: token };
+  }
+
+  @Post('reset-password')
+  async resetPassword(
+    @Body() dto: { reset_token: string; newPassword: string },
+  ) {
+    return this.authService.resetPasswordByToken(
+      dto.reset_token,
+      dto.newPassword,
+    );
+  }
+  @Post('refresh')
+  async refresh(@Body('refresh_token') token: string) {
+    return this.authService.refreshToken(token);
+  }
+
   @UseGuards(JwtAuthGuard)
   @Post('verify-email-update')
-  verifyEmailUpdate(
-    @Body() body: { email: string; code: string },
-  ) {
+  verifyEmailUpdate(@Body() body: { email: string; code: string }) {
     const isValid = this.emailVerificationService.verifyCode(
       body.email,
       body.code,

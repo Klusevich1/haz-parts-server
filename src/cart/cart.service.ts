@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CartItem } from 'src/entities/cart-item.entity';
 import { Repository } from 'typeorm';
@@ -13,9 +13,7 @@ export class CartService {
   ) {}
 
   async getCart(userId: number): Promise<CartItem[]> {
-    return this.repo.query(`SELECT * FROM cartitems WHERE user_id = ?`, [
-      userId,
-    ]);
+    return this.repo.find({ where: { userId } });
   }
 
   async addOrUpdateItem(userId: number, dto: CreateCartItemDto) {
@@ -26,6 +24,13 @@ export class CartService {
     if (existing) {
       existing.quantity += dto.quantity;
       return this.repo.save(existing);
+    }
+
+    const totalItems = await this.repo.count({ where: { userId } });
+    if (totalItems >= 100) {
+      throw new BadRequestException(
+        'Превышено максимальное количество товаров в корзине',
+      );
     }
 
     const newItem = this.repo.create({ ...dto, userId });
@@ -47,7 +52,7 @@ export class CartService {
   }
 
   async removeItem(userId: number, productId: number, hub: string) {
-    return this.repo.delete({ userId, productId: productId, hub });
+    return this.repo.delete({ userId: userId, productId: productId, hub });
   }
 
   async clearCart(userId: number) {

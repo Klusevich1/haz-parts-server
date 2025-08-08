@@ -95,7 +95,10 @@ export class ProductsController {
   }
 
   @Get(':sku')
-  async getProduct(@Param('sku') sku: string) {
-    return this.productsService.getProductDetailsBySku(sku);
+  async getProduct(
+    @Param('sku') sku: string,
+    @Query('lang') lang: 'ru' | 'en' | 'lv' = 'en',
+  ) {
+    return this.productsService.getProductDetailsBySku(sku, lang);
   }
 }

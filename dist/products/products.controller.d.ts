@@ -3,7 +3,7 @@ export declare class ProductsController {
     private readonly productsService;
     constructor(productsService: ProductsService);
     getCatalogProducts(categoryId: number, makeId: string, modelId: string, modificationId: string, manufacturers: string, warehouses: string, sortBy?: 'availability' | 'price' | '', sortDir?: 'ASC' | 'DESC', page?: number, limit?: number): Promise<{
-        result: any;
+        result: never[];
         totalCount: any;
         warehouseDetails: never[];
     }>;
@@ -25,13 +25,14 @@ export declare class ProductsController {
         totalCount: any;
         warehouseDetails: never[];
     }>;
-    getProduct(sku: string): Promise<{
+    getProduct(sku: string, lang?: 'ru' | 'en' | 'lv'): Promise<{
         attributes: any;
         photos: any;
         manufacturer_name: any;
         stock: any;
         oeNumbers: any;
         compatibility: any;
+        equivalentsData: any;
         id: number;
         name: string;
         sku: string;
