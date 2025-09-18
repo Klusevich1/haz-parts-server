@@ -61,6 +61,18 @@ export declare class ProductsService {
         category_id: number;
         manufacturer_id: number;
     } | null>;
+    getEquivalentProducts(params: {
+        productId: number;
+        includeOriginalSku?: boolean;
+        page?: number;
+        limit?: number;
+    }): Promise<{
+        result: any[];
+        totalCount: number;
+        page: number;
+        limit: number;
+        warehouseDetails: any[];
+    }>;
     searchBySku(skuFragment: string, page?: number, limit?: number): Promise<{
         result: any;
         totalCount: any;

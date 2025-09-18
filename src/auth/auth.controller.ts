@@ -22,7 +22,6 @@ export class AuthController {
 
   @Post('register')
   register(@Body() dto: RegisterDto) {
-    console.log(dto);
     return this.authService.register(dto);
   }
 
@@ -54,7 +53,6 @@ export class AuthController {
       dto.code,
     );
     if (isValid) {
-      console.log(isValid)
       return this.authService.register(dto);
     }
   }

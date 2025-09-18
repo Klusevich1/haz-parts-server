@@ -101,4 +101,26 @@ export class ProductsController {
   ) {
     return this.productsService.getProductDetailsBySku(sku, lang);
   }
+
+  @Get('product/equivalents')
+  async getEquivalentProducts(
+    @Query('productId', ParseIntPipe) productId: number,
+    @Query('includeOriginalSku') includeOriginalSku?: string, // 'true' | 'false'
+    @Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number = 1,
+    @Query('limit', new DefaultValuePipe(24), ParseIntPipe) limit: number = 24,
+  ) {
+    const includeOriginal =
+      typeof includeOriginalSku === 'string'
+        ? ['1', 'true', 'yes', 'y', 'on'].includes(
+            includeOriginalSku.toLowerCase(),
+          )
+        : true; // по умолчанию включаем исходный SKU
+
+    return this.productsService.getEquivalentProducts({
+      productId,
+      includeOriginalSku: includeOriginal,
+      page,
+      limit,
+    });
+  }
 }

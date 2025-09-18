@@ -27,7 +27,7 @@ export class CategoriesService {
       cg.name_${columnSuffix} AS group_name
     FROM Categories c
     LEFT JOIN CategoryGroups cg ON c.group_id = cg.id
-    ORDER BY cg.name_${columnSuffix}, c.name_${columnSuffix};
+    ORDER BY c.id;
     `,
     );
   }
@@ -52,6 +52,7 @@ export class CategoriesService {
     JOIN ProductVehicleCompatibility pvc ON pvc.product_id = p.id
     LEFT JOIN CategoryGroups cg ON c.group_id = cg.id
     WHERE pvc.modification_id = ?
+     ORDER BY c.id;
     `,
       [modificationId],
     );

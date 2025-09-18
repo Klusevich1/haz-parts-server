@@ -26,7 +26,6 @@ export class CartController {
 
   @Post()
   addOrUpdateItem(@Req() req, @Body() dto: CreateCartItemDto) {
-    console.log(dto)
     return this.cartService.addOrUpdateItem(req.user.id, dto);
   }
 

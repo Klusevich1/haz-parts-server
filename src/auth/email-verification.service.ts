@@ -68,13 +68,12 @@ export class EmailVerificationService {
     );
     await this.redisService.set(cooldownKey, '1', this.RESEND_TIMEOUT_SECONDS);
 
-    console.log(code);
     const htmlMessage = `
       <div>
         <p>Hello!</p>
         <p>Your verification code is: <strong>${code}</strong></p>
         <p>It is valid for 5 minutes.</p>
-        <p>Best regards,<br/>The HazParts Team</p>
+        <p>Best regards,<br/>The Hazparts team</p>
       </div>
     `;
 

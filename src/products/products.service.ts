@@ -233,21 +233,50 @@ export class ProductsService {
       );
       paramsWhere.push(...manufacturerIds);
     }
-    if (makeIdNum) {
-      conditions.push('mk.id = ?');
-      paramsWhere.push(makeIdNum);
-    }
-    if (modelIdNum) {
-      conditions.push('mdl.id = ?');
-      paramsWhere.push(modelIdNum);
-    }
     if (modificationIdNum) {
-      conditions.push('pvc.modification_id = ?');
+      conditions.push(`
+        EXISTS (
+          SELECT 1
+          FROM ProductVehicleCompatibility pvc
+          WHERE pvc.product_id = p.id
+          AND pvc.modification_id = ?
+          )
+          `);
       paramsWhere.push(modificationIdNum);
+    } else if (modelIdNum) {
+      conditions.push(`
+        EXISTS (
+          SELECT 1
+          FROM ProductVehicleCompatibility pvc
+          JOIN ModelModifications mm ON mm.id = pvc.modification_id
+          WHERE pvc.product_id = p.id
+          AND mm.model_id = ?
+          )
+          `);
+      paramsWhere.push(modelIdNum);
+    } else if (makeIdNum) {
+      conditions.push(`
+            EXISTS (
+              SELECT 1
+              FROM ProductVehicleCompatibility pvc
+              JOIN ModelModifications mm ON mm.id = pvc.modification_id
+              JOIN Models mdl ON mdl.id = mm.model_id
+              WHERE pvc.product_id = p.id
+                AND mdl.make_id = ?
+            )
+          `);
+      paramsWhere.push(makeIdNum);
     }
 
     if (warehouseIds?.length) {
-      conditions.push(`w.id IN (${warehouseIds.map(() => '?').join(',')})`);
+      conditions.push(`
+        EXISTS (
+          SELECT 1
+          FROM ProductStock ps
+          WHERE ps.product_id = p.id
+            AND ps.warehouse_id IN (${warehouseIds.map(() => '?').join(',')})
+        )
+      `);
       paramsWhere.push(...warehouseIds);
     }
 
@@ -523,6 +552,161 @@ export class ProductsService {
       oeNumbers,
       compatibility,
       equivalentsData,
+    };
+  }
+
+  async getEquivalentProducts(params: {
+    productId: number;
+    includeOriginalSku?: boolean;
+    page?: number;
+    limit?: number;
+  }) {
+    const {
+      productId,
+      includeOriginalSku = true,
+      page = 1,
+      limit = 24,
+    } = params;
+
+    const safeLimit = Math.min(Math.max(limit || 24, 1), 100);
+
+    // 1) собрать аналоги SKU
+    const equivalents: Array<{ sku: string }> =
+      await this.productRepository.query(
+        `
+    SELECT TRIM(sku) AS sku
+    FROM ProductEquivalents
+    WHERE product_id = ?
+      AND sku IS NOT NULL
+      AND sku <> ''
+    `,
+        [productId],
+      );
+
+    // опционально добавить исходный SKU товара
+    let originalSku: string | null = null;
+    if (includeOriginalSku) {
+      const orig = await this.productRepository.query(
+        `SELECT TRIM(sku) AS sku FROM Products WHERE id = ?`,
+        [productId],
+      );
+      originalSku = orig?.[0]?.sku ?? null;
+    }
+
+    const rawSkus = [
+      ...new Set([
+        ...equivalents.map((r) => r.sku),
+        ...(originalSku ? [originalSku] : []),
+      ]),
+    ].filter(Boolean) as string[];
+
+    if (rawSkus.length === 0) {
+      return {
+        result: [],
+        totalCount: 0,
+        page: 1,
+        limit: safeLimit,
+        warehouseDetails: [],
+      };
+    }
+
+    // 2) нормализуем SKU: убираем пробелы и приводим к верхнему регистру
+    const normalizedSkus = rawSkus.map((s) =>
+      s.replace(/\s+/g, '').toUpperCase(),
+    );
+
+    // 3) общий WHERE: сравниваем по UPPER(REPLACE(p.sku,' ',''))
+    const whereParts: string[] = [
+      `UPPER(REPLACE(p.sku, ' ', '')) IN (${normalizedSkus.map(() => '?').join(',')})`,
+    ];
+    const whereParams: any[] = [...normalizedSkus];
+
+    const whereClause = `WHERE ${whereParts.join(' AND ')}`;
+
+    // 4) количество
+    const countQuery = `
+    SELECT COUNT(DISTINCT p.id) AS total
+    FROM Products p
+    ${whereClause}
+  `;
+    const [{ total = 0 } = { total: 0 }] = await this.productRepository.query(
+      countQuery,
+      whereParams,
+    );
+    const totalCount = Number(total) || 0;
+
+    // 5) пагинация (защита от пустой страницы)
+    const lastPage = Math.max(1, Math.ceil(totalCount / safeLimit));
+    const safePage = Math.min(Math.max(page || 1, 1), lastPage);
+    const offset = (safePage - 1) * safeLimit;
+
+    // id-лист с детерминированным порядком
+    const idQuery = `
+    SELECT DISTINCT p.id
+    FROM Products p
+    ${whereClause}
+    ORDER BY p.id ASC
+    LIMIT ${safeLimit} OFFSET ${offset}
+  `;
+    const idsRaw = totalCount
+      ? await this.productRepository.query(idQuery, whereParams)
+      : [];
+    const productIds: number[] = idsRaw.map((r: any) => r.id);
+
+    let result: any[] = [];
+    if (productIds.length) {
+      const mainQuery = `
+      SELECT
+        p.id,
+        p.name,
+        p.sku,
+        pp.photo_url,
+        mfr.name AS manufacturer_name
+      FROM Products p
+      JOIN Manufacturers mfr ON mfr.id = p.manufacturer_id
+      LEFT JOIN ProductStock ps ON ps.product_id = p.id
+      LEFT JOIN (
+        SELECT product_id, MIN(photo_url) AS photo_url
+        FROM ProductPhotos
+        GROUP BY product_id
+      ) pp ON pp.product_id = p.id
+      WHERE p.id IN (${productIds.map(() => '?').join(',')})
+      GROUP BY p.id, p.name, p.sku, pp.photo_url, mfr.name
+    `;
+      result = await this.productRepository.query(mainQuery, productIds);
+    }
+
+    // 7) детали по складам
+    let warehouseDetails: any[] = [];
+    if (productIds.length) {
+      const wdQuery = `
+      SELECT
+        ps.product_id,
+        JSON_OBJECT(
+          'warehouse_id', w.id,
+          'warehouse', w.name,
+          'quantity', ps.quantity,
+          'price', ps.price,
+          'min_order_quantity', ps.min_order_quantity,
+          'returnable', ps.returnable,
+          'delivery_time', ps.delivery_time
+        ) AS detail
+      FROM ProductStock ps
+      JOIN Warehouses w ON w.id = ps.warehouse_id
+      WHERE ps.product_id IN (${productIds.map(() => '?').join(',')})
+    `;
+      warehouseDetails = await this.productRepository.query(
+        wdQuery,
+        productIds,
+      );
+    }
+
+    return {
+      result,
+      totalCount,
+      page: safePage,
+      limit: safeLimit,
+      warehouseDetails,
     };
   }
 

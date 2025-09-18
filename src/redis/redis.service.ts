@@ -22,12 +22,30 @@ export class RedisService implements OnModuleDestroy {
     return this.client.get(key);
   }
 
-  async del(key: string) {
-    await this.client.del(key);
+  async del(key: string | string[]) {
+    if (Array.isArray(key)) await this.client.del(...key);
+    else await this.client.del(key);
   }
 
   async exists(key: string) {
     return this.client.exists(key);
+  }
+
+  async expire(key: string, ttlSeconds: number) {
+    await this.client.expire(key, ttlSeconds);
+  }
+
+  // --- множества для управления RT пользователя ---
+  async sAdd(key: string, member: string) {
+    await this.client.sadd(key, member);
+  }
+
+  async sRem(key: string, member: string) {
+    await this.client.srem(key, member);
+  }
+
+  async sMembers(key: string): Promise<string[]> {
+    return this.client.smembers(key);
   }
 
   async onModuleDestroy() {

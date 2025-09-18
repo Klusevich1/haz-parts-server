@@ -27,7 +27,6 @@ let AuthController = class AuthController {
         this.emailVerificationService = emailVerificationService;
     }
     register(dto) {
-        console.log(dto);
         return this.authService.register(dto);
     }
     login(dto) {
@@ -42,7 +41,6 @@ let AuthController = class AuthController {
     async verifyCodeAndRegister(dto) {
         const isValid = await this.emailVerificationService.verifyCode(dto.email, dto.code);
         if (isValid) {
-            console.log(isValid);
             return this.authService.register(dto);
         }
     }

@@ -29,10 +29,25 @@ let RedisService = class RedisService {
         return this.client.get(key);
     }
     async del(key) {
-        await this.client.del(key);
+        if (Array.isArray(key))
+            await this.client.del(...key);
+        else
+            await this.client.del(key);
     }
     async exists(key) {
         return this.client.exists(key);
+    }
+    async expire(key, ttlSeconds) {
+        await this.client.expire(key, ttlSeconds);
+    }
+    async sAdd(key, member) {
+        await this.client.sadd(key, member);
+    }
+    async sRem(key, member) {
+        await this.client.srem(key, member);
+    }
+    async sMembers(key) {
+        return this.client.smembers(key);
     }
     async onModuleDestroy() {
         await this.client.quit();

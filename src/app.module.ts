@@ -13,10 +13,11 @@ import { CacheModule } from '@nestjs/cache-manager';
 import { IdsModule } from './ids/ids.module';
 import { CartModule } from './cart/cart.module';
 import { RedisModule } from './redis/redis.module';
+import { AppController } from './app.controller';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ isGlobal: true, envFilePath: '.env' }),
+    ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],

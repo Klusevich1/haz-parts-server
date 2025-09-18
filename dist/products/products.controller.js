@@ -66,6 +66,17 @@ let ProductsController = class ProductsController {
     async getProduct(sku, lang = 'en') {
         return this.productsService.getProductDetailsBySku(sku, lang);
     }
+    async getEquivalentProducts(productId, includeOriginalSku, page = 1, limit = 24) {
+        const includeOriginal = typeof includeOriginalSku === 'string'
+            ? ['1', 'true', 'yes', 'y', 'on'].includes(includeOriginalSku.toLowerCase())
+            : true;
+        return this.productsService.getEquivalentProducts({
+            productId,
+            includeOriginalSku: includeOriginal,
+            page,
+            limit,
+        });
+    }
 };
 exports.ProductsController = ProductsController;
 __decorate([
@@ -126,6 +137,16 @@ __decorate([
     __metadata("design:paramtypes", [String, String]),
     __metadata("design:returntype", Promise)
 ], ProductsController.prototype, "getProduct", null);
+__decorate([
+    (0, common_1.Get)('product/equivalents'),
+    __param(0, (0, common_1.Query)('productId', common_1.ParseIntPipe)),
+    __param(1, (0, common_1.Query)('includeOriginalSku')),
+    __param(2, (0, common_1.Query)('page', new common_1.DefaultValuePipe(1), common_1.ParseIntPipe)),
+    __param(3, (0, common_1.Query)('limit', new common_1.DefaultValuePipe(24), common_1.ParseIntPipe)),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, String, Number, Number]),
+    __metadata("design:returntype", Promise)
+], ProductsController.prototype, "getEquivalentProducts", null);
 exports.ProductsController = ProductsController = __decorate([
     (0, common_1.Controller)('products'),
     __metadata("design:paramtypes", [products_service_1.ProductsService])

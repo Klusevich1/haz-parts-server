@@ -39,4 +39,11 @@ export declare class ProductsController {
         category_id: number;
         manufacturer_id: number;
     } | null>;
+    getEquivalentProducts(productId: number, includeOriginalSku?: string, page?: number, limit?: number): Promise<{
+        result: any[];
+        totalCount: number;
+        page: number;
+        limit: number;
+        warehouseDetails: any[];
+    }>;
 }
