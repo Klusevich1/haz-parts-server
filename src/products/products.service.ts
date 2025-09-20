@@ -833,31 +833,32 @@ export class ProductsService {
     ];
 
     const query = `
-    SELECT
-      p.id,
-      p.name,
-      p.sku,
-      pp.photo_url,
-      mfr.name AS manufacturer_name
-    FROM Products p
-    ${joins.join('\n')}
-    WHERE po.oe_number LIKE ?
-    GROUP BY p.id, p.name, p.sku, ps.price, pp.photo_url, mfr.name
-    ORDER BY SUM(ps.quantity) DESC
-    LIMIT ? OFFSET ?;
-  `;
+      SELECT
+        p.id,
+        p.name,
+        p.sku,
+        pp.photo_url,
+        mfr.name AS manufacturer_name
+      FROM Products p
+      ${joins.join('\n')}
+      WHERE REPLACE(po.oe_number, ' ', '') LIKE ?
+      GROUP BY p.id, p.name, p.sku, ps.price, pp.photo_url, mfr.name
+      ORDER BY SUM(ps.quantity) DESC
+      LIMIT ? OFFSET ?;
+    `;
 
     const countQuery = `
-    SELECT COUNT(DISTINCT p.id) as total
-    FROM Products p
-    ${joins.join('\n')}
-    WHERE po.oe_number LIKE ?
+      SELECT COUNT(DISTINCT p.id) as total
+      FROM Products p
+      ${joins.join('\n')}
+      WHERE REPLACE(po.oe_number, ' ', '') LIKE ?
+    `;
 
-  `;
+    const cleanOem = oemNumber.replace(/\s+/g, '');
 
     const [result, totalCountQuery] = await Promise.all([
-      this.productRepository.query(query, [`%${oemNumber}%`, limit, offset]),
-      this.productRepository.query(countQuery, [`%${oemNumber}%]`]),
+      this.productRepository.query(query, [`%${cleanOem}%`, limit, offset]),
+      this.productRepository.query(countQuery, [`%${cleanOem}%]`]),
     ]);
 
     let warehouseDetails = [];
